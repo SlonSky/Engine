@@ -1,7 +1,7 @@
 package com.company;
 
-import com.company.forEngine.core.CoreEngine;
-import com.company.forEngine.Game;
+import com.company.Engine.core.CoreEngine;
+import com.company.Game.Game;
 
 public class Main {
 
