@@ -1,0 +1,48 @@
+#version 400
+
+in vec2 texCoord0;
+in vec3 normal0;
+in vec3 worldPos0;
+
+struct Light {
+	vec3 color;
+	vec3 intensity;
+};
+
+struct DirectionalLight {
+	Light light;
+	vec3 direction;
+};
+
+uniform sampler2D sampler;
+uniform DirectionalLight directionalLight;
+
+uniform vec3 eyePosition;
+uniform float specularIntensity;
+uniform float specularPower;
+
+vec4 calcLight(Light light, vec3 direction, vec3 normal, vec3 worldPos){
+	float diffuseFactor = dot(normal, -direction);
+	vec4 diffuseColor = vec4(0,0,0,0);
+	vec4 specularColor = vec4(0,0,0,0);
+	if(diffuseFactor > 0){
+		diffuseColor = vec4(light.color, 1.0) * light.intensity * diffuseFactor;
+		
+		vec3 dirToEye = normalize(eyePosition - worldPos);
+		vec3 reflectDir = normalize(reflect(direction, normal));
+		float specularFactor = dot(dirToEye, reflectDir);
+		specularFactor = pow(specularFactor, specularPower);
+		if(specularFactor > 0){
+			specularColor = vec4(light.color, 1.0) * specularIntensity * specularFactor;
+		}
+	}
+	return diffuseColor + specularColor;
+}
+
+vec4 calcDirectionalLight(DirectionalLight direcionalLight, vec3 normal, vec3 worldPos){
+	return calcLight(direcionalLight.light, direcionalLight.direction, normal, worldPos);
+}
+
+void main(){
+		gl_FragColor = texture2D(sampler, texCoord0.xy) * calcDirectionalLight(directionalLight, normal0, worldPos0);
+}
