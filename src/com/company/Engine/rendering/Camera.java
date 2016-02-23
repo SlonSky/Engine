@@ -50,7 +50,6 @@ public class Camera {
 
 //        TODO: object/component system!
 //        freeLookComponent.input(forward, up);
-//        System.out.println(forward + " " + up);
 
         float sensitivity = 0.5f;
         if(Input.getKey(Input.KEY_ESCAPE)){
