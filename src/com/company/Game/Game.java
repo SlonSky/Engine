@@ -6,13 +6,12 @@ import com.company.Engine.core.Input;
 import com.company.Engine.core.Time;
 import com.company.Engine.core.Window;
 import com.company.Engine.rendering.*;
-import com.company.Engine.rendering.light.Attenuation;
-import com.company.Engine.rendering.light.DirectionalLight;
-import com.company.Engine.rendering.light.PointLight;
-import com.company.Engine.rendering.light.SpotLight;
+import com.company.Engine.rendering.light.*;
 import com.company.Engine.util.Vector2f;
 import com.company.Engine.util.Vector3f;
 import com.company.Engine.util.Vertex;
+import com.company.Game.objects.GameObject;
+import com.company.Game.objects.Level;
 import com.company.Game.objects.Player;
 
 import java.util.ArrayList;
@@ -31,43 +30,28 @@ import java.util.Random;
 public class Game {
 
     private CoreEngine engine;
-
     private Camera camera;
+
     private Transform transform;
     private Material material;
     private Mesh mesh;
-    ArrayList<Entity> entities;
 
     private  Random r;
 
     private Player player;
+    private Level level;
 
     public void init(){
-//        try {
-//            AL.create(); // openAL context
-//            int buffer = alGenBuffers();
-//            WaveData data = WaveData.create(new BufferedInputStream(new FileInputStream("res/Armo01.wav")));
-//
-//            alBufferData(buffer, data.format, data.data, data.samplerate);
-//            data.dispose();
-//            source = alGenSources();
-//            alSourcei(source, AL_BUFFER, buffer);
-//            alSource3f(source, AL_POSITION, 0, 0, 0);
-//            alSource3f(source, AL_VELOCITY, 0, 0, 0);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            System.exit(-1);
-//        }
 
+        // main initialization
         camera = new Camera();
         engine.getRenderingEngine().setMainCamera(camera);
-        transform = new Transform();
-
-        Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.01f, 1000f);
+        Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.01f, 100f);
         Transform.setCamera(camera);
 
+        // stuff
+        transform = new Transform();
         r = new Random();
-        entities = new ArrayList<>();
 
 
 /*****************************************************
@@ -84,6 +68,7 @@ public class Game {
         int[] indices = new int[]{
                 0,1,2, 0,2,3
         };
+
         Mesh plane = new Mesh(vertices, indices);
         mesh = new Mesh("valid.obj");
         material = new Material(new Texture("1.png"), 1, 3);
@@ -95,8 +80,8 @@ public class Game {
 * SCENE: MULTICUBE
 */
 //        entities.add(new Entity(mesh, new Transform(new Vector3f(0,0.5f,0), new Vector3f(0,0,0), new Vector3f(1,1,1)), material));
-        entities.add(new Entity(mesh, transform, material));
-        entities.add(new Entity(plane, new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1)), material));
+//        entities.add(new Entity(mesh, transform, material));
+//        entities.add(new Entity(plane, new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1)), material));
 //        for(int i = 0; i < 500; i++){
 //            entities.add(new Entity(mesh, new Transform(new Vector3f(r.nextInt(100),r.nextInt(100),r.nextInt(100)), new Vector3f(r.nextInt(50),r.nextInt(50),r.nextInt(50)), new Vector3f(1,1,1)), material));
 //        }
@@ -110,11 +95,9 @@ public class Game {
 //                new Material(new Texture("2.png"))));
 /*****************************************************************************************/
 
-
 /***************************************************************************
 * SCENE: ROOM
 */
-
 //        entities.add(new Entity(new Mesh("room.obj"), new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1)), material));
 //        entities.add(new Entity(new Mesh("room1.obj"), new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1)), new Material(new Texture("room.png"), 1, 0)));
 
@@ -173,36 +156,45 @@ public class Game {
 //            engine.getRenderingEngine().addLight(new PointLight(new Vector3f(i*40, 3.7f, 0.7f),/* new Vector3f(0, -1, 0),*/ new Vector3f(1, 1,1), 10.9f, new Attenuation(0,0,0.5f) /*, 0.4f*/ ));
 //        }
 /*******************************************************************************/
-
-
-
-        camera.setPos(new Vector3f(0, 1, 0));
-        camera.setForward(new Vector3f(1, 0, 1));
-
 //        player = new Player(camera, new Mesh("punk3.obj"), new Material(new Texture("2.png")));
 //        entities.add(player);
 
 //        engine.getRenderingEngine().addLight(new DirectionalLight(new Vector3f(1, 0.6f, 0.6f), 0.8f, new Vector3f(1, -1, 0)));
 //        engine.getRenderingEngine().addLight(new PointLight(new Vector3f(10.5f, 3, 1.5f), new Vector3f(1, 1,1), 0.2f, new Attenuation(1,0,0)));
 //        engine.getRenderingEngine().addLight(new SpotLight(new Vector3f(-2, 5.1f, 3), new Vector3f(0, -1, -1), new Vector3f(1, 1,1), 10.9f, new Attenuation(0,0,0.5f), 0.4f ));
-        engine.getRenderingEngine().addLight(new SpotLight(new Vector3f(4, 3, 4), new Vector3f(0, -1, 0), new Vector3f(1, 1,1), 10.9f, new Attenuation(0,0,0.5f), 0.4f ));
+//        engine.getRenderingEngine().addLight(new SpotLight(new Vector3f(4, 3, 4), new Vector3f(0, -1, 0), new Vector3f(1, 1,1), 10.9f, new Attenuation(0,0,0.5f), 0.4f ));
+
+
+        camera.setPos(new Vector3f(0, 1, 0));
+        camera.setForward(new Vector3f(1, 0, 1));
+        ArrayList<GameObject> objects = new ArrayList<>();
+        ArrayList<Light> lights = new ArrayList<>();
+
+        objects.add(new GameObject(new Entity(mesh, transform, material)));
+//        objects.add(new GameObject(new Entity(plane,new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1)), material)));
+
+        int n = 300;
+        for(int i = 0; i < n; i++){
+            objects.add(new GameObject(new Entity(mesh,
+                    new Transform(new Vector3f(r.nextInt(n/10),r.nextInt(n/10),r.nextInt(n/10)),
+                            new Vector3f(r.nextInt(50),r.nextInt(50),r.nextInt(50)), new Vector3f(2.1f,2.1f,2.1f)), material)));
+        }
+
+        lights.add(new PointLight(new Vector3f(10.5f, 3, 1.5f), new Vector3f(1, 1,1), 0.2f, new Attenuation(1,0,0)));
+        lights.add(new PointLight(new Vector3f(20.5f, 3, 10.5f), new Vector3f(0, 1,1), 0.2f, new Attenuation(1,0,0)));
+        lights.add(new PointLight(new Vector3f(-10.5f, 3, -21.5f), new Vector3f(1, 0,0), 0.2f, new Attenuation(1,0,0)));
+        lights.add(new PointLight(new Vector3f(40.5f, 5, 13.5f), new Vector3f(0, 1,0), 0.2f, new Attenuation(1,0,0)));
+
+        level = new Level(objects, lights);
+
 
     }
     public void render(RenderingEngine renderingEngine){
-        renderingEngine.render(entities);
-
+        renderingEngine.render();
     }
 
-    float d = 0.0f;
     public void update(){
-        d += Time.getDelta()/10;
-        float a = 3 * (float)Math.sin(d);
-//        player.update();
-        transform.setPosition(new Vector3f(4, 2, 3));
-//        transform.setRotation(new Vector3f(d, d, 0));
 
-//        ((SpotLight)engine.getRenderingEngine().getLights().get(0)).setPosition(engine.getRenderingEngine().getMainCamera().getPos());
-//        ((SpotLight)engine.getRenderingEngine().getLights().get(0)).setDirection(engine.getRenderingEngine().getMainCamera().getForward());
     }
 
     public void input(){
@@ -215,5 +207,9 @@ public class Game {
 
     public void setEngine(CoreEngine engine){
         this.engine = engine;
+    }
+
+    public Level getLevel() {
+        return level;
     }
 }

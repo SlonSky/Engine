@@ -7,5 +7,9 @@ uniform vec3 ambient;
 uniform sampler2D sampler;
 
 void main(){
-	gl_FragColor = texture2D(sampler, texCoord0.xy) * ambient;
+vec4 texture = texture2D(sampler, texCoord0.xy);
+if(texture.a < 0.5){
+	discard;
+} else {
+	gl_FragColor = texture * ambient;}
 }

@@ -30,7 +30,7 @@ public class CoreEngine {
             Window.createWindow(width, height, title);
         }
 
-        renderingEngine = new RenderingEngine();
+        renderingEngine = new RenderingEngine(this);
     }
 
     public void start(){
@@ -108,5 +108,9 @@ public class CoreEngine {
     // TODO: temporary method - invalid architecture!!
     public RenderingEngine getRenderingEngine() {
         return renderingEngine;
+    }
+
+    public Game getGame() {
+        return game;
     }
 }

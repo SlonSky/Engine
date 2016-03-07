@@ -48,6 +48,20 @@ public class Transform {
         return projectionMatrix.mul(cameraRotation.mul(cameraTranslation.mul(transformationMatrix)));
     }
 
+    public static Matrix4f getProjectedModelView(){
+        Matrix4f id = new Matrix4f().initIdentity();
+        Matrix4f cameraRotation = new Matrix4f().initCamera(camera.getForward(), camera.getUp());
+        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camera.getPos().getX(), -camera.getPos().getY(), -camera.getPos().getZ());
+        return projectionMatrix.mul((cameraRotation.mul(cameraTranslation)).mul(id));
+//        Matrix4f orient = new Matrix4f().initCamOrientation(camera.getForward(), camera.getUp());
+//        Matrix4f transl = new Matrix4f().initCamTrans(camera.getPos());
+//        return projectionMatrix.mul((orient.mul(transl)).mul(new Matrix4f()));
+    }
+
+    public static Matrix4f getProjectionMatrix() {
+        return projectionMatrix;
+    }
+
     public static Camera getCamera() {
         return camera;
     }
