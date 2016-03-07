@@ -27,9 +27,9 @@ public class RenderingEngine {
     private Light activeLight;
 
     // temporary!
-//    private ShadowMapFBO shadowMapFBO;
-//    private Shader shadow;
-    //////////////
+    private ShadowMapFBO shadowMapFBO;
+    private ShadowShader shadow;
+    ////////////
 
     public RenderingEngine(){
         lights = new ArrayList<>();
@@ -43,7 +43,7 @@ public class RenderingEngine {
 //        glEnable(GL_SCISSOR_TEST);
 //        glScissor(10, 10, Window.getWidth() - 20, Window.getHeight() - 20);
 
-        ambient = new AmbientShader(new Vector3f(0.3f, 0.3f, 0.3f));
+        ambient = new AmbientShader(new Vector3f(0.1f, 0.1f, 0.1f));
 
 //        shadow = new ShadowShader();
 //        shadowMapFBO = new ShadowMapFBO();
@@ -54,8 +54,13 @@ public class RenderingEngine {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        drawEntities(entities, ambient);
 
+//        for(Light light: lights) {
+//            activeLight = light;
+//            shadowMapPass(entities, (SpotLight) light);
+//        }
+
+        drawEntities(entities, ambient);
 
         glEnable(GL_BLEND);
         glBlendFunc(GL_ONE, GL_ONE);
@@ -73,35 +78,36 @@ public class RenderingEngine {
 
     }
 
-//    public void shadowMapPass(List<Entity> entities, SpotLight light){
-//        shadowMapFBO.bindForWriting();
-//
-//        glClear(GL_DEPTH_BUFFER_BIT);
-//
-//        Camera mainCam = mainCamera;
-////        Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.1f, 1000); // new
-//
-//        mainCamera = new Camera();
-//        mainCamera.setPos(light.getPosition());
-//        mainCamera.setForward(light.getDirection());
-//
-//        shadow.bind();
-//        shadow.updateUniforms(entities.get(1).getTransform(), entities.get(1).getMaterial(), this);
-//        entities.get(1).getMesh().draw();
-//
-//
-//        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-//
-//        // TODO: oldCam / oldPersProj variables!
-//
-//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//        mainCamera = mainCam;
-//        shadowMapFBO.bindForReading(GL_TEXTURE0);
-//
-//        shadow.bind();
-//        shadow.updateUniforms(entities.get(0).getTransform(), entities.get(0).getMaterial(), this);
-//        entities.get(0).getMesh().draw();
-//    }
+    public void shadowMapPass(List<Entity> entities, SpotLight light){
+        shadowMapFBO.bindForWriting();
+
+
+
+        Camera mainCam = mainCamera;
+        Transform.setOrthographicProjection(0, Window.getWidth(), 0, Window.getHeight(), 1, 500); // new
+
+        mainCamera = new Camera(new Vector3f(4,3,4), new Vector3f(0, -1, -1),
+                new Vector3f(0, 0, -1));
+
+        glColorMask(false, false, false, false);
+        glDepthMask(true);
+        glClear(GL_DEPTH_BUFFER_BIT);
+        glCullFace(GL_FRONT);
+
+        shadow.setShadowMap(shadowMapFBO.getShadowMap());
+        drawEntities(entities, shadow);
+
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+
+        shadow.setShadowMap(shadowMapFBO.getShadowMap());
+        shadowMapFBO.bindForReading(GL_TEXTURE0);
+        mainCamera = mainCam;
+        Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.1f, 1000);
+        drawEntities(entities, shadow);
+    }
 
 
 

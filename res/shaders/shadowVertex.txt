@@ -7,8 +7,10 @@ layout (location = 2) in vec3 normal;
 uniform mat4 WVP;
 
 out vec2 texCoordOut;
+out vec4 light;
 
 void main(){
 	gl_Position = WVP * vec4(position, 1.0);
 	texCoordOut = texCoord;
+	light = vec4(position, 1.0) * gl_Position;
 }

@@ -21,6 +21,8 @@ public class Transform {
     private Vector3f rotation;
     private Vector3f scale;
 
+    private static Matrix4f projectionMatrix;
+
     public Transform(Vector3f position, Vector3f rotation, Vector3f scale) {
         this.position = position;
         this.rotation = rotation;
@@ -40,7 +42,6 @@ public class Transform {
 
     public Matrix4f getProjectedTransformation(){
         Matrix4f transformationMatrix = getTransformation();
-        Matrix4f projectionMatrix = new Matrix4f().initPerspectiveProjection(fov, width, height, zNear, zFar);
         Matrix4f cameraRotation = new Matrix4f().initCamera(camera.getForward(), camera.getUp());
         Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camera.getPos().getX(), -camera.getPos().getY(), -camera.getPos().getZ());
 
@@ -55,12 +56,21 @@ public class Transform {
         Transform.camera = camera;
     }
 
+    public static void setOrthographicProjection(float left, float right, float bottom, float top, float near, float far){
+        projectionMatrix = new Matrix4f().initOrthographic(left, right, bottom, top, near, far);
+    }
+
+    public static void backToPerspective(){
+        projectionMatrix = new Matrix4f().initPerspectiveProjection(fov, width, height, zNear, zFar);
+    }
+
     public static void setProjection(float fov, float width, float height, float zNear, float zFar){
         Transform.fov = fov;
         Transform.width = width;
         Transform.height = height;
         Transform.zNear = zNear;
         Transform.zFar = zFar;
+        projectionMatrix = new Matrix4f().initPerspectiveProjection(fov, width, height, zNear, zFar);
     }
 
     public Vector3f getPosition() {

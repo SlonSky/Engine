@@ -1,3 +1,8 @@
 Map:
 1. Object map
 2. Collision map
+
+Architecture:
+- Message or Event Queue pattern for right physics and audio
+- Game object hierarchy (tree or linear?)
+- Component pattern for nice object editing
