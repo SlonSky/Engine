@@ -78,45 +78,45 @@ public class LevelRenderer {
 
         // right plane
         frustum[0] = new Plane(
-                clip.get(0, 3) - clip.get(0,0),
-                clip.get(1, 3) - clip.get(1,0),
-                clip.get(2, 3) - clip.get(2,0),
-                clip.get(3, 3) - clip.get(3,0)).normalized();
+                clip.get(3, 0) - clip.get(0,0),
+                clip.get(3, 1) - clip.get(0,1),
+                clip.get(3, 2) - clip.get(0,2),
+                clip.get(3, 3) - clip.get(0,3)).normalized();
 
         // left plane
         frustum[1] = new Plane(
-                clip.get(0, 3) + clip.get(0,0),
-                clip.get(1, 3) + clip.get(1,0),
-                clip.get(2, 3) + clip.get(2,0),
-                clip.get(3, 3) + clip.get(3,0)).normalized();
+                clip.get(3, 0) + clip.get(0,0),
+                clip.get(3, 1) + clip.get(0,1),
+                clip.get(3, 2) + clip.get(0,2),
+                clip.get(3, 3) + clip.get(0,2)).normalized();
 
         // bottom plane
         frustum[2] = new Plane(
-                clip.get(0, 3) + clip.get(0,1),
-                clip.get(1, 3) + clip.get(1,1),
-                clip.get(2, 3) + clip.get(2,1),
-                clip.get(3, 3) + clip.get(3,1)).normalized();
+                clip.get(3, 0) + clip.get(1,0),
+                clip.get(3, 1) + clip.get(1,1),
+                clip.get(3, 2) + clip.get(1,2),
+                clip.get(3, 3) + clip.get(1,3)).normalized();
 
         // top plane
         frustum[3] = new Plane(
-                clip.get(0, 3) - clip.get(0,1),
-                clip.get(1, 3) - clip.get(1,1),
-                clip.get(2, 3) - clip.get(2,1),
-                clip.get(3, 3) - clip.get(3,1)).normalized();
+                clip.get(3, 0) - clip.get(1,0),
+                clip.get(3, 1) - clip.get(1,1),
+                clip.get(3, 2) - clip.get(1,2),
+                clip.get(3, 3) - clip.get(1,3)).normalized();
 
         // near plane
         frustum[4] = new Plane(
-                clip.get(0, 3) - clip.get(0,2),
-                clip.get(1, 3) - clip.get(1,2),
-                clip.get(2, 3) - clip.get(2,2),
-                clip.get(3, 3) - clip.get(3,2)).normalized();
+                clip.get(3, 0) - clip.get(2,0),
+                clip.get(3, 1) - clip.get(2,1),
+                clip.get(3, 2) - clip.get(2,2),
+                clip.get(3, 3) - clip.get(2,3)).normalized();
 
         // far plane
         frustum[5] = new Plane(
-                clip.get(0, 3) + clip.get(0,2),
-                clip.get(1, 3) + clip.get(1,2),
-                clip.get(2, 3) + clip.get(2,2),
-                clip.get(3, 3) + clip.get(3,2)).normalized();
+                clip.get(3, 0) + clip.get(2,0),
+                clip.get(3, 1) + clip.get(2,1),
+                clip.get(3, 2) + clip.get(2,2),
+                clip.get(3, 3) + clip.get(2,3)).normalized();
 
         return frustum;
     }

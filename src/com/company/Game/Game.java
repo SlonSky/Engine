@@ -46,7 +46,7 @@ public class Game {
         // main initialization
         camera = new Camera();
         engine.getRenderingEngine().setMainCamera(camera);
-        Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.01f, 100f);
+        Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.01f, 500f);
         Transform.setCamera(camera);
 
         // stuff
@@ -173,7 +173,7 @@ public class Game {
         objects.add(new GameObject(new Entity(mesh, transform, material)));
 //        objects.add(new GameObject(new Entity(plane,new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1)), material)));
 
-        int n = 300;
+        int n = 1000;
         for(int i = 0; i < n; i++){
             objects.add(new GameObject(new Entity(mesh,
                     new Transform(new Vector3f(r.nextInt(n/10),r.nextInt(n/10),r.nextInt(n/10)),
