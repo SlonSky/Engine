@@ -1,0 +1,142 @@
+package com.company.Engine.rendering;
+
+import com.company.Engine.rendering.light.AmbientShader;
+import com.company.Engine.rendering.light.Light;
+import com.company.Engine.util.Matrix4f;
+import com.company.Engine.util.Plane;
+import com.company.Engine.util.Vector3f;
+import com.company.Game.objects.GameObject;
+import com.company.Game.objects.Level;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.lwjgl.opengl.GL11.*;
+
+/**
+ * Created by Slon on 07.03.2016.
+ */
+public class LevelRenderer {
+
+
+    private Shader ambient;
+
+    public LevelRenderer(){
+        ambient = new AmbientShader(new Vector3f(0.4f, 0.4f, 0.4f));
+    }
+
+    public void render(Level level, RenderingEngine engine){
+
+        ArrayList<GameObject> objects = level.getObjects();
+        ArrayList<Light> lights = level.getLights();
+
+        drawObjects(objects, ambient, engine); // render ambient light
+
+        // blending other light types rendering
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_ONE, GL_ONE);
+        glDepthMask(false);
+        glDepthFunc(GL_EQUAL);
+
+        for(Light light: lights) {
+            engine.setActiveLight(light);
+            drawObjects(objects, light.getShader(), engine);
+        }
+
+        glDepthFunc(GL_LESS);
+        glDepthMask(true);
+        glDisable(GL_BLEND);
+    }
+
+
+    private void drawObjects(List<GameObject> objects, Shader shader, RenderingEngine engine){
+        Plane[] frustum = calcFrustum();
+        int b = 0;
+        for (GameObject object : objects) {
+            if(
+                    objectInFrustum(frustum, object.getCullingCube().getPoints()))
+//            pointInFrustum(frustum, object.getEntity().getTransform().getPosition()))
+            {
+                b++;
+                Entity e = object.getEntity();
+                shader.bind();
+                shader.updateUniforms(e.getTransform(), e.getMaterial(), engine);
+                e.getMesh().draw();
+
+                shader.bind();
+                shader.updateUniforms(object.bound.getTransform(), object.bound.getMaterial(), engine);
+                object.bound.getMesh().draw(); // todo
+            }
+        }
+        System.err.println(b);
+    }
+
+    private Plane[] calcFrustum(){
+        Matrix4f clip = Transform.getProjectedModelView();
+
+        Plane[] frustum = new Plane[6];
+
+        // right plane
+        frustum[0] = new Plane(
+                clip.get(0, 3) - clip.get(0,0),
+                clip.get(1, 3) - clip.get(1,0),
+                clip.get(2, 3) - clip.get(2,0),
+                clip.get(3, 3) - clip.get(3,0)).normalized();
+
+        // left plane
+        frustum[1] = new Plane(
+                clip.get(0, 3) + clip.get(0,0),
+                clip.get(1, 3) + clip.get(1,0),
+                clip.get(2, 3) + clip.get(2,0),
+                clip.get(3, 3) + clip.get(3,0)).normalized();
+
+        // bottom plane
+        frustum[2] = new Plane(
+                clip.get(0, 3) + clip.get(0,1),
+                clip.get(1, 3) + clip.get(1,1),
+                clip.get(2, 3) + clip.get(2,1),
+                clip.get(3, 3) + clip.get(3,1)).normalized();
+
+        // top plane
+        frustum[3] = new Plane(
+                clip.get(0, 3) - clip.get(0,1),
+                clip.get(1, 3) - clip.get(1,1),
+                clip.get(2, 3) - clip.get(2,1),
+                clip.get(3, 3) - clip.get(3,1)).normalized();
+
+        // near plane
+        frustum[4] = new Plane(
+                clip.get(0, 3) - clip.get(0,2),
+                clip.get(1, 3) - clip.get(1,2),
+                clip.get(2, 3) - clip.get(2,2),
+                clip.get(3, 3) - clip.get(3,2)).normalized();
+
+        // far plane
+        frustum[5] = new Plane(
+                clip.get(0, 3) + clip.get(0,2),
+                clip.get(1, 3) + clip.get(1,2),
+                clip.get(2, 3) + clip.get(2,2),
+                clip.get(3, 3) + clip.get(3,2)).normalized();
+
+        return frustum;
+    }
+
+    private boolean pointInFrustum(Plane[] frustum, Vector3f point){
+        for(int i = 0; i < 6; i++){
+            if(frustum[i].getA() * point.getX() + frustum[i].getB() * point.getY() + frustum[i].getC() * point.getZ() + frustum[i].getD() <= 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean objectInFrustum(Plane[] frustum, Vector3f[] points){
+        for (Vector3f point : points) {
+            if (pointInFrustum(frustum, point)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
