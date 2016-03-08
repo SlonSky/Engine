@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9634d66b-3a6e-420f-92b5-d7f99af9080a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/core/CoreEngine.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/core/CoreEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Game/Game.java" afterPath="$PROJECT_DIR$/src/com/company/Game/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Matrix4f.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Matrix4f.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/Transform.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/Transform.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/ambientFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/ambientFragment.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GameEngine.iws" />
@@ -737,7 +731,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457336502711</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Frustum culling implementation (in process)">
+      <created>1457457745152</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1457457745152</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -794,7 +794,8 @@
     <MESSAGE value="11" />
     <MESSAGE value="111" />
     <MESSAGE value="Last commit before architecture wil be reconstructed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Last commit before architecture wil be reconstructed." />
+    <MESSAGE value="Frustum culling implementation (in process)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frustum culling implementation (in process)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -832,7 +833,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -906,7 +907,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
