@@ -22,7 +22,7 @@ public class LevelRenderer {
     private Shader ambient;
 
     public LevelRenderer(){
-        ambient = new AmbientShader(new Vector3f(0.4f, 0.4f, 0.4f));
+        ambient = new AmbientShader(new Vector3f(0.2f, 0.2f, 0.2f));
     }
 
     public void render(Level level, RenderingEngine engine){
@@ -53,22 +53,19 @@ public class LevelRenderer {
         Plane[] frustum = calcFrustum();
         int b = 0;
         for (GameObject object : objects) {
-            if(
-                    objectInFrustum(frustum, object.getCullingCube().getPoints()))
-//            pointInFrustum(frustum, object.getEntity().getTransform().getPosition()))
-            {
+            if(objectInFrustum(frustum, object.getCullingCube().getPoints())){
                 b++;
                 Entity e = object.getEntity();
                 shader.bind();
                 shader.updateUniforms(e.getTransform(), e.getMaterial(), engine);
                 e.getMesh().draw();
-
-                shader.bind();
-                shader.updateUniforms(object.bound.getTransform(), object.bound.getMaterial(), engine);
-                object.bound.getMesh().draw(); // todo
+//
+//                shader.bind();
+//                shader.updateUniforms(object.bound.getTransform(), object.bound.getMaterial(), engine);
+//                object.bound.getMesh().draw(); // todo
             }
         }
-        System.err.println(b);
+//        System.err.println(b);
     }
 
     private Plane[] calcFrustum(){
@@ -88,7 +85,7 @@ public class LevelRenderer {
                 clip.get(3, 0) + clip.get(0,0),
                 clip.get(3, 1) + clip.get(0,1),
                 clip.get(3, 2) + clip.get(0,2),
-                clip.get(3, 3) + clip.get(0,2)).normalized();
+                clip.get(3, 3) + clip.get(0,3)).normalized();
 
         // bottom plane
         frustum[2] = new Plane(

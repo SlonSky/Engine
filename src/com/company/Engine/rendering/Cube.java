@@ -11,23 +11,26 @@ public class Cube {
     private Vector3f center;
     private Vector3f[] points;
 
-    public Cube(float length, Transform transform){
+    public Cube(Vector3f dimensions, Transform transform){
         points = new Vector3f[8];
 
-        float r = length/2;
+        float x = dimensions.getX();
+        float y = dimensions.getY();
+        float z = dimensions.getZ();
+
         center = transform.getPosition();
 
         // bottom face
-        points[0] = center.add(new Vector3f(-r, -r, r));
-        points[1] = center.add(new Vector3f(r, -r, r));
-        points[2] = center.add(new Vector3f(r, -r, -r));
-        points[3] = center.add(new Vector3f(-r, -r, -r));
+        points[0] = center.add(new Vector3f(-x, -y, z));
+        points[1] = center.add(new Vector3f(x, -y, z));
+        points[2] = center.add(new Vector3f(x, -y, -z));
+        points[3] = center.add(new Vector3f(-x, -y, -z));
 
         // top face
-        points[4] = center.add(new Vector3f(-r, r, r));
-        points[5] = center.add(new Vector3f(r, r, r));
-        points[6] = center.add(new Vector3f(r, r, -r));
-        points[7] = center.add(new Vector3f(-r, r, -r));
+        points[4] = center.add(new Vector3f(-x, y, z));
+        points[5] = center.add(new Vector3f(x, y, z));
+        points[6] = center.add(new Vector3f(x, y, -z));
+        points[7] = center.add(new Vector3f(-x, y, -z));
 
 
 
