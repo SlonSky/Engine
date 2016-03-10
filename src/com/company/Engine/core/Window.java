@@ -23,6 +23,7 @@ public class Window {
             Display.setTitle(title);
             Display.setDisplayMode(Display.getDesktopDisplayMode());
             Display.setFullscreen(true);
+            Display.setVSyncEnabled(true);
             Display.create();
         } catch (LWJGLException e) {
             e.printStackTrace();
