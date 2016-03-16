@@ -11,39 +11,40 @@ import com.company.Engine.util.Vertex;
 import org.lwjgl.opengl.GL15;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL15.*;
 import static org.lwjgl.opengl.GL20.*;
 
 public class Mesh {
-    private int vbo;
-    private int ibo;
-    private int size;
+    private static HashMap<String, MeshResource> loadedMeshes = new HashMap<>();
+
+    private String filename;
+    private MeshResource resource;
 
     public Mesh(Vertex[] vertices, int[] indices){
-        initMeshData();
         addVertices(vertices, indices);
 //        size = 0;
-
     }
 
     public Mesh(String filename){
-        initMeshData();
-        loadMesh(filename);
-    }
-
-    private void initMeshData(){
-        vbo = glGenBuffers();
-        ibo = glGenBuffers();
+        this.filename = filename;
+        MeshResource oldRes = loadedMeshes.get(filename);
+        if(oldRes == null) {
+            loadMesh(filename);
+            loadedMeshes.put(filename, resource);
+        } else {
+            resource = oldRes;
+        }
     }
 
     private void addVertices(Vertex[] vertices, int[] indices){
-        size = indices.length;
-        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+        resource = new MeshResource(indices.length);
+        glBindBuffer(GL_ARRAY_BUFFER, resource.getVbo());
         GL15.glBufferData(GL_ARRAY_BUFFER, Utils.createFlippedBuffer(vertices), GL_STATIC_DRAW);
 
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, Utils.createFlippedBuffer(indices), GL_STATIC_DRAW);
     }
 
@@ -52,20 +53,20 @@ public class Mesh {
         glEnableVertexAttribArray(1);
         glEnableVertexAttribArray(2);
 
-        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+        glBindBuffer(GL_ARRAY_BUFFER, resource.getVbo());
         glVertexAttribPointer(0, 3, GL_FLOAT, false, Vertex.SIZE * 4, 0);
         glVertexAttribPointer(1, 2, GL_FLOAT, false, Vertex.SIZE * 4, 12);
         glVertexAttribPointer(2, 3, GL_FLOAT, false, Vertex.SIZE * 4, 20);
 
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-        glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, 0);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
+        glDrawElements(GL_TRIANGLES, resource.getSize(), GL_UNSIGNED_INT, 0);
 
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
         glDisableVertexAttribArray(2);
     }
 
-    private Mesh loadMesh(String fileName)
+    private void loadMesh(String fileName)
     {
         String[] splitArray = fileName.split("\\.");
         String ext = splitArray[splitArray.length - 1];
@@ -95,8 +96,6 @@ public class Mesh {
         model.getIndices().toArray(indexData);
 
         addVertices(vertexData, Utils.toIntArray(indexData));
-
-        return null;
     }
 
 }

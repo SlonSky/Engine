@@ -54,6 +54,30 @@ public class Matrix4f {
         return this;
     }
 
+    public Matrix4f initRotation(Vector3f forward, Vector3f up){
+        Vector3f f = forward.normalized();
+
+        Vector3f r = up.normalized();
+        r = r.cross(f);
+
+        Vector3f u = f.cross(r);
+
+        return initRotation(f, u, r);
+    }
+
+    public Matrix4f initRotation(Vector3f forward, Vector3f up, Vector3f right){
+        Vector3f f = forward.normalized();
+        Vector3f r = right.normalized();
+        Vector3f u = up.normalized();
+
+        m[0][0] = r.getX();     m[0][1] = r.getY();    m[0][2] = r.getZ();    m[0][3] = 0;
+        m[1][0] = u.getX();     m[1][1] = u.getY();    m[1][2] = u.getZ();    m[1][3] = 0;
+        m[2][0] = f.getX();     m[2][1] = f.getY();    m[2][2] = f.getZ();    m[2][3] = 0;
+        m[3][0] = 0;            m[3][1] = 0;           m[3][2] = 0;           m[3][3] = 1;
+
+        return this;
+    }
+
     public Matrix4f initTranslation(float x, float y, float z){
         m[0][0] = 1;    m[0][1] = 0;    m[0][2] = 0;    m[0][3] = x;
         m[1][0] = 0;    m[1][1] = 1;    m[1][2] = 0;    m[1][3] = y;
@@ -87,47 +111,39 @@ public class Matrix4f {
         return this;
     }
 
-    public Matrix4f initBias(){
-        m[0][0] = 0.5f;    m[0][1] = 0;    m[0][2] = 0;    m[0][3] = 0.5f;
-        m[1][0] = 0;    m[1][1] = 0.5f;    m[1][2] = 0;    m[1][3] = 0.5f;
-        m[2][0] = 0;    m[2][1] = 0;    m[2][2] = 0.5f;    m[2][3] = 0.5f;
-        m[3][0] = 0;    m[3][1] = 0;    m[3][2] = 0;    m[3][3] = 1;
-        return this;
-    }
+//    public Matrix4f initCamera(Vector3f forward, Vector3f up){
+//        Vector3f n = forward.normalized();
+//        Vector3f u = up.normalized();
+//        u = u.cross(n);
+//        Vector3f v = n.cross(u);
+//
+//        m[0][0] = u.getX();    m[0][1] = u.getY();    m[0][2] = u.getZ();    m[0][3] = 0;
+//        m[1][0] = v.getX();    m[1][1] = v.getY();    m[1][2] = v.getZ();    m[1][3] = 0;
+//        m[2][0] = n.getX();    m[2][1] = n.getY();    m[2][2] = n.getZ();    m[2][3] = 0;
+//        m[3][0] = 0;           m[3][1] = 0;           m[3][2] = 0;           m[3][3] = 1;
+//        return this;
+//    }
 
-    public Matrix4f initCamera(Vector3f forward, Vector3f up){
-        Vector3f n = forward.normalized();
-        Vector3f u = up.normalized();
-        u = u.cross(n);
-        Vector3f v = n.cross(u);
-
-        m[0][0] = u.getX();    m[0][1] = u.getY();    m[0][2] = u.getZ();    m[0][3] = 0;
-        m[1][0] = v.getX();    m[1][1] = v.getY();    m[1][2] = v.getZ();    m[1][3] = 0;
-        m[2][0] = n.getX();    m[2][1] = n.getY();    m[2][2] = n.getZ();    m[2][3] = 0;
-        m[3][0] = 0;           m[3][1] = 0;           m[3][2] = 0;           m[3][3] = 1;
-        return this;
-    }
-
-    public Matrix4f initCamOrientation(Vector3f forward, Vector3f up){
-        Vector3f n = forward.normalized();
-        Vector3f u = up.normalized();
-        u = u.cross(n);
-        Vector3f v = n.cross(u);
-
-        m[0][0] = u.getX();    m[0][1] = v.getX();    m[0][2] = n.getX();    m[0][3] = 0;
-        m[1][0] = u.getY();    m[1][1] = v.getY();    m[1][2] = n.getY();    m[1][3] = 0;
-        m[2][0] = u.getZ();    m[2][1] = v.getZ();    m[2][2] = n.getZ();    m[2][3] = 0;
-        m[3][0] = 0;           m[3][1] = 0;           m[3][2] = 0;           m[3][3] = 1;
-        return this;
-    }
-
-    public Matrix4f initCamTrans(Vector3f pos){
-        m[0][0] = 1;    m[0][1] = 0;    m[0][2] = 0;    m[0][3] = 0;
-        m[1][0] = 0;    m[1][1] = 1;    m[1][2] = 0;    m[1][3] = 0;
-        m[2][0] = 0;    m[2][1] = 0;    m[2][2] = 1;    m[2][3] = 0;
-        m[3][0] = -pos.getX();    m[3][1] = -pos.getY();    m[3][2] = -pos.getZ();    m[3][3] = 1;
-        return this;
-    }
+//    public Matrix4f initCamOrientation(Vector3f forward, Vector3f up){
+//        Vector3f n = forward.normalized();
+//        Vector3f u = up.normalized();
+//        u = u.cross(n);
+//        Vector3f v = n.cross(u);
+//
+//        m[0][0] = u.getX();    m[0][1] = v.getX();    m[0][2] = n.getX();    m[0][3] = 0;
+//        m[1][0] = u.getY();    m[1][1] = v.getY();    m[1][2] = n.getY();    m[1][3] = 0;
+//        m[2][0] = u.getZ();    m[2][1] = v.getZ();    m[2][2] = n.getZ();    m[2][3] = 0;
+//        m[3][0] = 0;           m[3][1] = 0;           m[3][2] = 0;           m[3][3] = 1;
+//        return this;
+//    }
+//
+//    public Matrix4f initCamTrans(Vector3f pos){
+//        m[0][0] = 1;    m[0][1] = 0;    m[0][2] = 0;    m[0][3] = 0;
+//        m[1][0] = 0;    m[1][1] = 1;    m[1][2] = 0;    m[1][3] = 0;
+//        m[2][0] = 0;    m[2][1] = 0;    m[2][2] = 1;    m[2][3] = 0;
+//        m[3][0] = -pos.getX();    m[3][1] = -pos.getY();    m[3][2] = -pos.getZ();    m[3][3] = 1;
+//        return this;
+//    }
 
     public Matrix4f mul(Matrix4f r){
         Matrix4f res = new Matrix4f();

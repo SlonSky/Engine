@@ -15,7 +15,10 @@ import static org.lwjgl.opengl.GL11.*;
 
 /**
  * Created by Slon on 07.03.2016.
+ * TODO: light renderable/non-light renderable entities
  */
+
+
 public class LevelRenderer {
 
 
@@ -53,16 +56,16 @@ public class LevelRenderer {
         Plane[] frustum = calcFrustum();
         int b = 0;
         for (GameObject object : objects) {
-            if(objectInFrustum(frustum, object.getCullingCube().getPoints())){
-                b++;
+            if(!object.isCulling() || objectInFrustum(frustum, object.getCullingCube().getPoints())){
+//                b++;
                 Entity e = object.getEntity();
                 shader.bind();
                 shader.updateUniforms(e.getTransform(), e.getMaterial(), engine);
                 e.getMesh().draw();
-//
-//                shader.bind();
-//                shader.updateUniforms(object.bound.getTransform(), object.bound.getMaterial(), engine);
-//                object.bound.getMesh().draw(); // todo
+
+                shader.bind();
+                shader.updateUniforms(object.bound.getTransform(), object.bound.getMaterial(), engine);
+                object.bound.getMesh().draw(); // todo
             }
         }
 //        System.err.println(b);

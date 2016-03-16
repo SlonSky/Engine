@@ -6,19 +6,25 @@ import com.company.Engine.util.Vertex;
 /**
  * Created by Slon on 07.03.2016.
  */
-public class Cube {
-    private float length;
-    private Vector3f center;
+public class Box {
+    private Transform transform;
+    private Vector3f dimensions;
     private Vector3f[] points;
 
-    public Cube(Vector3f dimensions, Transform transform){
+    public Box(Vector3f dimensions, Transform transform){
         points = new Vector3f[8];
+        this.dimensions = dimensions;
+        this.transform = transform;
+        initBounds();
+    }
 
+
+    private void initBounds(){
         float x = dimensions.getX();
         float y = dimensions.getY();
         float z = dimensions.getZ();
 
-        center = transform.getPosition();
+        Vector3f center = transform.getPosition();
 
         // bottom face
         points[0] = center.add(new Vector3f(-x, -y, z));
@@ -32,24 +38,26 @@ public class Cube {
         points[6] = center.add(new Vector3f(x, y, -z));
         points[7] = center.add(new Vector3f(-x, y, -z));
 
-
-
     }
 
-    public float getLength() {
-        return length;
-    }
-
-    public Vector3f getCenter() {
-        return center;
+    public void moveTo(Vector3f position){
+        transform.setPosition(position);
+        initBounds();
     }
 
     public Vector3f[] getPoints() {
         return points;
     }
 
-    public boolean isCulling(){
+    public Vector3f getCenter(){
+        return transform.getPosition();
+    }
 
+    public float getSize(){
+        return dimensions.max();
+    }
+
+    public boolean isCulling(){
         return false;
     }
 }

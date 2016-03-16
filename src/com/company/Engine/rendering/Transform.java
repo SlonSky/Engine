@@ -1,6 +1,7 @@
 package com.company.Engine.rendering;
 
 import com.company.Engine.util.Matrix4f;
+import com.company.Engine.util.Quaternion;
 import com.company.Engine.util.Vector3f;
 
 /**
@@ -18,31 +19,32 @@ public class Transform {
     private static float fov;
 
     private Vector3f position;
-    private Vector3f rotation;
+    private Quaternion rotation;
     private Vector3f scale;
 
     private static Matrix4f projectionMatrix;
 
-    public Transform(Vector3f position, Vector3f rotation, Vector3f scale) {
+    public Transform(Vector3f position, Quaternion rotation, Vector3f scale) {
         this.position = position;
         this.rotation = rotation;
         this.scale = scale;
     }
 
     public Transform(){
-        this(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1));
+        this(new Vector3f(0,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1));
     }
 
     public Matrix4f getTransformation(){
         Matrix4f translationMatrix = new Matrix4f().initTranslation(position.getX(), position.getY(), position.getZ());
-        Matrix4f rotationMatrix = new Matrix4f().initRotation(rotation.getX(), rotation.getY(), rotation.getZ());
+        Matrix4f rotationMatrix = rotation.toRotationMatrix();
         Matrix4f scaleMatrix = new Matrix4f().initScale(scale.getX(), scale.getY(), scale.getZ());
         return translationMatrix.mul(rotationMatrix.mul(scaleMatrix));
     }
 
     public Matrix4f getProjectedTransformation(){
         Matrix4f transformationMatrix = getTransformation();
-        Matrix4f cameraRotation = new Matrix4f().initCamera(camera.getForward(), camera.getUp());
+//        Matrix4f cameraRotation = new Matrix4f().initRotation(camera.getForward(), camera.getUp(), camera.getRight());
+        Matrix4f cameraRotation = camera.getRot().conjugate().toRotationMatrix();
         Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camera.getPos().getX(), -camera.getPos().getY(), -camera.getPos().getZ());
 
         return projectionMatrix.mul(cameraRotation.mul(cameraTranslation.mul(transformationMatrix)));
@@ -50,7 +52,7 @@ public class Transform {
 
     public static Matrix4f getProjectedModelView(){
         Matrix4f id = new Matrix4f().initIdentity();
-        Matrix4f cameraRotation = new Matrix4f().initCamera(camera.getForward(), camera.getUp());
+        Matrix4f cameraRotation = new Matrix4f().initRotation(camera.getForward(), camera.getUp());
         Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camera.getPos().getX(), -camera.getPos().getY(), -camera.getPos().getZ());
         return projectionMatrix.mul((cameraRotation.mul(cameraTranslation).mul(id)));
 //        Matrix4f orient = new Matrix4f().initCamOrientation(camera.getForward(), camera.getUp());
@@ -87,6 +89,11 @@ public class Transform {
         projectionMatrix = new Matrix4f().initPerspectiveProjection(fov, width, height, zNear, zFar);
     }
 
+    public void rotate(Quaternion rotation){
+        Quaternion oldRot = this.rotation;
+        this.rotation = oldRot.mul(rotation).normalized();
+    }
+
     public Vector3f getPosition() {
         return position;
     }
@@ -95,11 +102,11 @@ public class Transform {
         this.position = position;
     }
 
-    public Vector3f getRotation() {
+    public Quaternion getRotation() {
         return rotation;
     }
 
-    public void setRotation(Vector3f rotation) {
+    public void setRotation(Quaternion rotation) {
         this.rotation = rotation;
     }
 
@@ -109,10 +116,6 @@ public class Transform {
 
     public void setScale(Vector3f scale) {
         this.scale = scale;
-    }
-
-    public void increaseRot(Vector3f amt){
-        rotation = rotation.add(amt);
     }
 
     public static boolean isOrthographic() {
