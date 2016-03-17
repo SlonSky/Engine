@@ -31,7 +31,7 @@ public class GameObject {
         bound = new Entity(boundMesh, new Transform(entity.getTransform().getPosition(), new Quaternion(0, 0, 0, 1), dimensions), boundMat);
 
         // temporary!
-//        collider = new Box(new Vector3f(2,2,2), entity.getTransform());
+//        collider = new Box(new Vector3f(cullingCube.getSize(),cullingCube.getSize(),cullingCube.getSize()), entity.getTransform());
         collider = cullingCube;
     }
 

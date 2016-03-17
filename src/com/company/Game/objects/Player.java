@@ -37,16 +37,19 @@ public class Player{
 
         float movAmt = (float)(10 * Time.getDelta());
         if(Input.getKey(Input.KEY_W)){
-            move(body.getEntity().getTransform().getRotation().getForward().mul(intersect).normalized(), movAmt);
+            move(body.getEntity().getTransform().getRotation().getForward().normalized(), movAmt);
         }
         if(Input.getKey(Input.KEY_S)){
-            move(body.getEntity().getTransform().getRotation().getForward().mul(intersect).normalized(), -movAmt);
+            move(body.getEntity().getTransform().getRotation().getForward().normalized(), -movAmt);
         }
         if(Input.getKey(Input.KEY_D)){
-            move(body.getEntity().getTransform().getRotation().getRight().mul(intersect).normalized(), movAmt);
+            move(body.getEntity().getTransform().getRotation().getRight().normalized(), movAmt);
         }
         if(Input.getKey(Input.KEY_A)){
-            move(body.getEntity().getTransform().getRotation().getLeft().mul(intersect).normalized(), movAmt);
+            move(body.getEntity().getTransform().getRotation().getLeft().normalized(), movAmt);
+        }
+        if(!intersect.equals(new Vector3f(0,0,0))){
+            move(intersect, -movAmt);
         }
 
 //        TODO: object/component system!

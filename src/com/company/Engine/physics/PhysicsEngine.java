@@ -24,11 +24,14 @@ public class PhysicsEngine {
     public static Vector3f checkIntersection(GameObject box, List<GameObject> colliders){
         for(GameObject b: colliders){
             Vector3f collisionVec = b.getColider().getCenter().sub(box.getColider().getCenter());
-            if(collisionVec.length() < (box.getColider().getSize() + b.getColider().getSize()) && !box.equals(b)){
-                return collisionVec;
+            if(Math.abs(b.getColider().getCenter().getX() - box.getColider().getCenter().getX()) < (box.getColider().getSize() + b.getColider().getSize())
+                    && Math.abs(b.getColider().getCenter().getY() - box.getColider().getCenter().getY()) < (box.getColider().getSize() + b.getColider().getSize())
+                    && Math.abs(b.getColider().getCenter().getZ() - box.getColider().getCenter().getZ()) < (box.getColider().getSize() + b.getColider().getSize())
+                    && !box.equals(b)){
+                return collisionVec.normalized();
             }
         }
-        return new Vector3f(1,1,1);
+        return new Vector3f(0,0,0);
     }
 
 }
