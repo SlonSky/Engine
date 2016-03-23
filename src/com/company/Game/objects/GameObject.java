@@ -1,57 +1,48 @@
 package com.company.Game.objects;
 
-import com.company.Engine.rendering.*;
-import com.company.Engine.util.Quaternion;
-import com.company.Engine.util.Vector3f;
+import com.company.Engine.rendering.RenderingEngine;
+import com.company.Engine.rendering.Shader;
+import com.company.Engine.rendering.Transform;
+import com.company.Game.components.GameComponent;
+
+import java.util.ArrayList;
 
 /**
- * Created by Slon on 25.02.2016.
+ * Created by Slon on 21.03.2016.
  */
-public class GameObject {
+public abstract class GameObject {
+    private Transform transform;
+    private ArrayList<GameComponent> components;
 
-    private static Mesh boundMesh = new Mesh("bound.obj");
-    private static Material boundMat = new Material(new Texture("bound.png"), 0,0);
-
-    private Entity entity;
-    private Box cullingCube;
-    private Box collider;
-    private boolean culling;
-
-    public Entity bound;
-
-
-    public GameObject(Entity entity, Vector3f dimensions) {
-        this(entity, dimensions, true);
+    public GameObject(Transform transform){
+        this.transform = transform;
+        components = new ArrayList<>();
     }
 
-    public GameObject(Entity entity, Vector3f dimensions, boolean culling) {
-        this.entity = entity;
-        this.culling = culling;
-        cullingCube = new Box(dimensions, entity.getTransform());
-        bound = new Entity(boundMesh, new Transform(entity.getTransform().getPosition(), new Quaternion(0, 0, 0, 1), dimensions), boundMat);
-
-        // temporary!
-//        collider = new Box(new Vector3f(cullingCube.getSize(),cullingCube.getSize(),cullingCube.getSize()), entity.getTransform());
-        collider = cullingCube;
+    public void input(){
+        for (GameComponent component: components){
+            component.input();
+        }
     }
 
-    public Entity getEntity() {
-        return entity;
+    public void update(){
+        for (GameComponent component: components){
+            component.update();
+        }
     }
 
-    public Box getCullingCube() {
-        return cullingCube;
+    public void render(Shader shader, RenderingEngine renderingEngine){
+        for (GameComponent component: components){
+            component.render(shader, renderingEngine);
+        }
     }
 
-    public Entity getBound() {
-        return bound;
+    public void addComponent(GameComponent component){
+        components.add(component);
+        component.setParent(this);
     }
 
-    public boolean isCulling() {
-        return culling;
-    }
-
-    public Box getColider() {
-        return collider;
+    public Transform getTransform() {
+        return transform;
     }
 }

@@ -4,6 +4,7 @@ import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.light.Light;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Slon on 07.03.2016.

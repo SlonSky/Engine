@@ -1,6 +1,7 @@
 package com.company.Engine.rendering.light;
 
 import com.company.Engine.rendering.*;
+import com.company.Engine.rendering.meshManagment.Material;
 
 /**
  * Created by Slon on 15.02.2016.

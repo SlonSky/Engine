@@ -5,29 +5,24 @@ package com.company.Engine.rendering;
  */
 
 import com.company.Engine.core.CoreEngine;
-import com.company.Engine.core.Window;
-import com.company.Engine.rendering.light.AmbientShader;
 import com.company.Engine.rendering.light.Light;
-import com.company.Engine.rendering.light.PointLight;
-import com.company.Engine.rendering.light.SpotLight;
 import com.company.Engine.util.Matrix4f;
-import com.company.Engine.util.Vector3f;
+import com.company.Engine.util.Plane;
+import com.company.Game.objects.Decoration;
 import com.company.Game.objects.Level;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.company.Game.objects.Player;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL13.*;
-import static org.lwjgl.opengl.GL30.*;
 
 public class RenderingEngine {
     private CoreEngine core;
 
     private Camera mainCamera;
     private Light activeLight;
+    private Plane[] frustum;
 
     private LevelRenderer levelRenderer;
+
 
     public RenderingEngine(CoreEngine core){
         this.core = core;
@@ -42,14 +37,70 @@ public class RenderingEngine {
 
     }
 
-
-    public void render() {
+    public void render(Level level) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        levelRenderer.render(core.getGame().getLevel(), this);
+        frustum = calcFrustum();
+
+        // skyboxRenderer.render(this);
+        levelRenderer.render(level, this);
+        // guiRenderer.render(guiManager.getGui, this);
 
 
+    }
 
+    private Plane[] calcFrustum(){
+        Matrix4f clip = Transform.getProjectedModelView();
+
+        Plane[] frustum = new Plane[6];
+
+        // right plane
+        frustum[0] = new Plane(
+                clip.get(3, 0) - clip.get(0,0),
+                clip.get(3, 1) - clip.get(0,1),
+                clip.get(3, 2) - clip.get(0,2),
+                clip.get(3, 3) - clip.get(0,3)).normalized();
+
+        // left plane
+        frustum[1] = new Plane(
+                clip.get(3, 0) + clip.get(0,0),
+                clip.get(3, 1) + clip.get(0,1),
+                clip.get(3, 2) + clip.get(0,2),
+                clip.get(3, 3) + clip.get(0,3)).normalized();
+
+        // bottom plane
+        frustum[2] = new Plane(
+                clip.get(3, 0) + clip.get(1,0),
+                clip.get(3, 1) + clip.get(1,1),
+                clip.get(3, 2) + clip.get(1,2),
+                clip.get(3, 3) + clip.get(1,3)).normalized();
+
+        // top plane
+        frustum[3] = new Plane(
+                clip.get(3, 0) - clip.get(1,0),
+                clip.get(3, 1) - clip.get(1,1),
+                clip.get(3, 2) - clip.get(1,2),
+                clip.get(3, 3) - clip.get(1,3)).normalized();
+
+        // near plane
+        frustum[4] = new Plane(
+                clip.get(3, 0) - clip.get(2,0),
+                clip.get(3, 1) - clip.get(2,1),
+                clip.get(3, 2) - clip.get(2,2),
+                clip.get(3, 3) - clip.get(2,3)).normalized();
+
+        // far plane
+        frustum[5] = new Plane(
+                clip.get(3, 0) + clip.get(2,0),
+                clip.get(3, 1) + clip.get(2,1),
+                clip.get(3, 2) + clip.get(2,2),
+                clip.get(3, 3) + clip.get(2,3)).normalized();
+
+        return frustum;
+    }
+
+    public Plane[] getFrustum() {
+        return frustum;
     }
 
     public void setActiveLight(Light activeLight) {

@@ -5,6 +5,8 @@ package com.company.Engine.rendering;
  */
 
 import com.company.Engine.rendering.light.*;
+import com.company.Engine.rendering.meshManagment.Material;
+import com.company.Engine.rendering.meshManagment.Texture;
 import com.company.Engine.util.Matrix4f;
 import com.company.Engine.util.Utils;
 import com.company.Engine.util.Vector3f;

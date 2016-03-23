@@ -1,6 +1,6 @@
 package com.company.Engine.rendering.light;
 
-import com.company.Engine.rendering.Material;
+import com.company.Engine.rendering.meshManagment.Material;
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
 import com.company.Engine.rendering.Transform;

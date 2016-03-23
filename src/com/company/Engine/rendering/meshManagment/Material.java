@@ -1,4 +1,4 @@
-package com.company.Engine.rendering;
+package com.company.Engine.rendering.meshManagment;
 
 /**
  * Created by Slon on 13.02.2016.

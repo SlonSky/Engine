@@ -5,6 +5,7 @@ import com.company.Engine.util.Vector3f;
 import com.company.Game.Game;
 import com.company.Game.objects.GameObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,21 +14,30 @@ import java.util.List;
  * TODO: collision vector/ move vector
  */
 public class PhysicsEngine {
+    public static final PhysicsEngine instance = new PhysicsEngine();
 
+    private ArrayList<Collider> colliders;
 
-    /**
-     *
-     * @param box
-     * @param colliders
-     * @return collision vector
-     */
-    public static Vector3f checkIntersection(GameObject box, List<GameObject> colliders){
-        for(GameObject b: colliders){
-            Vector3f collisionVec = b.getColider().getCenter().sub(box.getColider().getCenter());
-            if(Math.abs(b.getColider().getCenter().getX() - box.getColider().getCenter().getX()) < (box.getColider().getSize() + b.getColider().getSize())
-                    && Math.abs(b.getColider().getCenter().getY() - box.getColider().getCenter().getY()) < (box.getColider().getSize() + b.getColider().getSize())
-                    && Math.abs(b.getColider().getCenter().getZ() - box.getColider().getCenter().getZ()) < (box.getColider().getSize() + b.getColider().getSize())
-                    && !box.equals(b)){
+    private PhysicsEngine() {
+        colliders = new ArrayList<>();
+    }
+
+    public static PhysicsEngine getInstance() {
+        return instance;
+    }
+
+    public void addCollider(Collider collider){
+        colliders.add(collider);
+    }
+
+    public Vector3f checkIntersection(Collider colliding){
+        for(Collider collider: colliders){
+            Vector3f collisionVec = collider.getPosition().sub(colliding.getPosition());
+            if(!collider.equals(colliding)
+                    && Math.abs(colliding.getPosition().getX() - collider.getPosition().getX()) < (colliding.getSize() + collider.getSize())
+                    && Math.abs(colliding.getPosition().getY() - collider.getPosition().getY()) < (colliding.getSize() + collider.getSize())
+                    && Math.abs(colliding.getPosition().getZ() - collider.getPosition().getZ()) < (colliding.getSize() + collider.getSize())
+                    ){
                 return collisionVec.normalized();
             }
         }

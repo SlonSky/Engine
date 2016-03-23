@@ -1,7 +1,8 @@
-package com.company.Engine.rendering;
+package com.company.Engine.rendering.meshManagment;
 
 /**
  * Created by Slon on 12.02.2016.
+ * TODO: texture resource management
  */
 import org.lwjgl.BufferUtils;
 
@@ -10,37 +11,38 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.lwjgl.opengl.GL11.*;
 public class Texture {
-    private int id;
+    private static HashMap<String, TextureResource> textures = new HashMap<>();
 
-    public Texture(String fileName)
-    {
-        this(loadTexture(fileName));
+    private TextureResource resource;
+
+    public Texture(String filename){
+        TextureResource oldRes = textures.get(filename);
+        if(oldRes == null){
+            loadTexture(filename);
+            textures.put(filename, resource);
+        } else {
+            resource = oldRes;
+        }
     }
 
-    public Texture(int id)
-    {
-        this.id = id;
-    }
-
-    public void bind()
-    {
-        glBindTexture(GL_TEXTURE_2D, id);
+    public void bind() {
+        glBindTexture(GL_TEXTURE_2D, resource.getId());
     }
 
     public static void unbind(){
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    public int getID()
-    {
-        return id;
+    public int getID() {
+        return resource.getId();
     }
 
-    private static int loadTexture(String fileName)
-    {
+    private void loadTexture(String fileName) {
         try {
             BufferedImage image = ImageIO.read(new File("./res/textures/" + fileName));
             boolean hasAlpha = image.getColorModel().hasAlpha();
@@ -73,11 +75,10 @@ public class Texture {
             glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.getWidth(), image.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
 
-            return texture;
+            resource = new TextureResource(texture);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return 0;
     }
+
 }

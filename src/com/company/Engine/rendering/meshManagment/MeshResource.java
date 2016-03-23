@@ -1,4 +1,4 @@
-package com.company.Engine.rendering;
+package com.company.Engine.rendering.meshManagment;
 
 import static org.lwjgl.opengl.GL15.glGenBuffers;
 

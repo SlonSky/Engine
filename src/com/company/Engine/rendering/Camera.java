@@ -18,14 +18,8 @@ public class Camera {
 
     public Camera(Vector3f pos, Quaternion rot) {
         this.pos = pos;
-
         this.rot = rot;
-        }
-
-//    public Camera(){
-//        this(new Vector3f(0,0,0), new Vector3f(0,0,1), new Vector3f(0,1,0));
-//    }
-
+    }
 
     public Quaternion getRot() {
         return rot;
@@ -58,5 +52,4 @@ public class Camera {
     public Vector3f getUp() {
         return rot.getUp();
     }
-
 }

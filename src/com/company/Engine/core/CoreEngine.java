@@ -29,7 +29,6 @@ public class CoreEngine {
         } else {
             Window.createWindow(width, height, title);
         }
-
         renderingEngine = new RenderingEngine(this);
     }
 

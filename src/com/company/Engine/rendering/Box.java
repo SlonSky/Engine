@@ -40,9 +40,18 @@ public class Box {
 
     }
 
-    public void moveTo(Vector3f position){
+//    public void moveTo(Vector3f position){
+//        transform.setPosition(position);
+//        initBounds();
+//    }
+
+    public void setPosition(Vector3f position){
         transform.setPosition(position);
         initBounds();
+    }
+
+    public void setTransform(Transform transform) {
+        this.transform = transform;
     }
 
     public Vector3f[] getPoints() {
