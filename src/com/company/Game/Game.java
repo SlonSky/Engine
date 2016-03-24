@@ -9,6 +9,8 @@ import com.company.Engine.rendering.light.*;
 import com.company.Engine.rendering.meshManagment.Material;
 import com.company.Engine.rendering.meshManagment.Mesh;
 import com.company.Engine.rendering.meshManagment.Texture;
+import com.company.Engine.rendering.skybox.CubeMapTexture;
+import com.company.Engine.rendering.skybox.SkyBox;
 import com.company.Engine.util.Quaternion;
 import com.company.Engine.util.Vector2f;
 import com.company.Engine.util.Vector3f;
@@ -260,7 +262,7 @@ public class Game {
         objects.add(player);
         objects.add(d);
         objects.add(e);
-        level = new Level(objects, lights);
+        level = new Level(new SkyBox(mesh, new CubeMapTexture("1")), objects, lights);
 
 /**
  * TODO: interfaces which are given to engine?

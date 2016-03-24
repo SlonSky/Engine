@@ -9,6 +9,7 @@ import com.company.Engine.util.Vector3f;
 
 /**
  * Created by Slon on 11.02.2016.
+ * TODO: make component
  */
 public class Camera {
 

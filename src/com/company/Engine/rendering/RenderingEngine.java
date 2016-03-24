@@ -6,6 +6,7 @@ package com.company.Engine.rendering;
 
 import com.company.Engine.core.CoreEngine;
 import com.company.Engine.rendering.light.Light;
+import com.company.Engine.rendering.skybox.SkyBoxRenderer;
 import com.company.Engine.util.Matrix4f;
 import com.company.Engine.util.Plane;
 import com.company.Game.objects.Decoration;
@@ -22,11 +23,12 @@ public class RenderingEngine {
     private Plane[] frustum;
 
     private LevelRenderer levelRenderer;
-
+    private SkyBoxRenderer skyBoxRenderer;
 
     public RenderingEngine(CoreEngine core){
         this.core = core;
         levelRenderer = new LevelRenderer();
+        skyBoxRenderer = new SkyBoxRenderer();
 
         glClearColor(1.5f, 1, 1.5f, 1);
         glFrontFace(GL_CW);
@@ -42,8 +44,8 @@ public class RenderingEngine {
 
         frustum = calcFrustum();
 
-        // skyboxRenderer.render(this);
         levelRenderer.render(level, this);
+         skyBoxRenderer.render(level.getSkyBox(), this);
         // guiRenderer.render(guiManager.getGui, this);
 
 

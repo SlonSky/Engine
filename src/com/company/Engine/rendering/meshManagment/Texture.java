@@ -45,25 +45,7 @@ public class Texture {
     private void loadTexture(String fileName) {
         try {
             BufferedImage image = ImageIO.read(new File("./res/textures/" + fileName));
-            boolean hasAlpha = image.getColorModel().hasAlpha();
-            int[] pixels = image.getRGB(0, 0, image.getWidth(), image.getHeight(), null, 0, image.getWidth());
-            ByteBuffer buffer = BufferUtils.createByteBuffer(image.getWidth() * image.getHeight() * 4);
-
-            for(int y = 0; y < image.getHeight(); y++){
-                for(int x = 0; x < image.getWidth(); x++){
-                    int pixel = pixels[y * image.getWidth() + x];
-
-                    buffer.put((byte) ((pixel >> 16) & 0xFF));
-                    buffer.put((byte) ((pixel >> 8) & 0xFF));
-                    buffer.put((byte) ((pixel >> 0) & 0xFF));
-                    if(hasAlpha){
-                        buffer.put((byte) ((pixel >> 24) & 0xFF));
-                    } else {
-                        buffer.put((byte)(0xFF));
-                    }
-                }
-            }
-            buffer.flip();
+            ByteBuffer buffer = Texture.loadToBuffer(image);
 
             int texture = glGenTextures();
             glBindTexture(GL_TEXTURE_2D, texture);
@@ -79,6 +61,30 @@ public class Texture {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static ByteBuffer loadToBuffer(BufferedImage image){
+        boolean hasAlpha = image.getColorModel().hasAlpha();
+        int[] pixels = image.getRGB(0, 0, image.getWidth(), image.getHeight(), null, 0, image.getWidth());
+
+        ByteBuffer buffer = BufferUtils.createByteBuffer(image.getWidth() * image.getHeight() * 4);
+
+        for(int y = 0; y < image.getHeight(); y++){
+            for(int x = 0; x < image.getWidth(); x++){
+                int pixel = pixels[y * image.getWidth() + x];
+
+                buffer.put((byte) ((pixel >> 16) & 0xFF));
+                buffer.put((byte) ((pixel >> 8) & 0xFF));
+                buffer.put((byte) ((pixel >> 0) & 0xFF));
+                if(hasAlpha){
+                    buffer.put((byte) ((pixel >> 24) & 0xFF));
+                } else {
+                    buffer.put((byte)(0xFF));
+                }
+            }
+        }
+        buffer.flip();
+        return buffer;
     }
 
 }

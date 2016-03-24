@@ -1,0 +1,9 @@
+#version 400
+
+in vec3 texCoord0;
+
+uniform samplerCube cubeMapTex;
+
+void main(){
+	gl_FragColor = texture(cubeMapTex, texCoord0);
+}

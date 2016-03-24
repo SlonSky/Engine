@@ -2,85 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9634d66b-3a6e-420f-92b5-d7f99af9080a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/components/AIMove.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/objects/Decoration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/components/FrustumCulling.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/components/GameComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/components/Graphic.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/components/LookControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/components/MoveControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/objects/OldGameObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Game/objects/OldPlayer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/TextureResource.java" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\components\FreeLook.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\FrustumCulling.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/AmbientShader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/AmbientShader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/Attenuation.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/Attenuation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/Box.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/Box.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/skybox/1_BOTTOM.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/skybox/1_DOWN.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/skybox/1_LEFT.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/skybox/1_RIGHT.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/skybox/1_TOP.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/skybox/1_UP.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/CubeMapTexture.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBox.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxShader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/shaders/skyBoxFragment.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/shaders/skyBoxVertex.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/Camera.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/Camera.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/physics/Collider.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/physics/Collider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/core/CoreEngine.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/core/CoreEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/DirectionalLight.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/DirectionalLight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/DirectionalShader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/DirectionalShader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Game/objects/Enemy.java" afterPath="$PROJECT_DIR$/src/com/company/Game/objects/Enemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/Entity.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/Entity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Game/Game.java" afterPath="$PROJECT_DIR$/src/com/company/Game/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameEngine.iml" afterPath="$PROJECT_DIR$/GameEngine.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Game/objects/GameObject.java" afterPath="$PROJECT_DIR$/src/com/company/Game/objects/GameObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Game/objects/Level.java" afterPath="$PROJECT_DIR$/src/com/company/Game/objects/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/LevelRenderer.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/LevelRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/Light.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/Light.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/LightShader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/LightShader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Matrix4f.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Matrix4f.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/physics/PhysicsEngine.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/physics/PhysicsEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Plane.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Plane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Game/objects/Player.java" afterPath="$PROJECT_DIR$/src/com/company/Game/objects/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/PointLight.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/PointLight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/PointShader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/PointShader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Quaternion.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Quaternion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/Shader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/Shader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/ShadowMapFBO.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/ShadowMapFBO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/ShadowShader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/ShadowShader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/SimpleShader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/SimpleShader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Slon.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Slon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/SpotLight.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/SpotLight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/SpotShader.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/light/SpotShader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/core/Time.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/core/Time.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/Transform.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/Transform.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Utils.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Vector2f.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Vector2f.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Vector3f.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Vector3f.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/util/Vertex.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/util/Vertex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/core/Window.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/core/Window.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/ambientFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/ambientFragment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/ambientVertex.txt" afterPath="$PROJECT_DIR$/res/shaders/ambientVertex.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/directionalFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/directionalFragment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/directionalVertex.txt" afterPath="$PROJECT_DIR$/res/shaders/directionalVertex.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/lightFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/lightFragment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/lightVertex.txt" afterPath="$PROJECT_DIR$/res/shaders/lightVertex.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notes" afterPath="$PROJECT_DIR$/notes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/pointFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/pointFragment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/pointVertex.txt" afterPath="$PROJECT_DIR$/res/shaders/pointVertex.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project-template.xml" afterPath="$PROJECT_DIR$/.idea/project-template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/shadowFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/shadowFragment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/shadowVertex.txt" afterPath="$PROJECT_DIR$/res/shaders/shadowVertex.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/simpleFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/simpleFragment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/simpleVertex.txt" afterPath="$PROJECT_DIR$/res/shaders/simpleVertex.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/spotFragment.txt" afterPath="$PROJECT_DIR$/res/shaders/spotFragment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/spotVertex.txt" afterPath="$PROJECT_DIR$/res/shaders/spotVertex.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Texture.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Texture.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Material.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Material.java" />
-      <change type="MOVED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Mesh.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Mesh.java" />
-      <change type="MOVED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\MeshResource.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/MeshResource.java" />
-      <change type="MOVED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Texture.java" afterPath="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Texture.java" />
     </list>
     <ignored path="GameEngine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,62 +45,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Decoration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/objects/Decoration.java">
+      <file leaf-file-name="Texture.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Texture.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#835#836#0" expanded="true" />
+                <element signature="e#897#898#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrustumCulling.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/components/FrustumCulling.java">
+      <file leaf-file-name="RenderingEngine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#887#888#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Graphic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/components/Graphic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LookControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/components/LookControl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="74" selection-start-line="71" selection-start-column="74" selection-end-line="71" selection-end-column="74" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoveControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/components/MoveControl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -169,62 +73,106 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="258" column="37" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
+              <caret line="263" column="23" selection-start-line="263" selection-start-column="23" selection-end-line="263" selection-end-column="23" />
               <folding>
-                <element signature="e#2603#2735#0" expanded="false" />
-                <element signature="e#3824#3969#0" expanded="false" />
-                <element signature="e#5511#5557#0" expanded="false" />
-                <element signature="e#8319#8416#0" expanded="false" />
-                <element signature="e#9203#9280#0" expanded="false" />
-                <element signature="e#10426#10428#0" expanded="false" />
-                <element signature="e#17599#17600#0" expanded="true" />
-                <element signature="e#17630#17631#0" expanded="true" />
+                <element signature="e#2713#2845#0" expanded="false" />
+                <element signature="e#3934#4079#0" expanded="false" />
+                <element signature="e#5621#5667#0" expanded="false" />
+                <element signature="e#8429#8526#0" expanded="false" />
+                <element signature="e#9313#9390#0" expanded="false" />
+                <element signature="e#10536#10538#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/objects/Player.java">
+      <file leaf-file-name="CubeMapTexture.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/CubeMapTexture.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2987#2988#0" expanded="true" />
+                <element signature="e#3048#3049#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/Entity.java">
+      <file leaf-file-name="SkyBoxShader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxShader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4240363">
-              <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#662#663#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SkyBox.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+              <folding>
+                <element signature="e#420#421#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#504#505#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SkyBoxRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#448#449#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30839002">
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/objects/GameObject.java">
+      <file leaf-file-name="LevelRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/LevelRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1509#1589#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AIMove.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Game/components/AIMove.java">
+      <file leaf-file-name="Level.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Game/objects/Level.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#663#664#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -255,13 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/LightShader.java" />
-        <option value="$PROJECT_DIR$/res/shaders/spotFragment.txt" />
-        <option value="$PROJECT_DIR$/res/shaders/shadowVertex.txt" />
-        <option value="$PROJECT_DIR$/res/shaders/shadowFragment.txt" />
-        <option value="$PROJECT_DIR$/src/com/company/Game/objects/Frustum.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Engine/util/Plane.java" />
-        <option value="$PROJECT_DIR$/res/shaders/ambientFragment.txt" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/MeshResource.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/components/FreeLook.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/Mesh.java" />
@@ -273,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/FrusumCulling.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/FrustumCulling.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/Cube.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/physics/CollisionCube.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/CullingCube.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/ControlComponent.java" />
@@ -285,7 +225,6 @@
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/MoveControlComponent.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/GraphicComponent.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/objects/GameComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/Camera.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/objects/NewPlayer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/objects/GameObject.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/Entity.java" />
@@ -293,19 +232,28 @@
         <option value="$PROJECT_DIR$/src/com/company/Engine/core/CoreEngine.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/components/FrustumCulling.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/TextureResource.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java" />
         <option value="$PROJECT_DIR$/notes" />
-        <option value="$PROJECT_DIR$/src/com/company/Game/objects/Level.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/LevelRenderer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/objects/Enemy.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/components/AIMove.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/objects/Decoration.java" />
         <option value="$PROJECT_DIR$/src/com/company/Game/objects/Player.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Game/Game.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/Box.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/physics/Collider.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/physics/PhysicsEngine.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/Camera.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyboxTexture.java" />
         <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Texture.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyboxShader.java" />
+        <option value="$PROJECT_DIR$/res/shaders/skyBoxVertex.txt" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxShader.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBox.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Game/objects/Level.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Game/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/CubeMapTexture.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxRenderer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
     </option>
   </component>
@@ -554,7 +502,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="objLoader" />
+              <option name="myItemId" value="skybox" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -637,6 +585,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skybox" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -911,7 +891,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458132287944</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Stronger architecture">
+      <created>1458758593943</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1458758593943</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -925,7 +911,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -938,7 +924,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26687598" sideWeight="0.48821798" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1954612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14641288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -952,6 +938,32 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32750398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31796503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26709062" sideWeight="0.51178205" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27027026" sideWeight="0.48821798" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5362963" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32750398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987441" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -973,7 +985,8 @@
     <MESSAGE value="Nice scene, raw optimising" />
     <MESSAGE value="Quaternion rotating, now the scene is wrong - solvable" />
     <MESSAGE value="Changes become!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes become!" />
+    <MESSAGE value="Stronger architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stronger architecture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -986,48 +999,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/shaders/pointFragment.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4989247">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/SimpleShader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/shaders/spotFragment.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="102" selection-start-line="82" selection-start-column="102" selection-end-line="82" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/shaders/shadowVertex.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/shaders/shadowFragment.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/light/SpotShader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7648305">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/shaders/lightFragment.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1077,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/light/AmbientShader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/objLoader/OBJModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3069978">
@@ -1122,13 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4604966">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Engine/util/Vector3f.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0712644">
@@ -1141,6 +1098,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,6 +1106,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,17 +1115,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1066#1067#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1182,6 +1130,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.508046">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,6 +1138,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1196,14 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1224,33 +1166,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Game/objects/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/LevelRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="27" selection-start-line="41" selection-start-column="36" selection-end-line="42" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1509#1589#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Game/components/GameComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#502#503#0" expanded="false" />
+            <element signature="e#546#547#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1260,7 +1183,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1270,7 +1193,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
           <folding>
-            <element signature="e#1505#1506#0" expanded="true" />
+            <element signature="e#1505#1506#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1280,13 +1203,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="84" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="false" />
+            <element signature="e#539#540#0" expanded="false" />
+            <element signature="e#731#732#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#1083#1084#0" expanded="false" />
+            <element signature="e#1121#1122#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1296,31 +1218,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
           <folding>
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Texture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-          <folding>
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1043#1044#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/TextureResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="false" />
+            <element signature="e#653#654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1335,29 +1234,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="37" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
-          <folding>
-            <element signature="e#2603#2735#0" expanded="false" />
-            <element signature="e#3824#3969#0" expanded="false" />
-            <element signature="e#5511#5557#0" expanded="false" />
-            <element signature="e#8319#8416#0" expanded="false" />
-            <element signature="e#9203#9280#0" expanded="false" />
-            <element signature="e#10426#10428#0" expanded="false" />
-            <element signature="e#17599#17600#0" expanded="true" />
-            <element signature="e#17630#17631#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Game/objects/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1367,7 +1249,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1424,8 +1306,166 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4240363">
+        <state vertical-scroll-proportion="0.0">
           <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1090#1091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/TextureResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#261#262#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/light/AmbientShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="5" selection-start-line="15" selection-start-column="3" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/skyBoxFragment.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/skyBoxVertex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/meshManagment/Texture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding>
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/RenderingEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Game/objects/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <element signature="e#663#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/CubeMapTexture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2987#2988#0" expanded="true" />
+            <element signature="e#3048#3049#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="263" column="23" selection-start-line="263" selection-start-column="23" selection-end-line="263" selection-end-column="23" />
+          <folding>
+            <element signature="e#2713#2845#0" expanded="false" />
+            <element signature="e#3934#4079#0" expanded="false" />
+            <element signature="e#5621#5667#0" expanded="false" />
+            <element signature="e#8429#8526#0" expanded="false" />
+            <element signature="e#9313#9390#0" expanded="false" />
+            <element signature="e#10536#10538#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/LevelRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1509#1589#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Engine/rendering/skybox/SkyBoxRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30839002">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding />
         </state>
       </provider>

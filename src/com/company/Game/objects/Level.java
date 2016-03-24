@@ -2,6 +2,7 @@ package com.company.Game.objects;
 
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.light.Light;
+import com.company.Engine.rendering.skybox.SkyBox;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,10 +13,16 @@ import java.util.HashMap;
 public class Level {
     private ArrayList<GameObject> objects;
     private ArrayList<Light> lights;
+    private SkyBox skyBox;
 
-    public Level(ArrayList<GameObject> objects, ArrayList<Light> lights) {
+    public Level(SkyBox skyBox, ArrayList<GameObject> objects, ArrayList<Light> lights) {
+        this.skyBox = skyBox;
         this.objects = objects;
         this.lights = lights;
+    }
+
+    public SkyBox getSkyBox() {
+        return skyBox;
     }
 
     public ArrayList<GameObject> getObjects() {
