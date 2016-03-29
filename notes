@@ -1,19 +1,19 @@
 Map:
-1. Object map
-2. Collision map
+1. Object map ~
+2. Collision map ~
 
 Architecture:
 - Message or Event Queue pattern for right physics and audio
-- Game object hierarchy (tree or linear?)
-- Component pattern for nice object editing
+- Game object hierarchy (tree or linear?) done: linear
+- Component pattern for nice object editing: done!
 
 rendering:
-- skybox
+- skybox: done!
 - gui
 - text
 - normal map
 - animation
 
 physics:
-- aabb proper collision detection
+- aabb proper collision detection: done!
 

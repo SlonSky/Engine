@@ -1,25 +1,30 @@
-package com.company.Engine.rendering.skybox;
+package com.company.Engine.rendering.text;
 
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
 import com.company.Engine.rendering.Transform;
 import com.company.Engine.rendering.meshManagment.Material;
-import com.company.Engine.util.Vector3f;
+import sun.security.provider.SHA;
 
 /**
- * Created by Slon on 24.03.2016.
+ * Created by Slon on 27.03.2016.
  */
-public class SkyBoxShader extends Shader {
+public class TextShader extends Shader {
 
-
-    public SkyBoxShader(){
+    public TextShader(){
         super();
-
-        addVertexShader("skyBoxVertex.txt");
-        addFragmentShader("skyBoxFragment.txt");
+        addVertexShader("textVertex.txt");
+        addFragmentShader("textFragment.txt");
         compileShader();
 
         addUniform("WVP");
+        addUniform("color");
+
+    }
+
+    public void updateFont(Text text){
+        text.getFont().getAtlas().bind();
+        setUniform("color", text.getColor());
     }
 
     @Override

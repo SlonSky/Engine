@@ -2,6 +2,8 @@ package com.company.Engine.core;
 
 import com.company.Game.Game;
 import com.company.Engine.rendering.RenderingEngine;
+import org.newdawn.slick.AngelCodeFont;
+import org.newdawn.slick.SlickException;
 
 /**
  * Created by Slon on 09.02.2016.
@@ -13,6 +15,7 @@ public class CoreEngine {
     private Game game;
     private RenderingEngine renderingEngine;
     private double frameTime;
+    private int FPS;
 
     public CoreEngine(int width, int height, double frameRate, Game game) {
         isRunning = false;
@@ -51,7 +54,7 @@ public class CoreEngine {
 
         int frames = 0;
         long frameCounter = 0;
-
+        FPS =0;
         game.init();
 
         double lastTime = Time.getTime();
@@ -81,6 +84,7 @@ public class CoreEngine {
 
                 if(frameCounter >= Time.SECOND){
                     System.out.println(frames);
+                    FPS = frames;
                     frames = 0;
                     frameCounter = 0;
                 }
@@ -111,5 +115,9 @@ public class CoreEngine {
 
     public Game getGame() {
         return game;
+    }
+
+    public int getFPS() {
+        return FPS;
     }
 }

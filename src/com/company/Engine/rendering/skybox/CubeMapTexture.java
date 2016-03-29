@@ -32,8 +32,8 @@ public class CubeMapTexture{
             BufferedImage down = ImageIO.read(new File("res/skybox/"+name+"_DOWN.png"));
             BufferedImage left = ImageIO.read(new File("res/skybox/"+name+"_LEFT.png"));
             BufferedImage right = ImageIO.read(new File("res/skybox/"+name+"_RIGHT.png"));
-            BufferedImage top = ImageIO.read(new File("res/skybox/"+name+"_TOP.png"));
-            BufferedImage bottom = ImageIO.read(new File("res/skybox/"+name+"_BOTTOM.png"));
+            BufferedImage front = ImageIO.read(new File("res/skybox/"+name+"_FRONT.png"));
+            BufferedImage back = ImageIO.read(new File("res/skybox/"+name+"_BACK.png"));
 
             cubeMapID = glGenTextures();
             glBindTexture(GL_TEXTURE_CUBE_MAP, cubeMapID);
@@ -43,8 +43,8 @@ public class CubeMapTexture{
 
             glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_X, 0, GL_RGBA, left.getWidth(), left.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, Texture.loadToBuffer(left));
             glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL_RGBA, right.getWidth(), right.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, Texture.loadToBuffer(right));
-            glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, GL_RGBA, top.getWidth(), top.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, Texture.loadToBuffer(top));
-            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Z, 0, GL_RGBA, bottom.getWidth(), bottom.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, Texture.loadToBuffer(bottom));
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, GL_RGBA, front.getWidth(), front.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, Texture.loadToBuffer(front));
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Z, 0, GL_RGBA, back.getWidth(), back.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, Texture.loadToBuffer(back));
 
             glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
             glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);

@@ -11,7 +11,7 @@ import com.company.Game.components.*;
 public class Enemy extends GameObject{
 
     private Graphic graphic;
-//    private AI ai;
+    private AIMove ai;
     private FrustumCulling culling;
 
     public Enemy(Transform transform, Graphic graphic, Vector3f cullingSize) {
@@ -19,8 +19,9 @@ public class Enemy extends GameObject{
 
         this.graphic = graphic;
         this.culling = new FrustumCulling(new Box(cullingSize, transform));
+        this.ai = new AIMove();
 
-        addComponent(new AIMove());
+        addComponent(ai);
         addComponent(graphic);
         addComponent(culling);
     }

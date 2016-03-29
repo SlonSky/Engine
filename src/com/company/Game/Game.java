@@ -1,8 +1,10 @@
 package com.company.Game;
 
 
+import com.company.Editor.EditorWindow;
 import com.company.Engine.core.CoreEngine;
 import com.company.Engine.core.Input;
+import com.company.Engine.core.Time;
 import com.company.Engine.core.Window;
 import com.company.Engine.rendering.*;
 import com.company.Engine.rendering.light.*;
@@ -11,13 +13,17 @@ import com.company.Engine.rendering.meshManagment.Mesh;
 import com.company.Engine.rendering.meshManagment.Texture;
 import com.company.Engine.rendering.skybox.CubeMapTexture;
 import com.company.Engine.rendering.skybox.SkyBox;
+import com.company.Engine.rendering.text.Font;
+import com.company.Engine.rendering.text.Text;
 import com.company.Engine.util.Quaternion;
 import com.company.Engine.util.Vector2f;
 import com.company.Engine.util.Vector3f;
 import com.company.Engine.util.Vertex;
 import com.company.Game.components.Graphic;
 import com.company.Game.objects.*;
+import org.lwjgl.opengl.Display;
 
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -42,6 +48,9 @@ public class Game {
 
     private Player player;
     private Decoration d;
+
+    Text text;
+    Font font;
 
     private Level level;
     ArrayList<GameObject> objects;
@@ -195,14 +204,14 @@ public class Game {
 //        lights.add(new PointLight(new Vector3f(40.5f, 5, 13.5f), new Vector3f(0, 1,0), 0.2f, new Attenuation(1,0,0)));
 /**********************************************************************************************************************/
 //
-//        Mesh road = new Mesh("road.obj");
-//        Material roadMaterial = new Material(new Texture("road.png"));
+        Mesh road = new Mesh("road.obj");
+        Material roadMaterial = new Material(new Texture("road.png"));
 //
 //        Mesh block = new Mesh("block.obj");
 //        Material blockMaterial = new Material(new Texture("block.png"));
 //
-//        Mesh fence = new Mesh("fence.obj");
-//        Material fenceMaterial = new Material(new Texture("fence.png"), 2, 10);
+        Mesh fence = new Mesh("fence.obj");
+        Material fenceMaterial = new Material(new Texture("fence.png"), 2, 10);
 
         Mesh building = new Mesh("building.obj");
         Material buildingMaterial = new Material(new Texture("building.png"), 0, 8);
@@ -225,18 +234,21 @@ public class Game {
 //        objects.add(new GameObject(new Entity(block, new Transform(new Vector3f(3, 0, 0), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(64)), new Vector3f(1,1,1)), blockMaterial), new Vector3f(2.862f/2, 0.963f/2, 0.858f/2)));
 //        objects.add(new GameObject(new Entity(block, new Transform(new Vector3f(1.5f, 0, 1), new Vector3f(0,-37,0), new Vector3f(1,1,1)), blockMaterial), new Vector3f(2.862f/2, 0.963f/2, 0.858f/2)));
 
-//        for(int j =0; j<4; j++) {
-//            for (int i = 0; i < 15; i++) {
+        for(int j =0; j<4; j++) {
+            for (int i = 0; i < 15; i++) {
 
-//                objects.add(new GameObject(new Entity(zombie, new Transform(new Vector3f(i * r.nextInt(5), 0, j * 10 + r.nextInt(4)-2), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(r.nextInt(180))), new Vector3f(1, 1, 1)), zombieMaterial), new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
-//                objects.add(new GameObject(new Entity(zombie, new Transform(new Vector3f(i * r.nextInt(5), 0, j * 10 + r.nextInt(4)-2), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(r.nextInt(180))), new Vector3f(1, 1, 1)), zombieMaterial), new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
-//                objects.add(new GameObject(new Entity(zombie, new Transform(new Vector3f(i * r.nextInt(5), 0, j * 10 + r.nextInt(4)-2), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(r.nextInt(180))), new Vector3f(1, 1, 1)), zombieMaterial), new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
-//                objects.add(new GameObject(new Entity(zombie, new Transform(new Vector3f(i * r.nextInt(5), 0, j * 10 + r.nextInt(4)-2), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(r.nextInt(180))), new Vector3f(1, 1, 1)), zombieMaterial), new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
-//
-//                objects.add(new GameObject(new Entity(fence, new Transform(new Vector3f(i * 2.032f * 2, 0, j*10 + 1), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(90)), new Vector3f(1, 1, 1)), fenceMaterial), new Vector3f(4.032f / 2, 3.259f / 2, 0.133f / 2)));
-//                objects.add(new GameObject(new Entity(road, new Transform(new Vector3f(i * 3.422f, 0, j*10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(90)).mul(new Quaternion(new Vector3f(0, 0, 1), (float)Math.toRadians(180))), new Vector3f(1, 1, 1)), roadMaterial), new Vector3f(3.422f / 2, 0.088f / 2, 2.2f / 2)));
-//            }
-//        }
+                objects.add(new Enemy(new Transform(new Vector3f(i * r.nextInt(5), 0, j * 10 + r.nextInt(4)-2), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(r.nextInt(180))), new Vector3f(1, 1, 1)),
+                        new Graphic(zombie, zombieMaterial),
+                        new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
+
+                objects.add(new Decoration(new Transform(new Vector3f(i * 2.032f * 2, 0, j*10 + 1), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(90)), new Vector3f(1, 1, 1)),
+                        new Graphic(fence, fenceMaterial), new Vector3f(4.032f / 2, 3.259f / 2, 0.133f / 2), new Vector3f(4.032f / 2, 3.259f / 2, 0.133f / 2)));
+                objects.add(new Decoration(new Transform(new Vector3f(i * 3.422f, 0, j*10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(90)).mul(new Quaternion(new Vector3f(0, 0, 1), (float)Math.toRadians(180))), new Vector3f(1, 1, 1)),
+                        new Graphic(road, roadMaterial),
+                        new Vector3f(3.422f / 2, 0.088f / 2, 2.2f / 2), new Vector3f(3.422f / 2, 0.088f / 2, 2.2f / 2)));
+
+            }
+        }
 //
 //
 //        objects.add(new GameObject(new Entity(building2, new Transform(new Vector3f(25, -0.5f, -3), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(-90)), new Vector3f(1,1,1)), building2Material), new Vector3f(7.321f/2, 5.96f/2, 10.968f/2)));
@@ -262,7 +274,14 @@ public class Game {
         objects.add(player);
         objects.add(d);
         objects.add(e);
-        level = new Level(new SkyBox(mesh, new CubeMapTexture("1")), objects, lights);
+        level = new Level(new SkyBox("1"), objects, lights);
+        // todo: mocup, class diagram
+
+        font = new Font("font1.png", "1.fnt");
+        text = new Text(0, 0, 10, "ukrainec  pidr!", font, new Vector3f(1, 0,0));
+        level.setFont(font);
+        level.setText(text);
+
 
 /**
  * TODO: interfaces which are given to engine?
@@ -275,9 +294,11 @@ public class Game {
     public void render(RenderingEngine renderingEngine){
         renderingEngine.render(level);
     }
-
+float k =0;
     public void update(){
-        player.update();
+        level.update();
+        k+= (float)Time.getDelta();
+        level.setText(new Text(-5, -4, 10, Integer.toString(engine.getFPS()), font, new Vector3f(1,1,0)));
     }
 
     int i = 0;
@@ -285,8 +306,7 @@ public class Game {
         if(Input.getKey(Input.KEY_Q)){
             System.exit(0);
         }
-        player.input();
-//        player.input(PhysicsEngine.checkIntersection(player.getBody(), objects));
+        level.input();
 
 
     }

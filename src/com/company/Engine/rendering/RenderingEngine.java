@@ -7,11 +7,19 @@ package com.company.Engine.rendering;
 import com.company.Engine.core.CoreEngine;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.skybox.SkyBoxRenderer;
+import com.company.Engine.rendering.text.Text;
+import com.company.Engine.rendering.text.TextRenderer;
 import com.company.Engine.util.Matrix4f;
 import com.company.Engine.util.Plane;
 import com.company.Game.objects.Decoration;
 import com.company.Game.objects.Level;
 import com.company.Game.objects.Player;
+import org.newdawn.slick.*;
+import org.newdawn.slick.Color;
+import sun.font.TrueTypeFont;
+
+import java.awt.*;
+import java.awt.Font;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -22,13 +30,22 @@ public class RenderingEngine {
     private Light activeLight;
     private Plane[] frustum;
 
+    org.newdawn.slick.TrueTypeFont font;
+
     private LevelRenderer levelRenderer;
+
+    // todo move to level renderer?
     private SkyBoxRenderer skyBoxRenderer;
+    private TextRenderer textRenderer;
 
     public RenderingEngine(CoreEngine core){
         this.core = core;
         levelRenderer = new LevelRenderer();
         skyBoxRenderer = new SkyBoxRenderer();
+
+        textRenderer = new TextRenderer();
+
+        font = new org.newdawn.slick.TrueTypeFont(new Font("Times New Roman", Font.BOLD, 92), true);
 
         glClearColor(1.5f, 1, 1.5f, 1);
         glFrontFace(GL_CW);
@@ -44,10 +61,12 @@ public class RenderingEngine {
 
         frustum = calcFrustum();
 
+        skyBoxRenderer.render(level.getSkyBox(), this);
         levelRenderer.render(level, this);
-         skyBoxRenderer.render(level.getSkyBox(), this);
-        // guiRenderer.render(guiManager.getGui, this);
+        textRenderer.render(level.getText(), this);
 
+
+        // guiRenderer.render(guiManager.getGui, this);
 
     }
 
