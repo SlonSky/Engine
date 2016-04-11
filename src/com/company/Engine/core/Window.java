@@ -4,14 +4,18 @@ import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
+import java.awt.image.BufferedImage;
+
 /**
  * Created by Slon on 09.02.2016.
  */
 public class Window {
+
     public static void createWindow(int width, int height, String title){
         try {
             Display.setTitle(title);
             Display.setDisplayMode(new DisplayMode(width, height));
+            Display.setVSyncEnabled(true);
             Display.create();
         } catch (LWJGLException e) {
             e.printStackTrace();

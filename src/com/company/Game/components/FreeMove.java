@@ -6,11 +6,9 @@ import com.company.Engine.util.Vector3f;
 import com.company.Game.objects.GameObject;
 
 /**
- * Created by Slon on 21.03.2016.
+ * Created by Slon on 03.04.2016.
  */
-public class MoveControl extends GameComponent{
-    private static final Vector3f Y_AXIS = new Vector3f(0,1,0);
-
+public class FreeMove extends GameComponent{
     private int forward;
     private int backward;
     private int left;
@@ -19,39 +17,36 @@ public class MoveControl extends GameComponent{
 
     private Vector3f translation;
 
-    public MoveControl(int forward, int backward, int left, int right, float speed) {
+    public FreeMove(int forward, int backward, int left, int right, float speed) {
         this.forward = forward;
         this.backward = backward;
         this.left = left;
         this.right = right;
         this.speed = speed;
+
+//        translation = new Vector3f(0,2,0);
     }
 
     public void input(){
         float movAmt = (float)(speed * Time.getDelta());
-        Vector3f rightVec =  getTransform().getRotation().getRight().normalized();
+//        translation = getTransform().getPosition();
+//        translation = new Vector3f(0,0,0);
+
+        if(Input.getKeyDown(Input.KEY_LSHIFT)){
+            movAmt *= 10;
+        }
         if(Input.getKey(forward)){
-            translation.set(translation.add(getTranslation(rightVec.cross(Y_AXIS), movAmt)));
+            translation.set(translation.add(getTranslation(getTransform().getRotation().getForward().normalized(), movAmt)));
         }
         if(Input.getKey(backward)){
-            translation.set(translation.add(getTranslation(rightVec.cross(Y_AXIS), -movAmt)));
+            translation.set(translation.add(getTranslation(getTransform().getRotation().getForward().normalized(), -movAmt)));
         }
         if(Input.getKey(right)){
-            translation.set(translation.add(getTranslation(rightVec, movAmt)));
+            translation.set(translation.add(getTranslation(getTransform().getRotation().getRight().normalized(), movAmt)));
         }
         if(Input.getKey(left)){
-            translation.set(translation.add(getTranslation(rightVec, -movAmt)));
+            translation.set(translation.add(getTranslation(getTransform().getRotation().getLeft().normalized(), movAmt)));
         }
-
-        // template!
-        if(Input.getKey(Input.KEY_U)){
-            translation.set(translation.add(getTranslation(Y_AXIS, movAmt)));
-        }
-
-        if(Input.getKey(Input.KEY_J)){
-            translation.set(translation.add(getTranslation(Y_AXIS, -movAmt)));
-        }
-
     }
 
     @Override
@@ -89,3 +84,4 @@ public class MoveControl extends GameComponent{
 
     }
 }
+

@@ -37,6 +37,8 @@ public class LevelRenderer {
             object.render(ambient, engine);
         }
 
+        glDisable(GL_STENCIL_TEST);
+
         // blending other light types rendering
         glEnable(GL_BLEND);
         glBlendFunc(GL_ONE, GL_ONE);

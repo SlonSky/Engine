@@ -1,6 +1,7 @@
 package com.company.Game.objects;
 
 import com.company.Engine.rendering.RenderingEngine;
+import com.company.Engine.rendering.gui.GUITexture;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.skybox.SkyBox;
 import com.company.Engine.rendering.text.Font;
@@ -18,14 +19,15 @@ public class Level {
     private ArrayList<GameObject> objects;
     private ArrayList<Light> lights;
     private SkyBox skyBox;
-
-    private Text text;
-    private Font font;
+    private ArrayList<Text> text;
+    private ArrayList<GUITexture> guis;
 
     public Level(SkyBox skyBox, ArrayList<GameObject> objects, ArrayList<Light> lights) {
         this.skyBox = skyBox;
         this.objects = objects;
         this.lights = lights;
+        text = new ArrayList<>();
+        guis = new ArrayList<>();
     }
 
     public void update(){
@@ -51,19 +53,19 @@ public class Level {
         return lights;
     }
 
-    public Text getText() {
+    public void addText(Text text){
+        this.text.add(text);
+    }
+
+    public ArrayList<Text> getText() {
         return text;
     }
 
-    public Font getFont() {
-        return font;
+    public void addGUI(GUITexture gui){
+        guis.add(gui);
     }
 
-    public void setText(Text text) {
-        this.text = text;
-    }
-
-    public void setFont(Font font) {
-        this.font = font;
+    public ArrayList<GUITexture> getGuis() {
+        return guis;
     }
 }

@@ -42,7 +42,7 @@ public class Mesh {
     private void addVertices(Vertex[] vertices, int[] indices){
         resource = new MeshResource(indices.length);
         glBindBuffer(GL_ARRAY_BUFFER, resource.getVbo());
-        GL15.glBufferData(GL_ARRAY_BUFFER, Utils.createFlippedBuffer(vertices), GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, Utils.createFlippedBuffer(vertices), GL_STATIC_DRAW);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, Utils.createFlippedBuffer(indices), GL_STATIC_DRAW);

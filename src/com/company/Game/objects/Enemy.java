@@ -2,6 +2,9 @@ package com.company.Game.objects;
 
 import com.company.Engine.core.Input;
 import com.company.Engine.rendering.*;
+import com.company.Engine.rendering.meshManagment.Material;
+import com.company.Engine.rendering.meshManagment.Mesh;
+import com.company.Engine.rendering.meshManagment.Texture;
 import com.company.Engine.util.Vector3f;
 import com.company.Game.components.*;
 
@@ -14,6 +17,9 @@ public class Enemy extends GameObject{
     private AIMove ai;
     private FrustumCulling culling;
 
+    // temp
+    private GraphicBound graphicBound;
+
     public Enemy(Transform transform, Graphic graphic, Vector3f cullingSize) {
         super(transform);
 
@@ -21,14 +27,21 @@ public class Enemy extends GameObject{
         this.culling = new FrustumCulling(new Box(cullingSize, transform));
         this.ai = new AIMove();
 
-        addComponent(ai);
+//        addComponent(ai);
         addComponent(graphic);
         addComponent(culling);
+
+        // temp
+        graphicBound = new GraphicBound(cullingSize, new Vector3f(0, 1, 0));
+        addComponent(graphicBound);
     }
 
     public void render(Shader shader, RenderingEngine renderingEngine){
         if(culling.inFrustum(renderingEngine.getFrustum())){
             graphic.render(shader, renderingEngine);
+
+            // temp
+            graphicBound.render(shader, renderingEngine);
         }
     }
 }

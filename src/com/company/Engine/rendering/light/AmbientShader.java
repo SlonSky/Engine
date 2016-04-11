@@ -1,5 +1,6 @@
 package com.company.Engine.rendering.light;
 
+import com.company.Editor.LevelEditor.EditorWindow;
 import com.company.Engine.rendering.meshManagment.Material;
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
@@ -23,12 +24,15 @@ public class AmbientShader extends Shader {
 
         addUniform("WVP");
         addUniform("ambient");
+        addUniform("color");
     }
 
     @Override
     public void updateUniforms(Transform transformation, Material material, RenderingEngine renderingEngine) {
         prepareTexture(material);
-        setUniform("WVP", transformation.getProjectedTransformation());
+        setUniform("color", material.getColor());
+
+            setUniform("WVP", transformation.getProjectedTransformation());
         setUniform("ambient", ambientIntensity);
     }
 

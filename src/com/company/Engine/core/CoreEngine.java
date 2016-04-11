@@ -1,9 +1,8 @@
 package com.company.Engine.core;
 
-import com.company.Game.Game;
+import com.company.Game.TestGame;
 import com.company.Engine.rendering.RenderingEngine;
-import org.newdawn.slick.AngelCodeFont;
-import org.newdawn.slick.SlickException;
+import com.company.Game.objects.Game;
 
 /**
  * Created by Slon on 09.02.2016.
@@ -83,7 +82,7 @@ public class CoreEngine {
                 game.update();
 
                 if(frameCounter >= Time.SECOND){
-                    System.out.println(frames);
+//                    System.out.println(frames);
                     FPS = frames;
                     frames = 0;
                     frameCounter = 0;

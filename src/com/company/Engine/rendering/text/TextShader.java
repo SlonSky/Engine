@@ -1,5 +1,6 @@
 package com.company.Engine.rendering.text;
 
+import com.company.Editor.LevelEditor.EditorWindow;
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
 import com.company.Engine.rendering.Transform;
@@ -29,6 +30,6 @@ public class TextShader extends Shader {
 
     @Override
     public void updateUniforms(Transform transformation, Material material, RenderingEngine renderingEngine) {
-        setUniform("WVP", transformation.getProjectedTransformation());
+        setUniform("WVP", transformation.getTransformation());
     }
 }

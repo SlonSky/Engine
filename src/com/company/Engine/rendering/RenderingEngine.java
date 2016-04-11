@@ -5,6 +5,7 @@ package com.company.Engine.rendering;
  */
 
 import com.company.Engine.core.CoreEngine;
+import com.company.Engine.rendering.gui.GUIRenderer;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.skybox.SkyBoxRenderer;
 import com.company.Engine.rendering.text.Text;
@@ -37,6 +38,7 @@ public class RenderingEngine {
     // todo move to level renderer?
     private SkyBoxRenderer skyBoxRenderer;
     private TextRenderer textRenderer;
+    private GUIRenderer guiRenderer;
 
     public RenderingEngine(CoreEngine core){
         this.core = core;
@@ -44,6 +46,7 @@ public class RenderingEngine {
         skyBoxRenderer = new SkyBoxRenderer();
 
         textRenderer = new TextRenderer();
+        guiRenderer = new GUIRenderer();
 
         font = new org.newdawn.slick.TrueTypeFont(new Font("Times New Roman", Font.BOLD, 92), true);
 
@@ -65,8 +68,7 @@ public class RenderingEngine {
         levelRenderer.render(level, this);
         textRenderer.render(level.getText(), this);
 
-
-        // guiRenderer.render(guiManager.getGui, this);
+        guiRenderer.render(level.getGuis(), this);
 
     }
 

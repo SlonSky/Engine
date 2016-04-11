@@ -33,6 +33,12 @@ public class Collider extends GameComponent {
         getTransform().setPosition(oldPos.sub(engine.checkIntersection(this).mul(0.2f)));
     }
 
+    public Vector3f solveCollision(Vector3f transl){
+//        Vector3f oldPos = getPosition();
+//        getTransform().setPosition(oldPos.sub(engine.checkIntersection(this).mul(0.2f)));
+        return engine.checkIntersection(this, transl);
+    }
+
     public Vector3f getPosition(){
         return getTransform().getPosition();
     }
