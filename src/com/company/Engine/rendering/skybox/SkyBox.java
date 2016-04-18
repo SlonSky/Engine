@@ -17,7 +17,6 @@ public class SkyBox {
 
     private Mesh box;
     private CubeMapTexture texture;
-// todo dynamic parameters / constants
     public SkyBox(String textureName) {
         this.box = new Mesh("bound.obj");
         this.texture = new CubeMapTexture(textureName);
@@ -38,7 +37,4 @@ public class SkyBox {
                 new Vector3f(SKY_BOX_SIZE, SKY_BOX_SIZE, SKY_BOX_SIZE)), null, engine);
         box.draw();
     }
-
-
-
 }

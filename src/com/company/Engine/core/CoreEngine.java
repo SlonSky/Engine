@@ -1,8 +1,7 @@
 package com.company.Engine.core;
 
-import com.company.Game.TestGame;
+import com.company.Engine.audio.AudioEngine;
 import com.company.Engine.rendering.RenderingEngine;
-import com.company.Game.objects.Game;
 
 /**
  * Created by Slon on 09.02.2016.
@@ -15,6 +14,7 @@ public class CoreEngine {
     private RenderingEngine renderingEngine;
     private double frameTime;
     private int FPS;
+//    private AudioEngine audioEngine;
 
     public CoreEngine(int width, int height, double frameRate, Game game) {
         isRunning = false;
@@ -32,6 +32,8 @@ public class CoreEngine {
             Window.createWindow(width, height, title);
         }
         renderingEngine = new RenderingEngine(this);
+        AudioEngine.init();
+//        audioEngine = new AudioEngine();
     }
 
     public void start(){
@@ -94,7 +96,7 @@ public class CoreEngine {
                 frames++;
             } else {
                 try {
-                    Thread.sleep(1); // todo: valid time sleep
+                    Thread.sleep(1);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -104,10 +106,12 @@ public class CoreEngine {
     }
 
     private void cleanUp(){
+        game.destroy();
         Window.destroy();
+        AudioEngine.dispose();
+        System.exit(0);
     }
 
-    // TODO: temporary method - invalid architecture!!
     public RenderingEngine getRenderingEngine() {
         return renderingEngine;
     }

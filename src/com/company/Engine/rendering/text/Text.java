@@ -1,8 +1,7 @@
 package com.company.Engine.rendering.text;
 
-import com.company.Engine.core.Window;
 import com.company.Engine.rendering.Transform;
-import com.company.Engine.rendering.gui.GUITexture;
+import com.company.Engine.rendering.guis.GUITexture;
 import com.company.Engine.rendering.meshManagment.Mesh;
 import com.company.Engine.util.Quaternion;
 import com.company.Engine.util.Vector2f;

@@ -17,7 +17,3 @@ rendering:
 physics:
 - aabb proper collision detection: done!
 - collision resolving
-
-
-0932586598
-todo: flat text mesh

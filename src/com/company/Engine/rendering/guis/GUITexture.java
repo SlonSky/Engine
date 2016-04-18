@@ -1,15 +1,9 @@
-package com.company.Engine.rendering.gui;
+package com.company.Engine.rendering.guis;
 
-import com.company.Engine.core.Window;
 import com.company.Engine.rendering.Transform;
-import com.company.Engine.rendering.meshManagment.MeshResource;
 import com.company.Engine.rendering.meshManagment.Texture;
 import com.company.Engine.util.*;
-import org.lwjgl.Sys;
 import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.GL15;
-
-import static org.lwjgl.opengl.GL15.*;
 
 /**
  * Created by Slon on 11.04.2016.

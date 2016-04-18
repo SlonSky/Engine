@@ -1,9 +1,8 @@
-package com.company.Game.components;
+package com.company.Engine.core;
 
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
 import com.company.Engine.rendering.Transform;
-import com.company.Game.objects.GameObject;
 
 /**
  * Created by Slon on 21.03.2016.

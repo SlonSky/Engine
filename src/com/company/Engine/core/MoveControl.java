@@ -1,52 +1,60 @@
-package com.company.Game.components;
+package com.company.Engine.core;
 
-import com.company.Engine.core.Input;
-import com.company.Engine.core.Time;
 import com.company.Engine.util.Vector3f;
-import com.company.Game.objects.GameObject;
 
 /**
- * Created by Slon on 03.04.2016.
+ * Created by Slon on 21.03.2016.
  */
-public class FreeMove extends GameComponent{
+public class MoveControl extends GameComponent{
+    private static final Vector3f Y_AXIS = new Vector3f(0,1,0);
+
     private int forward;
     private int backward;
     private int left;
     private int right;
+    private int jump;
     private float speed;
+    private boolean shoot;
 
     private Vector3f translation;
 
-    public FreeMove(int forward, int backward, int left, int right, float speed) {
+    public MoveControl(int forward, int backward, int left, int right, int jump, float speed) {
         this.forward = forward;
         this.backward = backward;
         this.left = left;
         this.right = right;
         this.speed = speed;
-
-//        translation = new Vector3f(0,2,0);
     }
 
     public void input(){
         float movAmt = (float)(speed * Time.getDelta());
-//        translation = getTransform().getPosition();
-//        translation = new Vector3f(0,0,0);
-
-        if(Input.getKeyDown(Input.KEY_LSHIFT)){
-            movAmt *= 10;
-        }
+        Vector3f rightVec =  getTransform().getRotation().getRight().normalized();
         if(Input.getKey(forward)){
-            translation.set(translation.add(getTranslation(getTransform().getRotation().getForward().normalized(), movAmt)));
+            translation.set(translation.add(getTranslation(rightVec.cross(Y_AXIS), movAmt)));
         }
         if(Input.getKey(backward)){
-            translation.set(translation.add(getTranslation(getTransform().getRotation().getForward().normalized(), -movAmt)));
+            translation.set(translation.add(getTranslation(rightVec.cross(Y_AXIS), -movAmt)));
         }
         if(Input.getKey(right)){
-            translation.set(translation.add(getTranslation(getTransform().getRotation().getRight().normalized(), movAmt)));
+            translation.set(translation.add(getTranslation(rightVec, movAmt)));
         }
         if(Input.getKey(left)){
-            translation.set(translation.add(getTranslation(getTransform().getRotation().getLeft().normalized(), movAmt)));
+            translation.set(translation.add(getTranslation(rightVec, -movAmt)));
         }
+        if(Input.getKeyDown(jump)){
+            translation.set(translation.add(getTranslation(Y_AXIS, 9*movAmt)));
+        }
+
+
+        // template!
+        if(Input.getKey(Input.KEY_U)){
+            translation.set(translation.add(getTranslation(Y_AXIS, 3*movAmt)));
+        }
+
+        if(Input.getKey(Input.KEY_J)){
+            translation.set(translation.add(getTranslation(Y_AXIS, -movAmt)));
+        }
+
     }
 
     @Override
@@ -84,4 +92,3 @@ public class FreeMove extends GameComponent{
 
     }
 }
-

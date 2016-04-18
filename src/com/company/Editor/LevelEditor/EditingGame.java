@@ -1,7 +1,8 @@
 package com.company.Editor.LevelEditor;
 
-import com.company.Engine.core.Input;
+import com.company.Engine.core.*;
 import com.company.Engine.rendering.Camera;
+import com.company.Engine.rendering.Decoration;
 import com.company.Engine.rendering.Transform;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.meshManagment.Material;
@@ -10,11 +11,8 @@ import com.company.Engine.rendering.meshManagment.Texture;
 import com.company.Engine.rendering.skybox.SkyBox;
 import com.company.Engine.util.Quaternion;
 import com.company.Engine.util.Vector3f;
-import com.company.Game.components.Graphic;
-import com.company.Game.objects.*;
-import org.lwjgl.Sys;
+import com.company.Engine.rendering.Graphic;
 
-import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -30,7 +28,7 @@ public class EditingGame extends Game {
     @Override
     public void init() {
 
-        skyBox = new SkyBox("1");
+        skyBox = new SkyBox("TEST");
         objects = new ArrayList<>();
         lights = new ArrayList<>();
 

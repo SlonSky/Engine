@@ -1,9 +1,7 @@
 package com.company.Engine.rendering.text;
 
-import com.company.Editor.LevelEditor.EditorWindow;
 import com.company.Engine.rendering.RenderingEngine;
-import com.company.Engine.rendering.Transform;
-import com.company.Engine.util.Vector3f;
+
 import static org.lwjgl.opengl.GL11.*;
 
 import java.util.ArrayList;

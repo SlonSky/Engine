@@ -1,12 +1,9 @@
-package com.company.Engine.rendering.gui;
+package com.company.Engine.rendering.guis;
 
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
 import com.company.Engine.rendering.Transform;
 import com.company.Engine.rendering.meshManagment.Material;
-import com.company.Engine.util.Matrix4f;
-import com.company.Engine.util.Vector3f;
-import org.lwjgl.util.vector.Matrix;
 
 /**
  * Created by Slon on 11.04.2016.

@@ -1,12 +1,11 @@
-package com.company.Game.objects;
+package com.company.Engine.core;
 
+import com.company.Engine.core.GameObject;
 import com.company.Engine.core.Input;
 import com.company.Engine.rendering.Camera;
 import com.company.Engine.rendering.Transform;
-import com.company.Game.components.FreeLook;
-import com.company.Game.components.FreeMove;
-import com.company.Game.components.LookControl;
-import com.company.Game.components.MoveControl;
+import com.company.Engine.core.FreeLook;
+import com.company.Engine.core.FreeMove;
 
 /**
  * Created by Slon on 03.04.2016.

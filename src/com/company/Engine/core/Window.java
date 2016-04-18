@@ -15,11 +15,15 @@ public class Window {
         try {
             Display.setTitle(title);
             Display.setDisplayMode(new DisplayMode(width, height));
-            Display.setVSyncEnabled(true);
+//            Display.setVSyncEnabled(true);
             Display.create();
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void setLocation(int x, int y){
+        Display.setLocation(x, y);
     }
 
     public static void createFullWindow(String title){
@@ -27,11 +31,15 @@ public class Window {
             Display.setTitle(title);
             Display.setDisplayMode(Display.getDesktopDisplayMode());
             Display.setFullscreen(true);
-            Display.setVSyncEnabled(true);
+//            Display.setVSyncEnabled(true);
             Display.create();
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void setVSync(boolean on){
+        Display.setVSyncEnabled(on);
     }
 
     public static int getWidth(){

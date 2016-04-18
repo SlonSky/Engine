@@ -20,20 +20,9 @@ public class SkyBoxRenderer {
 
     public void render(SkyBox skyBox, RenderingEngine engine){
         shader.bind();
-        // todo: old cull face
         glCullFace(GL_FRONT);
         glDepthFunc(GL_LEQUAL);
-
         skyBox.render(shader, engine);
-//        shader.bindCubeMap(skyBox);
-//        //todo camera component!!?
-//        shader.updateUniforms(
-//                new Transform(
-//                        engine.getMainCamera().getPos(),
-//                        new Quaternion(0,0,0,1),
-//                        new Vector3f(1000,1000,1000)), null, engine);
-//        skyBox.getBox().draw();
-
         glCullFace(GL_BACK);
         glDepthFunc(GL_LESS);
 

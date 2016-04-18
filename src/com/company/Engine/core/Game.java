@@ -1,7 +1,5 @@
-package com.company.Game.objects;
+package com.company.Engine.core;
 
-import com.company.Engine.core.CoreEngine;
-import com.company.Engine.core.Window;
 import com.company.Engine.rendering.Camera;
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Transform;
@@ -25,9 +23,7 @@ public abstract class Game {
     }
 
 
-    public void render(RenderingEngine renderingEngine){
-        renderingEngine.render(level);
-    }
+    public void render(RenderingEngine renderingEngine){  renderingEngine.render(level);  }
 
     public void setEngine(CoreEngine engine) {
         this.engine = engine;
@@ -39,7 +35,12 @@ public abstract class Game {
 
     public void setCamera(Camera camera){
         engine.getRenderingEngine().setMainCamera(camera);
+        this.camera = camera;
         Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.01f, 1000f);
         Transform.setCamera(camera);
+    }
+
+    public void destroy(){
+        level.destroy();
     }
 }

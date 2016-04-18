@@ -1,9 +1,8 @@
-package com.company.Game.components;
+package com.company.Engine.rendering;
 
 import com.company.Engine.rendering.meshManagment.Material;
 import com.company.Engine.rendering.meshManagment.Mesh;
-import com.company.Engine.rendering.RenderingEngine;
-import com.company.Engine.rendering.Shader;
+import com.company.Engine.core.GameComponent;
 
 /**
  * Created by Slon on 21.03.2016.

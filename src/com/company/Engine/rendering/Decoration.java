@@ -1,17 +1,14 @@
-package com.company.Game.objects;
+package com.company.Engine.rendering;
 
 import com.company.Engine.physics.Collider;
-import com.company.Engine.rendering.*;
 import com.company.Engine.util.Vector3f;
-import com.company.Game.components.FrustumCulling;
-import com.company.Game.components.Graphic;
-import com.company.Game.components.GraphicBound;
+import com.company.Engine.core.GameObject;
 
 /**
  * Created by Slon on 21.03.2016.
  * TODO: renderable interface
  */
-public class Decoration extends GameObject{
+public class Decoration extends GameObject {
     private Graphic graphic;
     private FrustumCulling culling;
     private Collider collider;

@@ -1,9 +1,9 @@
-package com.company.Game.objects;
+package com.company.Engine.core;
 
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
 import com.company.Engine.rendering.Transform;
-import com.company.Game.components.GameComponent;
+import com.company.Engine.core.GameComponent;
 
 import java.util.ArrayList;
 

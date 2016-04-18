@@ -2,7 +2,6 @@ package com.company.Engine.rendering.meshManagment;
 
 /**
  * Created by Slon on 12.02.2016.
- * TODO: texture resource management
  */
 import org.lwjgl.BufferUtils;
 

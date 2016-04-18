@@ -18,7 +18,6 @@ public class Box {
         initBounds();
     }
 
-
     private void initBounds(){
         float x = dimensions.getX();
         float y = dimensions.getY();
@@ -62,9 +61,12 @@ public class Box {
         return transform.getPosition();
     }
 
-    public float getSize(){
-        return dimensions.max();
-    }
+//    public float getSize(){
+//        return dimensions.max();
+//    }
+
+    // temp?
+    public Vector3f getSize(){return dimensions;}
 
     public boolean isCulling(){
         return false;

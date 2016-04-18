@@ -1,17 +1,12 @@
-package com.company.Engine.rendering.gui;
+package com.company.Engine.rendering.guis;
 
-import com.company.Editor.LevelEditor.EditorWindow;
 import com.company.Engine.rendering.RenderingEngine;
-import com.company.Engine.rendering.Transform;
 import com.company.Engine.rendering.meshManagment.Mesh;
 import com.company.Engine.util.*;
 
 import java.util.ArrayList;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL13.*;
-import static org.lwjgl.opengl.GL15.*;
-import static org.lwjgl.opengl.GL20.*;
 
 /**
  * Created by Slon on 11.04.2016.

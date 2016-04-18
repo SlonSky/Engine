@@ -12,7 +12,7 @@ import java.awt.event.AdjustmentListener;
 /**
  * Created by Slon on 27.03.2016.
  */
-public class EditorWindow {
+public class SyncEditor {
     private JFrame frame;
 
     public static int a = 0;
@@ -25,7 +25,7 @@ public class EditorWindow {
 
     public static boolean s = false;
 
-    public EditorWindow(){
+    public SyncEditor(){
         frame = new JFrame("Post Mortem editor");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

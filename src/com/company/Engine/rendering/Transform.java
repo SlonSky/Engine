@@ -55,9 +55,6 @@ public class Transform {
         Matrix4f cameraRotation = new Matrix4f().initRotation(camera.getForward(), camera.getUp());
         Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camera.getPos().getX(), -camera.getPos().getY(), -camera.getPos().getZ());
         return projectionMatrix.mul((cameraRotation.mul(cameraTranslation).mul(id)));
-//        Matrix4f orient = new Matrix4f().initCamOrientation(camera.getForward(), camera.getUp());
-//        Matrix4f transl = new Matrix4f().initCamTrans(camera.getPos());
-//        return projectionMatrix.mul((orient.mul(transl)).mul(id));
     }
 
     public static Matrix4f getProjectionMatrix() {
@@ -70,14 +67,6 @@ public class Transform {
 
     public static void setCamera(Camera camera) {
         Transform.camera = camera;
-    }
-
-    public static void setOrthographicProjection(float left, float right, float bottom, float top, float near, float far){
-        projectionMatrix = new Matrix4f().initOrthographic(left, right, bottom, top, near, far);
-    }
-
-    public static void backToPerspective(){
-        projectionMatrix = new Matrix4f().initPerspectiveProjection(fov, width, height, zNear, zFar);
     }
 
     public static void setProjection(float fov, float width, float height, float zNear, float zFar){

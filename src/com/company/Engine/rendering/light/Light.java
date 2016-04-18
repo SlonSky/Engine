@@ -20,9 +20,6 @@ public abstract class Light {
         shader.bind();
     }
 
-// todo ?????
-
-
     public Vector3f getColor() {
         return color;
     }

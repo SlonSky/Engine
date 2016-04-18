@@ -3,12 +3,12 @@ package com.company.Engine.physics;
 import com.company.Engine.rendering.Box;
 import com.company.Engine.rendering.Transform;
 import com.company.Engine.util.Vector3f;
-import com.company.Game.components.GameComponent;
-import com.company.Game.objects.GameObject;
+import com.company.Engine.core.GameComponent;
+import com.company.Engine.core.GameObject;
 
 /**
  * Created by Slon on 15.03.2016.
- * todo: AABB
+ * todo: broad/wide phases AABB/OBB
  */
 public class Collider extends GameComponent {
     private PhysicsEngine engine = PhysicsEngine.getInstance();
@@ -20,7 +20,6 @@ public class Collider extends GameComponent {
 
     public void setParent(GameObject parent){
         super.setParent(parent);
-        bound.setTransform(getTransform());
         engine.addCollider(this);
     }
 
@@ -28,10 +27,10 @@ public class Collider extends GameComponent {
         bound.setPosition(getTransform().getPosition());
     }
 
-    public void solveCollision(){
-        Vector3f oldPos = getPosition();
-        getTransform().setPosition(oldPos.sub(engine.checkIntersection(this).mul(0.2f)));
-    }
+//    public void solveCollision(){
+//        Vector3f oldPos = getPosition();
+//        getTransform().setPosition(oldPos.sub(engine.checkIntersection(this).mul(0.2f)));
+//    }
 
     public Vector3f solveCollision(Vector3f transl){
 //        Vector3f oldPos = getPosition();
@@ -43,8 +42,16 @@ public class Collider extends GameComponent {
         return getTransform().getPosition();
     }
 
-    public float getSize() {
-        return bound.getSize();
+    public float getSizeX() {
+        return bound.getSize().getX();
+    }
+
+    public float getSizeY() {
+        return bound.getSize().getY();
+    }
+
+    public float getSizeZ() {
+        return bound.getSize().getZ();
     }
 
 }

@@ -1,6 +1,5 @@
 package com.company.Engine.rendering.light;
 
-import com.company.Editor.LevelEditor.EditorWindow;
 import com.company.Engine.rendering.meshManagment.Material;
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;

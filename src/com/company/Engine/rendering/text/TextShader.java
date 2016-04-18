@@ -1,11 +1,9 @@
 package com.company.Engine.rendering.text;
 
-import com.company.Editor.LevelEditor.EditorWindow;
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.Shader;
 import com.company.Engine.rendering.Transform;
 import com.company.Engine.rendering.meshManagment.Material;
-import sun.security.provider.SHA;
 
 /**
  * Created by Slon on 27.03.2016.

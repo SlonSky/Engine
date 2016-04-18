@@ -1,14 +1,12 @@
-package com.company.Game.objects;
+package com.company.Engine.core;
 
-import com.company.Engine.rendering.RenderingEngine;
-import com.company.Engine.rendering.gui.GUITexture;
+import com.company.Engine.core.GameObject;
+import com.company.Engine.rendering.guis.GUITexture;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.skybox.SkyBox;
-import com.company.Engine.rendering.text.Font;
 import com.company.Engine.rendering.text.Text;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by Slon on 07.03.2016.
@@ -28,6 +26,21 @@ public class Level {
         this.lights = lights;
         text = new ArrayList<>();
         guis = new ArrayList<>();
+    }
+
+    public Level(SkyBox skyBox, ArrayList<GameObject> objects){
+        this(skyBox, objects, new ArrayList<>());
+    }
+
+    public Level(SkyBox skyBox){
+        this(skyBox, new ArrayList<>());
+    }
+
+    public void destroy(){
+        objects.clear();
+        lights.clear();
+        text.clear();
+        guis.clear();
     }
 
     public void update(){

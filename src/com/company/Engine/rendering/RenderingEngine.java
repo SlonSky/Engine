@@ -5,22 +5,13 @@ package com.company.Engine.rendering;
  */
 
 import com.company.Engine.core.CoreEngine;
-import com.company.Engine.rendering.gui.GUIRenderer;
+import com.company.Engine.rendering.guis.GUIRenderer;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.skybox.SkyBoxRenderer;
-import com.company.Engine.rendering.text.Text;
 import com.company.Engine.rendering.text.TextRenderer;
 import com.company.Engine.util.Matrix4f;
 import com.company.Engine.util.Plane;
-import com.company.Game.objects.Decoration;
-import com.company.Game.objects.Level;
-import com.company.Game.objects.Player;
-import org.newdawn.slick.*;
-import org.newdawn.slick.Color;
-import sun.font.TrueTypeFont;
-
-import java.awt.*;
-import java.awt.Font;
+import com.company.Engine.core.Level;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -30,8 +21,6 @@ public class RenderingEngine {
     private Camera mainCamera;
     private Light activeLight;
     private Plane[] frustum;
-
-    org.newdawn.slick.TrueTypeFont font;
 
     private LevelRenderer levelRenderer;
 
@@ -48,7 +37,6 @@ public class RenderingEngine {
         textRenderer = new TextRenderer();
         guiRenderer = new GUIRenderer();
 
-        font = new org.newdawn.slick.TrueTypeFont(new Font("Times New Roman", Font.BOLD, 92), true);
 
         glClearColor(1.5f, 1, 1.5f, 1);
         glFrontFace(GL_CW);
@@ -59,6 +47,9 @@ public class RenderingEngine {
 
     }
 
+
+
+
     public void render(Level level) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -66,10 +57,9 @@ public class RenderingEngine {
 
         skyBoxRenderer.render(level.getSkyBox(), this);
         levelRenderer.render(level, this);
+
         textRenderer.render(level.getText(), this);
-
         guiRenderer.render(level.getGuis(), this);
-
     }
 
     private Plane[] calcFrustum(){

@@ -1,17 +1,13 @@
-package com.company.Game.objects;
+package com.company.Engine.ai;
 
-import com.company.Engine.core.Input;
 import com.company.Engine.rendering.*;
-import com.company.Engine.rendering.meshManagment.Material;
-import com.company.Engine.rendering.meshManagment.Mesh;
-import com.company.Engine.rendering.meshManagment.Texture;
 import com.company.Engine.util.Vector3f;
-import com.company.Game.components.*;
+import com.company.Engine.core.GameObject;
 
 /**
  * Created by Slon on 15.03.2016.
  */
-public class Enemy extends GameObject{
+public class Enemy extends GameObject {
 
     private Graphic graphic;
     private AIMove ai;
@@ -27,7 +23,7 @@ public class Enemy extends GameObject{
         this.culling = new FrustumCulling(new Box(cullingSize, transform));
         this.ai = new AIMove();
 
-//        addComponent(ai);
+        addComponent(ai);
         addComponent(graphic);
         addComponent(culling);
 

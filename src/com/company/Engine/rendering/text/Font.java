@@ -17,7 +17,7 @@ public class Font {
     private Texture atlas;
     private float atlasWidth;
     private float atlasHeight;
-    private float lineHeight; // todo: don't know why need it
+    private float lineHeight;
     private float size;
     private HashMap<Character, AtlasChar> characters;
 
