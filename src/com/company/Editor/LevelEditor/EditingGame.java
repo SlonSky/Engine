@@ -2,7 +2,7 @@ package com.company.Editor.LevelEditor;
 
 import com.company.Engine.core.*;
 import com.company.Engine.rendering.Camera;
-import com.company.Engine.rendering.Decoration;
+import com.company.Game.entities.Decoration;
 import com.company.Engine.rendering.Transform;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.meshManagment.Material;
@@ -12,6 +12,7 @@ import com.company.Engine.rendering.skybox.SkyBox;
 import com.company.Engine.util.Quaternion;
 import com.company.Engine.util.Vector3f;
 import com.company.Engine.rendering.Graphic;
+import com.company.Game.entities.Director;
 
 import java.util.ArrayList;
 

@@ -26,4 +26,13 @@ public class TextRenderer {
         }
         glEnable(GL_DEPTH_TEST);
     }
+
+    public void render(Text text, RenderingEngine engine){
+        glDisable(GL_DEPTH_TEST);
+        shader.bind();
+        shader.updateFont(text);
+        shader.updateUniforms(text.getTransform(), null, engine);
+        text.draw();
+        glEnable(GL_DEPTH_TEST);
+    }
 }

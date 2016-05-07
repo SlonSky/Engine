@@ -6,6 +6,8 @@ import com.company.Engine.util.Vector3f;
  * Created by Slon on 03.04.2016.
  */
 public class FreeMove extends GameComponent{
+
+    private static final Vector3f Y_AXIS = new Vector3f(0,1,0);
     private int forward;
     private int backward;
     private int left;
@@ -33,7 +35,8 @@ public class FreeMove extends GameComponent{
             movAmt *= 10;
         }
         if(Input.getKey(forward)){
-            translation.set(translation.add(getTranslation(getTransform().getRotation().getForward().normalized(), movAmt)));
+            translation.set(translation.add(getTranslation(
+                    getTransform().getRotation().getForward().normalized(), movAmt)));
         }
         if(Input.getKey(backward)){
             translation.set(translation.add(getTranslation(getTransform().getRotation().getForward().normalized(), -movAmt)));
@@ -43,6 +46,14 @@ public class FreeMove extends GameComponent{
         }
         if(Input.getKey(left)){
             translation.set(translation.add(getTranslation(getTransform().getRotation().getLeft().normalized(), movAmt)));
+        }
+        // template!
+        if(Input.getKey(Input.KEY_U)){
+            translation.set(translation.add(getTranslation(Y_AXIS, 9*movAmt)));
+        }
+
+        if(Input.getKey(Input.KEY_J)){
+            translation.set(translation.add(getTranslation(Y_AXIS, -movAmt)));
         }
     }
 

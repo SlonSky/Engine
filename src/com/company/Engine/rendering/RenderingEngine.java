@@ -12,6 +12,8 @@ import com.company.Engine.rendering.text.TextRenderer;
 import com.company.Engine.util.Matrix4f;
 import com.company.Engine.util.Plane;
 import com.company.Engine.core.Level;
+import com.company.Engine.windows.UIComponent;
+import com.company.Engine.windows.UIFrame;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -45,6 +47,7 @@ public class RenderingEngine {
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_TEXTURE_2D);
 
+
     }
 
 
@@ -58,8 +61,23 @@ public class RenderingEngine {
         skyBoxRenderer.render(level.getSkyBox(), this);
         levelRenderer.render(level, this);
 
-        textRenderer.render(level.getText(), this);
         guiRenderer.render(level.getGuis(), this);
+        textRenderer.render(level.getText(), this);
+    }
+
+    public void render(UIFrame frame){
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+//        // todo: render by components, not guis/text
+//        guiRenderer.render(frame.getAllGuis(), this);
+//        textRenderer.render(frame.getAllTexts(), this);
+
+        guiRenderer.render(frame.getBackground(), this);
+        textRenderer.render(frame.getText(), this);
+        for(UIComponent component: frame.getComponents()){
+            guiRenderer.render(component.getGui(), this);
+            textRenderer.render(component.getText(), this);
+        }
     }
 
     private Plane[] calcFrustum(){

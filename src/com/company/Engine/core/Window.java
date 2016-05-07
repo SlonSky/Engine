@@ -16,15 +16,17 @@ public class Window {
             Display.setTitle(title);
             Display.setDisplayMode(new DisplayMode(width, height));
 //            Display.setVSyncEnabled(true);
+
+//          todo:  Display.setParent(CANVAS);!!!!
             Display.create();
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
     }
 
-    public static void setLocation(int x, int y){
-        Display.setLocation(x, y);
-    }
+//    public static void setLocation(int x, int y){
+//        Display.setLocation(x, y);
+//    }
 
     public static void createFullWindow(String title){
         try {

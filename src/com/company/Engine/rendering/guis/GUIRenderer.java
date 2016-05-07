@@ -3,6 +3,7 @@ package com.company.Engine.rendering.guis;
 import com.company.Engine.rendering.RenderingEngine;
 import com.company.Engine.rendering.meshManagment.Mesh;
 import com.company.Engine.util.*;
+import com.company.Engine.windows.UIFrame;
 
 import java.util.ArrayList;
 
@@ -42,8 +43,24 @@ public class GUIRenderer {
             shader.updateUniforms(gui.getTransform(), null, engine);
             quad.draw();
         }
-        glEnable(GL_DEPTH_TEST);
 
+        glEnable(GL_DEPTH_TEST);
+        glDisable(GL_BLEND);
+    }
+
+    // temp
+    public void render(GUITexture gui, RenderingEngine engine){
+
+        glDisable(GL_DEPTH_TEST);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        shader.bind();
+        gui.getTexture().bind();
+        shader.updateUniforms(gui.getTransform(), null, engine);
+        quad.draw();
+
+        glEnable(GL_DEPTH_TEST);
         glDisable(GL_BLEND);
     }
 }

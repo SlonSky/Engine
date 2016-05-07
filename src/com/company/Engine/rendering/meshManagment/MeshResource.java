@@ -1,5 +1,6 @@
 package com.company.Engine.rendering.meshManagment;
 
+import static org.lwjgl.opengl.GL15.glDeleteBuffers;
 import static org.lwjgl.opengl.GL15.glGenBuffers;
 
 /**
@@ -27,5 +28,10 @@ public class MeshResource {
 
     public int getSize() {
         return size;
+    }
+
+    public void destroy(){
+        glDeleteBuffers(vbo);
+        glDeleteBuffers(ibo);
     }
 }

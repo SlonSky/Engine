@@ -9,7 +9,7 @@ import org.lwjgl.opengl.Display;
  * Created by Slon on 11.04.2016.
  */
 public class GUITexture {
-    public static final float ar = (float)Display.getWidth()/(float)Display.getHeight();
+    public static final float ASPECT_RATIO = (float)Display.getWidth()/(float)Display.getHeight();
     private Texture texture;
     private Transform transform;
 
@@ -17,9 +17,9 @@ public class GUITexture {
         this.texture = texture;
         transform = new Transform();
         transform.setPosition(new Vector3f(pos.getX(), pos.getY(), 0));
-        transform.setScale(new Vector3f(scale.getX() / ar, scale.getY(), 1));
+        transform.setScale(new Vector3f(scale.getX() / ASPECT_RATIO, scale.getY(), 1));
 
-//        setScale(new Vector2f(scale.getX()*ar, scale.getY()/ar));
+//        setScale(new Vector2f(scale.getX()*ASPECT_RATIO, scale.getY()/ASPECT_RATIO));
     }
 
     public Texture getTexture() {
@@ -35,7 +35,7 @@ public class GUITexture {
     }
 
     public void setScale(Vector2f scale) {
-        transform.setScale(new Vector3f(scale.getX()/ ar, scale.getY(), 1));
+        transform.setScale(new Vector3f(scale.getX()/ ASPECT_RATIO, scale.getY(), 1));
     }
 
     public Transform getTransform() {

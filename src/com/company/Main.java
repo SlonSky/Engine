@@ -6,7 +6,9 @@ import com.company.Editor.LevelEditor.SyncEditor;
 import com.company.Engine.audio.AudioEngine;
 import com.company.Engine.audio.Source;
 import com.company.Engine.core.CoreEngine;
+import com.company.Game.DemoGame;
 import com.company.Game.TestGame;
+import com.company.Game.WindowedGame;
 import org.lwjgl.Sys;
 import org.newdawn.slick.openal.Audio;
 import org.newdawn.slick.openal.AudioLoader;
@@ -38,10 +40,13 @@ public class Main {
         CoreEngine core = new CoreEngine(800, 600, 60,
 //                new UserGame()
                 new TestGame()
+//                new DemoGame()
 //                new EditingGame()
+//                new WindowedGame()
 //                new MeshEditorGame()
         );
-        core.createWindow("game", false);
+        core.createWindow("game", false
+        );
         core.start();
     }
 }

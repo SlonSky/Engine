@@ -13,9 +13,16 @@ import com.company.Engine.core.GameObject;
 public class Collider extends GameComponent {
     private PhysicsEngine engine = PhysicsEngine.getInstance();
     private Box bound;
+    private Vector3f offset;
 
     public Collider(Vector3f size){
+//        bound = new Box(size, new Transform());
+        this(size, new Vector3f(0,0,0));
+    }
+    public Collider(Vector3f size, Vector3f offset){
+        this.offset = offset;
         bound = new Box(size, new Transform());
+        bound.setPosition(bound.getCenter().add(offset));
     }
 
     public void setParent(GameObject parent){
@@ -24,7 +31,7 @@ public class Collider extends GameComponent {
     }
 
     public void update() {
-        bound.setPosition(getTransform().getPosition());
+        bound.setPosition(getTransform().getPosition().add(offset));
     }
 
 //    public void solveCollision(){
@@ -39,7 +46,7 @@ public class Collider extends GameComponent {
     }
 
     public Vector3f getPosition(){
-        return getTransform().getPosition();
+        return getTransform().getPosition().add(offset);
     }
 
     public float getSizeX() {

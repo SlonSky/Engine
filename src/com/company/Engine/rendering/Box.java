@@ -13,7 +13,7 @@ public class Box {
 
     public Box(Vector3f dimensions, Transform transform){
         points = new Vector3f[8];
-        this.dimensions = dimensions;
+        this.dimensions = dimensions.div(2);
         this.transform = transform;
         initBounds();
     }
@@ -67,6 +67,10 @@ public class Box {
 
     // temp?
     public Vector3f getSize(){return dimensions;}
+
+    public Transform getTransform() {
+        return transform;
+    }
 
     public boolean isCulling(){
         return false;

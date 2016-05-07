@@ -8,15 +8,20 @@ import com.company.Engine.util.Vector3f;
 public class MoveControl extends GameComponent{
     private static final Vector3f Y_AXIS = new Vector3f(0,1,0);
 
+
     private int forward;
     private int backward;
     private int left;
     private int right;
-    private int jump;
+    private int jumpButton;
     private float speed;
-    private boolean shoot;
 
     private Vector3f translation;
+
+
+    private boolean jump;
+    private boolean onGround;
+//    private boolean shoot;
 
     public MoveControl(int forward, int backward, int left, int right, int jump, float speed) {
         this.forward = forward;
@@ -24,6 +29,10 @@ public class MoveControl extends GameComponent{
         this.left = left;
         this.right = right;
         this.speed = speed;
+        this.jumpButton = jump;
+
+        this.jump = false;
+        this.onGround = false;
     }
 
     public void input(){
@@ -41,14 +50,14 @@ public class MoveControl extends GameComponent{
         if(Input.getKey(left)){
             translation.set(translation.add(getTranslation(rightVec, -movAmt)));
         }
-        if(Input.getKeyDown(jump)){
-            translation.set(translation.add(getTranslation(Y_AXIS, 9*movAmt)));
-        }
+//        if(Input.getKeyDown(jump)){
+//            translation.set(translation.add(getTranslation(Y_AXIS, 9*movAmt)));
+//        }
 
 
         // template!
         if(Input.getKey(Input.KEY_U)){
-            translation.set(translation.add(getTranslation(Y_AXIS, 3*movAmt)));
+            translation.set(translation.add(getTranslation(Y_AXIS, 9*movAmt)));
         }
 
         if(Input.getKey(Input.KEY_J)){
@@ -62,8 +71,14 @@ public class MoveControl extends GameComponent{
         super.update();
 
         move(translation);
+//        updateState();
         translation = new Vector3f(0,0,0);
     }
+
+//    private void updateState(){
+//        jump = (onGround && !jump && translation.getY() > 0);
+//        onGround = translation.getY() == 0;
+//    }
 
     private void move(Vector3f dir, float amt){
         getTransform().setPosition(getTransform().getPosition().add(dir.mul(amt)));
@@ -90,5 +105,9 @@ public class MoveControl extends GameComponent{
         super.setParent(parent);
         translation = getTransform().getPosition();
 
+    }
+
+    public boolean isJump() {
+        return jump;
     }
 }

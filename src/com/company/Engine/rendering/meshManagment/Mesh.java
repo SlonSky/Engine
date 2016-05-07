@@ -98,4 +98,13 @@ public class Mesh {
         addVertices(vertexData, Utils.toIntArray(indexData));
     }
 
+//    @Override
+//    protected void finalize() throws Throwable {
+//        destroyRes();
+//        super.finalize();
+//    }
+//
+    public void destroyRes(){
+        resource.destroy();
+    }
 }

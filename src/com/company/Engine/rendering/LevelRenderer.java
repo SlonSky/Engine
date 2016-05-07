@@ -1,5 +1,6 @@
 package com.company.Engine.rendering;
 
+import com.company.Editor.LevelEditor.SyncEditor;
 import com.company.Engine.rendering.light.AmbientShader;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.util.Vector3f;
@@ -18,9 +19,9 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class LevelRenderer {
 
-    private Shader ambient;
+    private AmbientShader ambient;
     public LevelRenderer(){
-        ambient = new AmbientShader(new Vector3f(0.8f, 0.8f, 0.8f));
+        ambient = new AmbientShader(new Vector3f(0.5f, 0.37f, 0.18f));
     }
 
     public void render(Level level, RenderingEngine engine){
@@ -47,9 +48,16 @@ public class LevelRenderer {
             }
         }
 
+
         glDepthFunc(GL_LESS);
         glDepthMask(true);
         glDisable(GL_BLEND);
+
+    }
+
+    public void setAmbient(Vector3f ambient){
+        this.ambient.setAmbientIntensity(ambient);
+        System.out.println(ambient);
     }
 
 }

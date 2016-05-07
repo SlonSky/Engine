@@ -1,5 +1,6 @@
 package com.company.Engine.rendering.text;
 
+import com.company.Engine.rendering.guis.GUITexture;
 import com.company.Engine.rendering.meshManagment.Texture;
 import org.lwjgl.opengl.Display;
 
@@ -55,7 +56,8 @@ public class Font {
     private void initFontSize(String[] tokens){
         for(String token: tokens){
             if(token.startsWith("size")){
-                size = Integer.parseInt(token.split("=")[1]) / (Display.getWidth()/Display.getHeight());
+                size = Float.parseFloat(token.split("=")[1]);
+                System.out.println("font size" + size);
             }
         }
     }
@@ -63,7 +65,8 @@ public class Font {
     private void initCommon(String[] tokens){
         for(String token: tokens){
             if(token.startsWith("lineHeight")){
-                lineHeight = Integer.parseInt(token.split("=")[1]) / Display.getHeight();
+                lineHeight = Float.parseFloat(token.split("=")[1])/ Display.getHeight();// ??
+//                System.out.println("line height" + lineHeight);
             } else if(token.startsWith("scaleW")){
                 atlasWidth = Integer.parseInt(token.split("=")[1]);
             } else if(token.startsWith("scaleH")){

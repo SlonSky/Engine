@@ -11,9 +11,11 @@ public class PhysicsEngine {
     public static final PhysicsEngine instance = new PhysicsEngine();
 
     private ArrayList<Collider> colliders;
+    private ArrayList<OBB> obbs;
 
     private PhysicsEngine() {
         colliders = new ArrayList<>();
+        obbs = new ArrayList<>();
     }
 
     public static PhysicsEngine getInstance() {
@@ -67,7 +69,7 @@ public class PhysicsEngine {
                     && Math.abs(pos.getZ() - collider.getPosition().getZ()) < (colliding.getSizeZ() + collider.getSizeZ())
                     ){
 //                System.out.println("block!");
-                return responseAABBCollision(transl, collisionVec);
+                transl = responseAABBCollision(transl, collisionVec);
             }
         }
         return transl;
@@ -78,7 +80,8 @@ public class PhysicsEngine {
         Vector3f normal = calcNormal(collisionVec);
         if(normal.max() > 0) {
             return translation.sub(translation.mul(normal));
-        } else return translation.add(translation.mul(normal));
+        } else
+            return translation.add(translation.mul(normal));
     }
 
     private Vector3f calcNormal(Vector3f colVec){
@@ -96,6 +99,7 @@ public class PhysicsEngine {
             return new Vector3f(0, 0, (colVec.getZ() > 0) ? 1 : -1);
         }
         return new Vector3f(0,0,0);
+
 
     }
 

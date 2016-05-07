@@ -32,17 +32,23 @@ public class SyncEditor {
         frame.setLayout(new GridLayout(2, 4));
         frame.setBounds(new Rectangle(100, 800));
 
-        JScrollBar xBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
+        JScrollBar xBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, 0, 1000);
         JScrollBar yBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
         JScrollBar zBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
 //        xBar
-        xBar.addAdjustmentListener(e -> a = e.getValue());
+        xBar.addAdjustmentListener(new AdjustmentListener() {
+            @Override
+            public void adjustmentValueChanged(AdjustmentEvent e) {
+                a = e.getValue();
+//                System.out.println("val " + (float)a/1000f);
+            }
+        });
         yBar.addAdjustmentListener(e -> b = e.getValue());
         zBar.addAdjustmentListener(e -> c = e.getValue());
 
         JScrollBar xrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, 0, 100);
-        JScrollBar yrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
-        JScrollBar zrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
+        JScrollBar yrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, 0, 100);
+        JScrollBar zrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, 0, 100);
 //        xBar
         xrBar.addAdjustmentListener(e -> x = e.getValue());
         yrBar.addAdjustmentListener(e -> y = e.getValue());
@@ -66,5 +72,6 @@ public class SyncEditor {
 frame.add(b);
         frame.pack();
         frame.setVisible(true);
+        frame.setSize(frame.getWidth(), 800);
     }
 }

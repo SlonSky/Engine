@@ -15,15 +15,17 @@ public abstract class Game {
     public abstract void init();
 
     public void input(){
-        level.input();
+//        level.input();
     }
 
     public void update(){
-        level.update();
+//        level.update();
     }
 
 
-    public void render(RenderingEngine renderingEngine){  renderingEngine.render(level);  }
+    public void render(RenderingEngine renderingEngine){
+//        renderingEngine.render(level);
+    }
 
     public void setEngine(CoreEngine engine) {
         this.engine = engine;
@@ -41,6 +43,6 @@ public abstract class Game {
     }
 
     public void destroy(){
-        level.destroy();
+//        level.destroy();
     }
 }

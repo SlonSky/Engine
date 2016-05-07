@@ -1,4 +1,4 @@
-package com.company.Engine.core;
+package com.company.Game.entities;
 
 import com.company.Engine.core.GameObject;
 import com.company.Engine.core.Input;
@@ -17,8 +17,8 @@ public class Director extends GameObject {
     public Director(Camera camera, Transform transform) {
         super(transform);
         this.camera = camera;
-        addComponent(new FreeLook(0, Input.KEY_ESCAPE, 0.5f));
-        addComponent(new FreeMove(Input.KEY_W, Input.KEY_S, Input.KEY_A, Input.KEY_D, 10));
+        addComponent(new FreeLook(0, Input.KEY_ESCAPE, 0.07f));
+        addComponent(new FreeMove(Input.KEY_W, Input.KEY_S, Input.KEY_A, Input.KEY_D, 1));
     }
 
     @Override
