@@ -10,6 +10,26 @@ import java.util.Random;
  * Created by Slon on 22.03.2016.
  */
 public class AIMove extends GameComponent {
+    /**
+     * todo:
+     *  ai observer
+     *  level grid - graph for pathfinding
+     *  A*
+     *  ***************
+     *  **ooooooooo**o*
+     *  **ooooooo***oo*
+     *  **ooo**oo***oo*
+     *  **ooo**oo***oo*
+     *  **ooooooo***oo*
+     *  **ooooooo***oo*
+     *  *******ooooooo*
+     *  *******ooooooo*
+     *  ***************
+     *  keep all paths
+     *
+     *  attack/sleep distance
+     *
+     */
 
     // temp!
     public static Vector3f moveTo = new Vector3f(0,0,0);

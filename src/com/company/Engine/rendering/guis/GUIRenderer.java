@@ -41,6 +41,7 @@ public class GUIRenderer {
             shader.bind();
             gui.getTexture().bind();
             shader.updateUniforms(gui.getTransform(), null, engine);
+            shader.setMask(gui.getMask());
             quad.draw();
         }
 
@@ -51,16 +52,19 @@ public class GUIRenderer {
     // temp
     public void render(GUITexture gui, RenderingEngine engine){
 
-        glDisable(GL_DEPTH_TEST);
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        if(!gui.isHidden()) {
+            glDisable(GL_DEPTH_TEST);
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-        shader.bind();
-        gui.getTexture().bind();
-        shader.updateUniforms(gui.getTransform(), null, engine);
-        quad.draw();
+            shader.bind();
+            gui.getTexture().bind();
+            shader.updateUniforms(gui.getTransform(), null, engine);
+            shader.setMask(gui.getMask());
+            quad.draw();
 
-        glEnable(GL_DEPTH_TEST);
-        glDisable(GL_BLEND);
+            glEnable(GL_DEPTH_TEST);
+            glDisable(GL_BLEND);
+        }
     }
 }

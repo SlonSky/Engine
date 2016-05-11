@@ -39,13 +39,15 @@ public class Main {
     private static void initGame() {
         CoreEngine core = new CoreEngine(800, 600, 60,
 //                new UserGame()
-                new TestGame()
+//                new TestGame()
 //                new DemoGame()
 //                new EditingGame()
-//                new WindowedGame()
+                new WindowedGame()
 //                new MeshEditorGame()
         );
-        core.createWindow("game", false
+        core.createWindow("game",
+                true
+//                false
         );
         core.start();
     }

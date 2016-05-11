@@ -1,0 +1,15 @@
+#version 400
+
+in vec2 texCoord;
+
+uniform vec3 color;
+uniform sampler2D tex;
+
+void main(){
+	vec4 texture = texture2D(tex, texCoord.xy);
+	if(texture.a < 0.5){
+		discard;
+	} else {
+		gl_FragColor = texture * color;
+	}
+}

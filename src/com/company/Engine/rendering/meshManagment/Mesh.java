@@ -6,9 +6,8 @@ package com.company.Engine.rendering.meshManagment;
 
 import com.company.Engine.rendering.objLoader.IndexedModel;
 import com.company.Engine.rendering.objLoader.OBJModel;
-import com.company.Engine.util.Utils;
+import com.company.Engine.util.Vector2f;
 import com.company.Engine.util.Vertex;
-import org.lwjgl.opengl.GL15;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,10 +41,10 @@ public class Mesh {
     private void addVertices(Vertex[] vertices, int[] indices){
         resource = new MeshResource(indices.length);
         glBindBuffer(GL_ARRAY_BUFFER, resource.getVbo());
-        glBufferData(GL_ARRAY_BUFFER, Utils.createFlippedBuffer(vertices), GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, Vector2f.Utils.createFlippedBuffer(vertices), GL_STATIC_DRAW);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, Utils.createFlippedBuffer(indices), GL_STATIC_DRAW);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, Vector2f.Utils.createFlippedBuffer(indices), GL_STATIC_DRAW);
     }
 
     public void draw(){
@@ -95,7 +94,7 @@ public class Mesh {
         Integer[] indexData = new Integer[model.getIndices().size()];
         model.getIndices().toArray(indexData);
 
-        addVertices(vertexData, Utils.toIntArray(indexData));
+        addVertices(vertexData, Vector2f.Utils.toIntArray(indexData));
     }
 
 //    @Override

@@ -8,8 +8,9 @@ import com.company.Engine.rendering.light.*;
 import com.company.Engine.rendering.meshManagment.Material;
 import com.company.Engine.rendering.meshManagment.Texture;
 import com.company.Engine.util.Matrix4f;
-import com.company.Engine.util.Utils;
+import com.company.Engine.util.Vector2f;
 import com.company.Engine.util.Vector3f;
+import com.company.Engine.util.Vector4f;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -118,7 +119,7 @@ public abstract class Shader {
     }
 
     public void setUniform(String uniformName, Matrix4f matrix) {
-        glUniformMatrix4(uniforms.get(uniformName), true, Utils.createFlippedBuffer(matrix));
+        glUniformMatrix4(uniforms.get(uniformName), true, Vector2f.Utils.createFlippedBuffer(matrix));
     }
 
     public void setUniform(String uniformName, Light light){
@@ -150,6 +151,9 @@ public abstract class Shader {
         setUniform(uniformName + ".cutoff", spotLight.getCutoff());
     }
 
+    public void setUniform(String uniformName, Vector4f vec){
+        glUniform4f(uniforms.get(uniformName), vec.getX(), vec.getY(), vec.getZ(), vec.getW());
+    }
     public void prepareTexture(Material material){
         if(material.getTexture() != null){
             material.getTexture().bind();

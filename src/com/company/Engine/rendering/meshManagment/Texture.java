@@ -3,6 +3,7 @@ package com.company.Engine.rendering.meshManagment;
 /**
  * Created by Slon on 12.02.2016.
  */
+import com.company.Engine.util.Vector2f;
 import org.lwjgl.BufferUtils;
 
 import javax.imageio.ImageIO;
@@ -63,7 +64,7 @@ public class Texture {
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
             glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_LOD_BIAS, -1);
 
-            resource = new TextureResource(texture);
+            resource = new TextureResource(texture, new Vector2f(image.getWidth(), image.getHeight()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,4 +94,7 @@ public class Texture {
         return buffer;
     }
 
+    public Vector2f getSize() {
+        return resource.getSize();
+    }
 }

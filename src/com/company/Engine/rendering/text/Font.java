@@ -57,7 +57,7 @@ public class Font {
         for(String token: tokens){
             if(token.startsWith("size")){
                 size = Float.parseFloat(token.split("=")[1]);
-                System.out.println("font size" + size);
+//                System.out.println("font size" + size);
             }
         }
     }

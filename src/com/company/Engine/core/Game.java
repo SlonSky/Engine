@@ -14,18 +14,9 @@ public abstract class Game {
 
     public abstract void init();
 
-    public void input(){
-//        level.input();
-    }
-
-    public void update(){
-//        level.update();
-    }
-
-
-    public void render(RenderingEngine renderingEngine){
-//        renderingEngine.render(level);
-    }
+    public void input(){}
+    public void update(){}
+    public void render(RenderingEngine renderingEngine){}
 
     public void setEngine(CoreEngine engine) {
         this.engine = engine;
@@ -42,7 +33,5 @@ public abstract class Game {
         Transform.setCamera(camera);
     }
 
-    public void destroy(){
-//        level.destroy();
-    }
+    public void destroy(){}
 }

@@ -82,6 +82,10 @@ public class Vector3f {
         return new Vector3f(x / r, y / r, z / r);
     }
 
+    public Vector2f getXY(){
+        return new Vector2f(x, y);
+    }
+
     public float getX() {
         return x;
     }

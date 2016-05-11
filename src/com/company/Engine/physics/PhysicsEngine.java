@@ -11,11 +11,9 @@ public class PhysicsEngine {
     public static final PhysicsEngine instance = new PhysicsEngine();
 
     private ArrayList<Collider> colliders;
-    private ArrayList<OBB> obbs;
 
     private PhysicsEngine() {
         colliders = new ArrayList<>();
-        obbs = new ArrayList<>();
     }
 
     public static PhysicsEngine getInstance() {

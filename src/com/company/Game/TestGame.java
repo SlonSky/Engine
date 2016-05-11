@@ -105,29 +105,29 @@ public class TestGame extends Game {
         Mesh zombie = new Mesh("za.obj");
         Material zombieMaterial = new Material(new Texture("zomby_light.png"), 2, 20);
 //
-        for(int i =0; i<4; i++) {
-            for (int j = 0; j < 15; j++) {
-
-                objects.add(new Enemy(new Transform(new Vector3f(j *  r.nextInt(4)-2, 0, i * 10 +r.nextInt(5)), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(r.nextInt(180))), new Vector3f(3, 3, 3)),
-                        new Graphic(zombie, zombieMaterial),
-                        new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
-
-                objects.add(new Decoration(
-                        new Transform(new Vector3f(i*10+ 2, 1.6f, j * 2.032f * 2 ), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(0)), new Vector3f(1, 1, 1)),
-                        new Graphic(fence, fenceMaterial),
-                        new Vector3f(0.133f / 2, 3.259f / 2, 4.032f / 2),
-                        new Vector3f(0.133f / 2, 3.259f / 2, 4.032f / 2)
-                ));
-                objects.add(new Decoration(
-                        new Transform(new Vector3f(i*10, 0, j * 3.422f*2), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(0)).mul(new Quaternion(new Vector3f(0, 0, 1), (float)Math.toRadians(180))), new Vector3f(1, 1, 1)),
-                        new Graphic(road, roadMaterial),
-                        new Vector3f(2.2f, 0.088f, 3.422f),
-//                        new Vector3f(2.2f, 0.088f, 3.422f)
-                        new Vector3f(3.4f, 3.4f, 3.4f)
-                ));
-
-            }
-        }
+//        for(int i =0; i<4; i++) {
+//            for (int j = 0; j < 15; j++) {
+//
+//                objects.add(new Enemy(new Transform(new Vector3f(j *  r.nextInt(4)-2, 0, i * 10 +r.nextInt(5)), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(r.nextInt(180))), new Vector3f(3, 3, 3)),
+//                        new Graphic(zombie, zombieMaterial),
+//                        new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
+//
+//                objects.add(new Decoration(
+//                        new Transform(new Vector3f(i*10+ 2, 1.6f, j * 2.032f * 2 ), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(0)), new Vector3f(1, 1, 1)),
+//                        new Graphic(fence, fenceMaterial),
+//                        new Vector3f(0.133f / 2, 3.259f / 2, 4.032f / 2),
+//                        new Vector3f(0.133f / 2, 3.259f / 2, 4.032f / 2)
+//                ));
+//                objects.add(new Decoration(
+//                        new Transform(new Vector3f(i*10, 0, j * 3.422f*2), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(0)).mul(new Quaternion(new Vector3f(0, 0, 1), (float)Math.toRadians(180))), new Vector3f(1, 1, 1)),
+//                        new Graphic(road, roadMaterial),
+//                        new Vector3f(2.2f, 0.088f, 3.422f),
+////                        new Vector3f(2.2f, 0.088f, 3.422f)
+//                        new Vector3f(3.4f, 3.4f, 3.4f)
+//                ));
+//
+//            }
+//        }
         objects.add(new Decoration(
                         new Transform(new Vector3f(10+ 2, 1.6f, 2.032f * 2 ), new Quaternion(new Vector3f(0, 1, 0),(float)Math.toRadians(0)), new Vector3f(1, 1, 1)),
                 new Graphic(fence, fenceMaterial),
@@ -139,11 +139,11 @@ public class TestGame extends Game {
                         new Graphic(zombie, zombieMaterial),
                         new Vector3f(1.794f / 2, 0.581f / 2,  1.055f/ 2)));
 
-        lights.add(new DirectionalLight(new Vector3f(0.5f, 0.3f, 0), 0.2f, new Vector3f(1f, -1, 1)));
-        lights.add(new PointLight(new Vector3f(25.5f, 3, -2f), new Vector3f(1, 0,0), 0.2f, new Attenuation(1,0,0)));
-        lights.add(new PointLight(new Vector3f(35.5f, 3, -2f), new Vector3f(1, 0,0), 0.2f, new Attenuation(1,0,0)));
-        lights.add(new PointLight(new Vector3f(45.5f, 3, -2f), new Vector3f(1, 1,1), 0.2f, new Attenuation(1,0,0)));
-        lights.add(new PointLight(new Vector3f(55.5f, 3, -2f), new Vector3f(1, 1,1), 0.2f, new Attenuation(1,0,0)));
+//        lights.add(new DirectionalLight(new Vector3f(0.5f, 0.3f, 0), 0.2f, new Vector3f(1f, -1, 1)));
+//        lights.add(new PointLight(new Vector3f(25.5f, 3, -2f), new Vector3f(1, 0,0), 0.2f, new Attenuation(1,0,0)));
+//        lights.add(new PointLight(new Vector3f(35.5f, 3, -2f), new Vector3f(1, 0,0), 0.2f, new Attenuation(1,0,0)));
+//        lights.add(new PointLight(new Vector3f(45.5f, 3, -2f), new Vector3f(1, 1,1), 0.2f, new Attenuation(1,0,0)));
+//        lights.add(new PointLight(new Vector3f(55.5f, 3, -2f), new Vector3f(1, 1,1), 0.2f, new Attenuation(1,0,0)));
 
 
         player = new Player(camera, new Transform(new Vector3f(0f, 10, 0f), camera.getRot(), new Vector3f(1,1,1)),
@@ -165,14 +165,14 @@ public class TestGame extends Game {
         text = new Text(0.8f, 0.8f, 0.15f, "text", font, new Vector3f(1, 0,0));
         level.addText(text);
 
-        level.addText(new Text(0, 0.0f, 0.10f, "small piece of text", font, new Vector3f(0, 0,0)));
-
-        level.addText(new Text(-0.9f, 0.0f, 0.10f, "small shit of text", font, new Vector3f(0, 1,0)));
-
-        level.addGUI(new GUITexture(new Texture("health.png"), new Vector2f(0.85f, -0.75f), new Vector2f(0.25f, 0.25f)));
-        level.addGUI(new GUITexture(new Texture("minimap.png"), new Vector2f(-0.75f, 0.70f),new Vector2f( 0.2f, 0.2f)));
-        level.addGUI(new GUITexture(new Texture("logo.png"), new Vector2f(-0.75f, -0.70f),new Vector2f( 0.2f, 0.2f)));
-        level.addGUI(new GUITexture(new Texture("cross.png"), new Vector2f(0, 0),new Vector2f( 0.2f, 0.2f)));
+//        level.addText(new Text(0, 0.0f, 0.10f, "small piece of text", font, new Vector3f(0, 0,0)));
+//
+//        level.addText(new Text(-0.9f, 0.0f, 0.10f, "small shit of text", font, new Vector3f(0, 1,0)));
+//
+//        level.addGUI(new GUITexture(new Texture("health.png"), new Vector2f(0.85f, -0.75f), new Vector2f(0.25f, 0.25f)));
+//        level.addGUI(new GUITexture(new Texture("minimap.png"), new Vector2f(-0.75f, 0.70f),new Vector2f( 0.2f, 0.2f)));
+//        level.addGUI(new GUITexture(new Texture("logo.png"), new Vector2f(-0.75f, -0.70f),new Vector2f( 0.2f, 0.2f)));
+//        level.addGUI(new GUITexture(new Texture("cross.png"), new Vector2f(0, 0),new Vector2f( 0.2f, 0.2f)));
 //
 //        level.addGUI(new GUITexture(new Texture("health.png"), new Vector2f(1, 1), new Vector2f(1f, 1f)));
 

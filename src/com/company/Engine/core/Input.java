@@ -149,7 +149,11 @@ public class Input
 		for(int i = 0; i < NUM_MOUSEBUTTONS; i++)
 			lastMouse[i] = getMouse(i);
 	}
-	
+
+	public static int getWheelDelta(){
+		return Mouse.getDWheel()/120;
+	}
+
 	public static boolean getKey(int keyCode)
 	{
 		return Keyboard.isKeyDown(keyCode);

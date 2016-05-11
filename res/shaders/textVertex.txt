@@ -1,0 +1,13 @@
+#version 400
+
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec2 texCoord0;
+
+uniform mat4 WVP;
+
+out vec2 texCoord;
+
+void main(){
+	gl_Position = WVP * vec4(position, 1.0);
+	texCoord = texCoord0;
+}

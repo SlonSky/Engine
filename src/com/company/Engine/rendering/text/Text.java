@@ -1,5 +1,6 @@
 package com.company.Engine.rendering.text;
 
+import com.company.Engine.core.Window;
 import com.company.Engine.rendering.Transform;
 import com.company.Engine.rendering.guis.GUITexture;
 import com.company.Engine.rendering.meshManagment.Mesh;
@@ -7,7 +8,6 @@ import com.company.Engine.util.Quaternion;
 import com.company.Engine.util.Vector2f;
 import com.company.Engine.util.Vector3f;
 import com.company.Engine.util.Vertex;
-import org.lwjgl.opengl.Display;
 
 import java.util.ArrayList;
 
@@ -121,7 +121,7 @@ import java.util.ArrayList;
 //        return font;
 //    }
 //
-////    public Vector2f getPos() {
+////    public Vector2f getScreenPos() {
 ////        return pos;
 ////    }
 //
@@ -141,6 +141,8 @@ public class Text {
 
     private float size;
 
+    private float len;
+
     private Transform transform;
 
     public Text(float X, float Y, float size, String line, Font font, Vector3f color){
@@ -148,7 +150,7 @@ public class Text {
         this.color = color;
         this.font = font;
         transform = new Transform(new Vector3f(X, Y, 0), new Quaternion(0,0,0,1), new Vector3f(size/font.getSize()/ GUITexture.ASPECT_RATIO, size/font.getSize(), 1));
-
+        this.size = size;
         edit(line);
 
 //? ???
@@ -193,6 +195,7 @@ public class Text {
             chars.add(new Mesh(v, indices));
             cursorX += c.getWidth() + c.getxAdvance();
         }
+        len = cursorX;
 //        transform.setPosition(new Vector3f(transform.getPosition().getX() - size*cursorX, transform.getPosition().getY(), 0));
 
 
@@ -205,6 +208,10 @@ public class Text {
         for(Mesh m: chars){
             m.draw();
         }
+    }
+
+    public void move(Vector2f delta){
+        transform.setPosition(transform.getPosition().add(new Vector3f(delta.getX(), delta.getY(), 0)));
     }
 
     public void setPos(Vector2f pos) {
@@ -223,16 +230,12 @@ public class Text {
 //        transform.setScale(new Vector3f(size*font.getSize()/ GUITexture.ASPECT_RATIO, size*font.getSize(), 1));
 
 //        transform.setPosition(transform.getPosition().sub(new Vector3f(this.size - size, this.size - size, 0)));
-        System.out.println("size " + size); // ????
+//        System.out.println("size " + size); // ????
     }
 
     public Font getFont() {
         return font;
     }
-
-//    public Vector2f getPos() {
-//        return pos;
-//    }
 
     public Vector3f getColor() {
         return color;
@@ -240,5 +243,13 @@ public class Text {
 
     public float getSize() {
         return size;
+    }
+
+    public Vector2f getScreenPos() {
+        return new Vector2f(transform.getPosition().getX()+ getScreenScale().getX(), transform.getPosition().getY()+getScreenScale().getY());
+    }
+
+    public Vector2f getScreenScale(){
+        return new Vector2f(transform.getScale().getX()*len/2, transform.getScale().getY()*font.getLineHeight()* Window.getHeight()/2);
     }
 }

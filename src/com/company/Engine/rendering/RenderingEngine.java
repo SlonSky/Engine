@@ -6,8 +6,10 @@ package com.company.Engine.rendering;
 
 import com.company.Engine.core.CoreEngine;
 import com.company.Engine.rendering.guis.GUIRenderer;
+import com.company.Engine.rendering.guis.GUITexture;
 import com.company.Engine.rendering.light.Light;
 import com.company.Engine.rendering.skybox.SkyBoxRenderer;
+import com.company.Engine.rendering.text.Text;
 import com.company.Engine.rendering.text.TextRenderer;
 import com.company.Engine.util.Matrix4f;
 import com.company.Engine.util.Plane;
@@ -68,15 +70,15 @@ public class RenderingEngine {
     public void render(UIFrame frame){
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-//        // todo: render by components, not guis/text
-//        guiRenderer.render(frame.getAllGuis(), this);
-//        textRenderer.render(frame.getAllTexts(), this);
-
-        guiRenderer.render(frame.getBackground(), this);
-        textRenderer.render(frame.getText(), this);
         for(UIComponent component: frame.getComponents()){
-            guiRenderer.render(component.getGui(), this);
-            textRenderer.render(component.getText(), this);
+            GUITexture gui = component.getGui();
+            Text text = component.getText();
+            if(gui != null) {
+                guiRenderer.render(component.getGui(), this);
+            }
+            if(text != null) {
+                textRenderer.render(component.getText(), this);
+            }
         }
     }
 
