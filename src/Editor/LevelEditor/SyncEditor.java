@@ -30,9 +30,9 @@ public class SyncEditor {
         frame.setLayout(new GridLayout(2, 4));
         frame.setBounds(new Rectangle(100, 800));
 
-        JScrollBar xBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
-        JScrollBar yBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
-        JScrollBar zBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -100, 100);
+        JScrollBar xBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -1000, 1000);
+        JScrollBar yBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -1000, 1000);
+        JScrollBar zBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -1000, 1000);
 //        xBar
         xBar.addAdjustmentListener(new AdjustmentListener() {
             @Override

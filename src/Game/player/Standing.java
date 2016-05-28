@@ -8,10 +8,8 @@ import Engine.util.Vector3f;
  */
 public class Standing implements PlayerState {
 
-    private Audible audible;
-    private Animable animable;
 
-    public Standing(Audible audible, Animable animable) {
+    public Standing() {
 
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9634d66b-3a6e-420f-92b5-d7f99af9080a" name="Default" comment="">
+    <list default="true" id="9634d66b-3a6e-420f-92b5-d7f99af9080a" name="Default" comment="Particle system!">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/1.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/textures/old/1_ASPHALT.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/skybox/1_BACK.png" />
@@ -106,123 +106,17 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/1_ROAD.obj" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/1_TRASH.mtl" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/1_TRASH.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/ai/AIMove.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/AK.mtl" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/AK.obj" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/AK1.mtl" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/AK1.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/AmbientShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/animation/AnimMesh.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/Animable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/animation/Animation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/text/AtlasChar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/Attenuation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/Audible.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/audio/AudioComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/audio/AudioEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/BlinkImage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/Box.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/Button.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/Camera.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/CheckBox.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/physics/Collider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/Controllable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/core/CoreEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/skybox/CubeMapTexture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/entities/Decoration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/games/DemoGame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/DirectionalLight.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/DirectionalShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/entities/Director.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/Dying.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Editor/LevelEditor/EditingGame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Editor/LevelEditor/EditorConsole.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/enemy/Enemy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/gun/Equipment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/text/Font.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/FreeLook.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/FreeMove.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/FrustumCulling.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/guis/GUIRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/guis/GUIShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/guis/GUITexture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/Game.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/GameComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/GameObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/GameState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/Graphic.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/GraphicBound.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/gun/Gun.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/gun/GunState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/Icon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/gun/Idling.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/Image.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/objLoader/IndexedModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/core/Input.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/KeyBoardControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/Label.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/Level.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Editor/LevelEditor/LevelEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/LevelRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/Light.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/meshManagment/Material.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/util/Matrix4f.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/meshManagment/Mesh.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Editor/MeshEditor/MeshEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Editor/LevelEditor/MeshPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/meshManagment/MeshResource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/MouseControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/objLoader/OBJIndex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/objLoader/OBJModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/physics/PhysicsEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/util/Plane.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/PlayerState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/PointLight.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/PointShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/util/Quaternion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/gun/Reloading.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/RenderingEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/RollPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/ScrollBar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/Shader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/ShadowMapFBO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/ShadowShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/gun/Shooting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/SimpleShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/skybox/SkyBox.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/skybox/SkyBoxRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/skybox/SkyBoxShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/audio/Sound.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/audio/Source.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/SpotLight.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/light/SpotShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/Standing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/StateManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Editor/LevelEditor/SyncEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/games/TestGame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/text/Text.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/text/TextRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/text/TextShader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/meshManagment/Texture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/meshManagment/TextureResource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/core/Time.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/Transform.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Editor/LevelEditor/TransformPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/entities/Trigger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/UIComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/UIFrame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/UIState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/games/UserGame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/util/Vector2f.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/util/Vector3f.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/util/Vector4f.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/util/Vertex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/player/Walking.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/core/Window.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/WindowManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/games/WindowedGame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/windows/LevelIcon.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/particles/Particle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleMaster.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleShader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleSystem.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleTexture.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/ambulance.mtl" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/ambulance.obj" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/barrel.obj" />
@@ -466,6 +360,8 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/lamp.obj" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/m1.obj" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/monkey.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/shaders/particleFragment.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/shaders/particleVertex.txt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/punk.obj" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/punk1.mtl" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/1/punk1.obj" />
@@ -1349,104 +1245,35 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/zombie.mtl" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/zombie.obj" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/models/zombie_axe.obj" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Editor\LevelEditor\EditingGame.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Editor\LevelEditor\EditorConsole.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Editor\LevelEditor\LevelEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Editor\LevelEditor\MeshPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Editor\LevelEditor\SyncEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Editor\LevelEditor\TransformPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Editor\MeshEditor\MeshEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\ai\AIMove.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\ai\Enemy.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\CoreEngine.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\FreeLook.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\FreeMove.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\Game.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\GameComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\GameObject.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\Input.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\Level.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\LookControl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\MoveControl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\Time.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\core\Window.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\physics\Collider.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\physics\PhysicsEngine.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Box.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Camera.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\FrustumCulling.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Graphic.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\GraphicBound.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\LevelRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\RenderingEngine.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Shader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\ShadowMapFBO.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\ShadowShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\SimpleShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\Transform.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\guis\GUIRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\guis\GUIShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\guis\GUITexture.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\AmbientShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\Attenuation.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\DirectionalLight.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\DirectionalShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\Light.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\PointLight.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\PointShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\SpotLight.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\light\SpotShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\meshManagment\Material.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\meshManagment\Mesh.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\meshManagment\MeshResource.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\meshManagment\Texture.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\meshManagment\TextureResource.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\objLoader\IndexedModel.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\objLoader\OBJIndex.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\objLoader\OBJModel.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\skybox\CubeMapTexture.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\skybox\SkyBox.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\skybox\SkyBoxRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\skybox\SkyBoxShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\text\AtlasChar.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\text\Font.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\text\Text.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\text\TextRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\text\TextShader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\util\Matrix4f.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\util\Plane.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\util\Quaternion.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\util\Vector2f.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\util\Vector3f.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\util\Vector4f.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\util\Vertex.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\BlinkImage.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\Button.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\CheckBox.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\Icon.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\Image.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\Label.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\RollPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\ScrollBar.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\UIComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\UIFrame.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\UIState.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\windows\WindowListener.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\DemoGame.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\GameState.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\TestGame.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\UserGame.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\WindowedGame.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\entities\Decoration.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\entities\Director.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\entities\Gun.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\entities\Player.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Game\entities\Trigger.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\com\company\Main.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameEngine.iml" afterPath="$PROJECT_DIR$/GameEngine.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\Game\player\Animable.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\gamedev\GameEngine\src\Game\player\Audible.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/rendering/Box.java" afterPath="$PROJECT_DIR$/src/Engine/rendering/Box.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/physics/Collider.java" afterPath="$PROJECT_DIR$/src/Engine/physics/Collider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/player/Controllable.java" afterPath="$PROJECT_DIR$/src/Game/player/Controllable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/enemy/Enemy.java" afterPath="$PROJECT_DIR$/src/Game/enemy/Enemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/rendering/FrustumCulling.java" afterPath="$PROJECT_DIR$/src/Engine/rendering/FrustumCulling.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/rendering/guis/GUIRenderer.java" afterPath="$PROJECT_DIR$/src/Engine/rendering/guis/GUIRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/gun/Gun.java" afterPath="$PROJECT_DIR$/src/Game/gun/Gun.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/KeyBoardControl.java" afterPath="$PROJECT_DIR$/src/Game/KeyBoardControl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Level.java" afterPath="$PROJECT_DIR$/src/Game/Level.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/MouseControl.java" afterPath="$PROJECT_DIR$/src/Game/MouseControl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/physics/PhysicsEngine.java" afterPath="$PROJECT_DIR$/src/Engine/physics/PhysicsEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/player/Player.java" afterPath="$PROJECT_DIR$/src/Game/player/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/gun/Reloading.java" afterPath="$PROJECT_DIR$/src/Game/gun/Reloading.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/rendering/RenderingEngine.java" afterPath="$PROJECT_DIR$/src/Engine/rendering/RenderingEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/rendering/Shader.java" afterPath="$PROJECT_DIR$/src/Engine/rendering/Shader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/gun/Shooting.java" afterPath="$PROJECT_DIR$/src/Game/gun/Shooting.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/player/Standing.java" afterPath="$PROJECT_DIR$/src/Game/player/Standing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Editor/LevelEditor/SyncEditor.java" afterPath="$PROJECT_DIR$/src/Editor/LevelEditor/SyncEditor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/games/TestGame.java" afterPath="$PROJECT_DIR$/src/Game/games/TestGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/rendering/Transform.java" afterPath="$PROJECT_DIR$/src/Engine/rendering/Transform.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/windows/UIComponent.java" afterPath="$PROJECT_DIR$/src/Engine/windows/UIComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/player/Walking.java" afterPath="$PROJECT_DIR$/src/Game/player/Walking.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/core/Window.java" afterPath="$PROJECT_DIR$/src/Engine/core/Window.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/games/WindowedGame.java" afterPath="$PROJECT_DIR$/src/Game/games/WindowedGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\gamedev\GameEngine\src\com\company\Engine\rendering\guis\todo" afterPath="$PROJECT_DIR$/src/Engine/rendering/guis/todo" />
+      <change type="MOVED" beforePath="D:\gamedev\GameEngine\src\Engine\ai\AIMove.java" afterPath="$PROJECT_DIR$/src/Game/enemy/AIMove.java" />
     </list>
     <ignored path="GameEngine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1471,12 +1298,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AIMove.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Engine/ai/AIMove.java">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-              <folding />
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/games/TestGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="242" column="73" selection-start-line="242" selection-start-column="73" selection-end-line="242" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1799#1801#0" expanded="false" />
+                <element signature="e#9273#9354#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1485,94 +1328,105 @@
         <entry file="file://$PROJECT_DIR$/src/Game/Level.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Icon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Engine/windows/Icon.java">
+      <file leaf-file-name="ParticleRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LevelIcon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Engine/windows/LevelIcon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+              <caret line="46" column="66" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#807#808#0" expanded="true" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#881#882#0" expanded="true" />
-                <element signature="e#917#918#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WindowedGame.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Game/games/WindowedGame.java">
+      <file leaf-file-name="ParticleMaster.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleMaster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36479592">
-              <caret line="165" column="129" selection-start-line="165" selection-start-column="129" selection-end-line="165" selection-end-column="129" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1710#1711#0" expanded="true" />
+                <element signature="e#1769#1770#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="particleVertex.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/shaders/particleVertex.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Engine/windows/Image.java">
+      <file leaf-file-name="particleFragment.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/shaders/particleFragment.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.5340314">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIComponent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Engine/windows/UIComponent.java">
+      <file leaf-file-name="Particle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/Particle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-              <folding />
+              <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1038#1039#0" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
+                <element signature="e#2537#2538#0" expanded="true" />
+                <element signature="e#2567#2568#0" expanded="true" />
+                <element signature="e#2606#2607#0" expanded="true" />
+                <element signature="e#2639#2640#0" expanded="true" />
+                <element signature="e#2678#2679#0" expanded="true" />
+                <element signature="e#2711#2712#0" expanded="true" />
+                <element signature="e#2742#2743#0" expanded="true" />
+                <element signature="e#2770#2771#0" expanded="true" />
+                <element signature="e#2804#2805#0" expanded="true" />
+                <element signature="e#2835#2836#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RollPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Engine/windows/RollPanel.java">
+      <file leaf-file-name="ParticleSystem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleSystem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
+              <caret line="45" column="84" selection-start-line="45" selection-start-column="84" selection-end-line="45" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <file leaf-file-name="Shader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Engine/rendering/Shader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Engine/windows/UIFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
+              <caret line="117" column="75" selection-start-line="117" selection-start-column="75" selection-end-line="117" selection-end-column="75" />
+              <folding>
+                <element signature="e#852#853#0" expanded="true" />
+                <element signature="e#918#919#0" expanded="true" />
+                <element signature="e#3403#3404#0" expanded="true" />
+                <element signature="e#3464#3465#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1605,57 +1459,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Game/gun/Equipmentable.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/Controllable.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Lookable.java" />
-        <option value="$PROJECT_DIR$/src/Engine/audio/Source.java" />
-        <option value="$PROJECT_DIR$/src/Engine/core/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/ShootingState.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/ReloadingState.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/DefaultState.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/GunState.java" />
-        <option value="$PROJECT_DIR$/src/Engine/core/CoreEngine.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/Idling.java" />
-        <option value="$PROJECT_DIR$/src/Engine/core/MouseControl.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/PlayerState.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Standing.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/Equipment.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Lifeable.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Livable.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Dying.java" />
-        <option value="$PROJECT_DIR$/src/Engine/core/KeyBoardControl.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Jumping.java" />
-        <option value="$PROJECT_DIR$/src/Game/TestGame.java" />
-        <option value="$PROJECT_DIR$/src/Engine/rendering/particles/BillBoard.java" />
-        <option value="$PROJECT_DIR$/src/Game/games/DemoGame.java" />
-        <option value="$PROJECT_DIR$/src/Game/games/UserGame.java" />
-        <option value="$PROJECT_DIR$/src/Editor/LevelEditor/EditingGame.java" />
-        <option value="$PROJECT_DIR$/src/Engine/windows/Window.java" />
-        <option value="$PROJECT_DIR$/src/Game/Initializer.java" />
-        <option value="$PROJECT_DIR$/src/Game/enemy/EnemyState.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/Gun.java" />
-        <option value="$PROJECT_DIR$/src/Game/entities/Decoration.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Collidable.java" />
         <option value="$PROJECT_DIR$/src/Game/player/Collide.java" />
         <option value="$PROJECT_DIR$/src/Game/player/Movable.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Walking.java" />
-        <option value="$PROJECT_DIR$/src/Game/KeyBoardControl.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Controllable.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/Shooting.java" />
-        <option value="$PROJECT_DIR$/src/Engine/physics/Collider.java" />
         <option value="$PROJECT_DIR$/src/Engine/windows/Button.java" />
         <option value="$PROJECT_DIR$/src/Game/entities/Trigger.java" />
         <option value="$PROJECT_DIR$/src/Engine/rendering/LevelRenderer.java" />
-        <option value="$PROJECT_DIR$/src/Engine/rendering/RenderingEngine.java" />
-        <option value="$PROJECT_DIR$/src/Engine/physics/PhysicsEngine.java" />
-        <option value="$PROJECT_DIR$/src/Game/gun/Reloading.java" />
-        <option value="$PROJECT_DIR$/src/Game/player/Player.java" />
-        <option value="$PROJECT_DIR$/src/Game/games/TestGame.java" />
-        <option value="$PROJECT_DIR$/src/Game/enemy/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/Engine/core/Window.java" />
         <option value="$PROJECT_DIR$/src/Engine/ai/AIMove.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Engine/windows/LevelIcon.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/FrustumCulling.java" />
+        <option value="$PROJECT_DIR$/src/Game/games/UserGame.java" />
+        <option value="$PROJECT_DIR$/src/Editor/LevelEditor/SyncEditor.java" />
+        <option value="$PROJECT_DIR$/src/Engine/physics/PhysicsEngine.java" />
+        <option value="$PROJECT_DIR$/src/Engine/physics/HitBox.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/Box.java" />
+        <option value="$PROJECT_DIR$/src/Engine/physics/Collider.java" />
         <option value="$PROJECT_DIR$/src/Game/games/WindowedGame.java" />
+        <option value="$PROJECT_DIR$/src/Engine/windows/UIComponent.java" />
+        <option value="$PROJECT_DIR$/src/Engine/windows/LevelIcon.java" />
+        <option value="$PROJECT_DIR$/src/Game/player/Walking.java" />
+        <option value="$PROJECT_DIR$/src/Game/player/Standing.java" />
+        <option value="$PROJECT_DIR$/src/Game/enemy/AIMove.java" />
+        <option value="$PROJECT_DIR$/src/Game/enemy/EnemyState.java" />
+        <option value="$PROJECT_DIR$/src/Game/enemy/Death.java" />
+        <option value="$PROJECT_DIR$/src/Game/enemy/Idle.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/animation/Animation.java" />
+        <option value="$PROJECT_DIR$/src/Game/MouseControl.java" />
+        <option value="$PROJECT_DIR$/src/Game/gun/Reloading.java" />
+        <option value="$PROJECT_DIR$/src/Game/gun/Gun.java" />
+        <option value="$PROJECT_DIR$/src/Game/enemy/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/Game/enemy/Chase.java" />
+        <option value="$PROJECT_DIR$/src/Game/gun/Shooting.java" />
+        <option value="$PROJECT_DIR$/src/Game/player/Jumping.java" />
+        <option value="$PROJECT_DIR$/src/Game/KeyBoardControl.java" />
+        <option value="$PROJECT_DIR$/src/Game/player/Controllable.java" />
+        <option value="$PROJECT_DIR$/src/Game/player/Livable.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/guis/GUIRenderer.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/meshManagment/Mesh.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/RenderingEngine.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/Transform.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleTexture.java" />
+        <option value="$PROJECT_DIR$/res/shaders/particleFragment.txt" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/Shader.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleShader.java" />
+        <option value="$PROJECT_DIR$/res/shaders/particleVertex.txt" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleRenderer.java" />
+        <option value="$PROJECT_DIR$/src/Game/Level.java" />
+        <option value="$PROJECT_DIR$/src/Game/games/TestGame.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/particles/Particle.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleMaster.java" />
+        <option value="$PROJECT_DIR$/src/Engine/rendering/particles/ParticleSystem.java" />
+        <option value="$PROJECT_DIR$/src/Game/player/Player.java" />
       </list>
     </option>
   </component>
@@ -1891,10 +1745,6 @@
               <option name="myItemId" value="Engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="windows" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1911,6 +1761,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rendering" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1933,6 +1787,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rendering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="particles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rendering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meshManagment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rendering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="guis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1976,7 +1886,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ai" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1998,6 +1908,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LevelEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shaders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -2007,7 +1971,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tutorAnim" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../particles" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -2338,7 +2302,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463001951382</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Morphing animation, player/gun state machines done">
+      <created>1464044074213</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1464044074213</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2352,33 +2322,59 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32605043" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32463294" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30995107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32328308" sideWeight="0.5245023" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31484503" sideWeight="0.52723145" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8107667" sideWeight="0.49394855" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31484503" sideWeight="0.4754977" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33115825" sideWeight="0.47276855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21709532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.53479576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31973898" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39698493" sideWeight="0.48562783" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3953099" sideWeight="0.48562783" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.319933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32463294" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30995107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31484503" sideWeight="0.52723145" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8107667" sideWeight="0.49394855" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3400335" sideWeight="0.47276855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34189406" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31973898" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3953099" sideWeight="0.48562783" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -2407,7 +2403,9 @@
     <MESSAGE value="Some editors; OGG, WAV loading; work on audio and physics" />
     <MESSAGE value="UI implementing in process; skeletal animation prototyping; level editor coming" />
     <MESSAGE value="Cute UI! still prototyping animation, level editing, and things..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cute UI! still prototyping animation, level editing, and things..." />
+    <MESSAGE value="Morphing animation, player/gun state machines done" />
+    <MESSAGE value="Particle system!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Particle system!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2431,7 +2429,7 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="35" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2440,331 +2438,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Game/player/Livable.java">
+    <entry file="file://$PROJECT_DIR$/src/Engine/windows/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/player/Jumping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="79" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/audio/AudioComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31648937">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/audio/AudioEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.045212764">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/guis/GUITexture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/guis/GUIRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="10" selection-start-line="21" selection-start-column="7" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/games/DemoGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/games/UserGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Editor/LevelEditor/EditingGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/util/Plane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/lwjgl.jar!/org/lwjgl/opengl/Display.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.432781">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/slick.jar!/org/newdawn/slick/opengl/ImageIOImageData.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.814815">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6530612">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/player/PlayerState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/enemy/EnemyState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/gun/Equipment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/gun/Gun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/entities/Decoration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/audio/Source.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/player/Audible.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/player/Controllable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/gun/Shooting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56377554">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/player/Walking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/windows/WindowManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/windows/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/entities/Trigger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/LevelRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/physics/Collide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/physics/Collider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/physics/PhysicsEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/RenderingEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="72" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/gun/Reloading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/player/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="5" selection-start-line="118" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/KeyBoardControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/Box.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/FrustumCulling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/games/TestGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="158" column="60" selection-start-line="158" selection-start-column="60" selection-end-line="158" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/enemy/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/ai/AIMove.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/windows/UIFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.109947644">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -2772,7 +2449,15 @@
     <entry file="file://$PROJECT_DIR$/src/Engine/windows/RollPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/games/WindowedGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="167" column="115" selection-start-line="167" selection-start-column="115" selection-end-line="167" selection-end-column="115" />
           <folding />
         </state>
       </provider>
@@ -2780,45 +2465,456 @@
     <entry file="file://$PROJECT_DIR$/src/Engine/windows/UIComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/windows/Icon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/windows/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="e#1000#1001#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/windows/LevelIcon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/player/Walking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/player/Standing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/gun/Idling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/gun/Equipment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/Attack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/AIMove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/Hit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/animation/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/MouseControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5366492">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/gun/Reloading.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1636#1637#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/games/WindowedGame.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/gun/Gun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36479592">
-          <caret line="165" column="129" selection-start-line="165" selection-start-column="129" selection-end-line="165" selection-end-column="129" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/Idle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#763#764#0" expanded="false" />
+            <element signature="e#795#796#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/Chase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#687#688#0" expanded="false" />
+            <element signature="e#719#720#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/Death.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#703#704#0" expanded="false" />
+            <element signature="e#730#731#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/entities/Trigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/enemy/EnemyState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/gun/Shooting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/games/UserGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/KeyBoardControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="145" column="1" selection-start-line="145" selection-start-column="1" selection-end-line="145" selection-end-column="1" />
+          <folding>
+            <element signature="e#3429#3430#0" expanded="true" />
+            <element signature="e#3466#3467#0" expanded="true" />
+            <element signature="e#3853#3854#0" expanded="true" />
+            <element signature="e#3892#3893#0" expanded="true" />
+            <element signature="e#3925#3926#0" expanded="true" />
+            <element signature="e#3954#3955#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/player/Controllable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/player/Livable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/text/TextRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/text/Text.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/guis/GUITexture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/guis/GUIRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/meshManagment/Mesh.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/guis/GUIShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/RenderingEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="36" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/ambientVertex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/ambientFragment.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/Transform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/Shader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="75" selection-start-line="117" selection-start-column="75" selection-end-line="117" selection-end-column="75" />
+          <folding>
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3464#3465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/lwjgl_util.jar!/org/lwjgl/util/vector/Vector3f.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14366198">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7431694">
+          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleTexture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#395#396#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
+            <element signature="e#461#462#0" expanded="false" />
+            <element signature="e#496#497#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/games/TestGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="242" column="73" selection-start-line="242" selection-start-column="73" selection-end-line="242" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1799#1801#0" expanded="false" />
+            <element signature="e#9273#9354#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="66" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/Particle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2567#2568#0" expanded="true" />
+            <element signature="e#2606#2607#0" expanded="true" />
+            <element signature="e#2639#2640#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
+            <element signature="e#2742#2743#0" expanded="true" />
+            <element signature="e#2770#2771#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2835#2836#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1769#1770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/rendering/particles/ParticleSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="84" selection-start-line="45" selection-start-column="84" selection-end-line="45" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/particleVertex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/particleFragment.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5340314">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,8 @@
 package Game.gun;
 
 import Engine.audio.Sound;
+import Engine.audio.Source;
+import Engine.rendering.animation.Animation;
 import Game.player.*;
 
 /**
@@ -11,51 +13,52 @@ public class Reloading implements GunState {
     // todo: you know...
     private static Sound reload = new Sound("res/sound/reload.ogg");
 
-    private Audible audible;
-    private Animable animable;
+    private Source source;
+    private Animation animation;
+
     private Controllable controllable;
     private Equipment equipment;
 
-    public Reloading(Audible audible, Animable animable, Controllable controllable, Equipment equipment) {
-        this.audible = audible;
-        this.animable = animable;
+    public Reloading(Source source, Animation animation, Controllable controllable, Equipment equipment) {
+        this.source = source;
+        this.animation = animation;
         this.controllable = controllable;
         this.equipment = equipment;
     }
 
     @Override
     public void enter() {
-        audible.getSource().setLooping(false);
-        audible.getSource().stop();
+        source.setLooping(false);
+        source.stop();
         playAnimation();
         sound();
     }
 
     @Override
     public void update() {
-        if(!animable.getAnimation().isPlaying()){
-            controllable.setReloading(false);
+        if(!animation.isPlaying()){
             chargeMagazine();
+            controllable.setReloading(false);
         }
     }
 
     @Override
     public void exit() {
-        animable.getAnimation().stop();
+        animation.stop();
     }
 
     public void chargeMagazine(){
         int bulletsNeed = equipment.getMagazineCapacity() - equipment.getBulletsInMagazine();
-        int bullets = equipment.getBulletsAmount()-bulletsNeed;
-        equipment.setBulletsInMagazine(bullets > 0 ? bulletsNeed : equipment.getBulletsAmount());
-        equipment.setBulletsAmount(bullets > 0 ? bullets : 0);
+        int bulletsRemain = equipment.getBulletsAmount()-bulletsNeed;
+        equipment.setBulletsInMagazine(bulletsRemain > 0 ? bulletsNeed : equipment.getBulletsAmount());
+        equipment.setBulletsAmount(bulletsRemain > 0 ? bulletsRemain : 0);
     }
 
     private void playAnimation(){
-        animable.getAnimation().play();
+        animation.play();
     }
 
-    private void sound(){
-        audible.getSource().play(reload.getBufferId(), true);
+    private void sound() {
+        source.play(reload.getBufferId(), true);
     }
 }

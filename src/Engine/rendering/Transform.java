@@ -49,6 +49,26 @@ public class Transform {
         return projectionMatrix.mul(cameraRotation.mul(cameraTranslation.mul(transformationMatrix)));
     }
 
+    public Matrix4f getProjectedBillBoardTransformation(){
+        Matrix4f transformationMatrix = getTransformation();
+        Matrix4f cameraRotation = camera.getRot().conjugate().toRotationMatrix();
+        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camera.getPos().getX(), -camera.getPos().getY(), -camera.getPos().getZ());
+
+        Matrix4f mv = cameraRotation.mul(cameraTranslation.mul(transformationMatrix));
+        mv.set(0,0, 1);
+        mv.set(0,1, 0);
+        mv.set(0,2, 0);
+        mv.set(1,0, 0);
+        mv.set(1,1, 1);
+        mv.set(1,2, 0);
+        mv.set(2,0, 0);
+        mv.set(2,1, 0);
+        mv.set(2,2, 1);
+
+        return projectionMatrix.mul(mv);
+
+    }
+
     public static Matrix4f getProjectedModelView(){
         Matrix4f id = new Matrix4f().initIdentity();
         Matrix4f cameraRotation = new Matrix4f().initRotation(camera.getForward(), camera.getUp());

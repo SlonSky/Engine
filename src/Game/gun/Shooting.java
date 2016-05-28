@@ -1,7 +1,9 @@
 package Game.gun;
 
 import Engine.audio.Sound;
+import Engine.audio.Source;
 import Engine.core.Time;
+import Engine.rendering.animation.Animation;
 import Engine.util.Quaternion;
 import Engine.util.Vector3f;
 import Game.player.*;
@@ -18,29 +20,31 @@ public class Shooting implements GunState {
     private static final float RECOIL_OFFSET = -0.01f;
     private static final float SHOT_TIME = 0.1f;
 
+    //todo: prizelivanie
+
     // todo: init sounds from loader
     private static Sound shooting = new Sound("res/sound/fire.wav");
     private static Sound shootingEnded = new Sound("res/sound/fired.wav");
     private static Sound dryFire = new Sound("res/sound/dryfire.wav");
 
-    private Audible audible;
-    private Animable animable;
+    private Source source;
+    private Animation animation;
     private Controllable controllable;
     private Equipment equipment;
 
     private float increment;
     private float time;
 
-    public Shooting(Audible audible, Animable animable, Controllable controllable, Equipment equipment) {
-        this.audible = audible;
-        this.animable = animable;
+    public Shooting(Source source, Animation animation, Controllable controllable, Equipment equipment) {
+        this.source = source;
+        this.animation = animation;
         this.controllable = controllable;
         this.equipment = equipment;
     }
 
     @Override
     public void enter() {
-        audible.getSource().stop();
+        source.stop();
         increment = 0;
         time = 0;
     }
@@ -54,19 +58,20 @@ public class Shooting implements GunState {
 
     @Override
     public void exit() {
-        animable.getAnimation().setOffset(new Vector3f(0,0,0));
-        animable.getAnimation().setRotationOffset(new Quaternion(0, 0, 0, 1));
+        animation.setOffset(new Vector3f(0,0,0));
+        animation.setRotationOffset(new Quaternion(0, 0, 0, 1));
 
-        if(equipment.getBulletsInMagazine() + equipment.getBulletsAmount() == 0){
+        if(equipment.getBulletsInMagazine() == 0){
             return;
         }
-        audible.getSource().setLooping(false);
-        audible.getSource().play(shootingEnded.getBufferId());
+
+        source.setLooping(false);
+        source.play(shootingEnded.getBufferId());
 
         if(time != 0){
             equipment.setBulletsInMagazine(equipment.getBulletsInMagazine() - 1);
         }
-        controllable.setShooting(false);
+//        controllable.setShooting(false);
 
     }
 
@@ -77,20 +82,20 @@ public class Shooting implements GunState {
         increment += Time.getDelta();
         // offset
         float kickout = (float) (Math.sin(increment * SHOT_PERIOD));
-        animable.getAnimation().setOffset(controllable.getLookAt().add(kickout).normalized().mul(RECOIL_OFFSET));
+        animation.setOffset(controllable.getLookAt().add(kickout).normalized().mul(RECOIL_OFFSET));
 
         // rot
-        animable.getAnimation().setRotationOffset(new Quaternion(controllable.getLeft(),
+        animation.setRotationOffset(new Quaternion(controllable.getLeft(),
                 (float) Math.toRadians(RECOIL_ANGLE * (Math.abs(Math.sin(increment * SHOT_PERIOD)) - 1) / 2)));
     }
 
     private void sound(){
             if(equipment.getBulletsInMagazine() != 0) {
-                audible.getSource().setLooping(true);
-                audible.getSource().play(shooting.getBufferId(), true);
+                source.setLooping(true);
+                source.play(shooting.getBufferId(), true);
             } else {
-                audible.getSource().setLooping(false);
-                audible.getSource().play(dryFire.getBufferId(), true);
+                source.setLooping(false);
+                source.play(dryFire.getBufferId(), true);
             }
     }
 
@@ -103,9 +108,9 @@ public class Shooting implements GunState {
             }
         } else {
             time = 0;
-            if(equipment.getBulletsAmount() > 0) {
-                controllable.setReloading(true);
-            }
+//            if(equipment.getBulletsAmount() > 0) {
+//                controllable.setReloading(true);
+//            }
         }
         System.out.println(equipment.getBulletsInMagazine());
     }

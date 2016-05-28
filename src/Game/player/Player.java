@@ -1,7 +1,13 @@
 package Game.player;
 
 import Editor.LevelEditor.SyncEditor;
-import Engine.ai.AIMove;
+import Engine.rendering.meshManagment.Texture;
+import Engine.rendering.particles.Particle;
+import Engine.rendering.particles.ParticleMaster;
+import Engine.rendering.particles.ParticleSystem;
+import Engine.rendering.particles.ParticleTexture;
+import Engine.util.Quaternion;
+import Game.enemy.AIMove;
 import Engine.audio.Source;
 import Engine.core.*;
 import Engine.physics.Collider;
@@ -16,7 +22,10 @@ import Game.gun.Gun;
 /**
  * Created by Slon on 21.03.2016.
  */
-public class Player extends GameObject implements Audible, Controllable, Livable{
+public class Player extends GameObject implements Controllable, Livable{
+    public static final float GRAVITY = 10;
+    private static final float FLOOR_LEVEL = 1;
+
 
     private Camera camera;
     private Gun gun;
@@ -35,20 +44,35 @@ public class Player extends GameObject implements Audible, Controllable, Livable
     private int health;
     private int currentHealth;
 
+    private Vector3f velocity;
+
+    ParticleTexture r = new ParticleTexture(new Texture("particleAtlas.png"), 4);
+    ParticleTexture fire = new ParticleTexture(new Texture("fire.png"), 8);
+
+    private ParticleSystem f = new ParticleSystem(fire,10, 0.0001f, -0.001f, 1f);
+    private ParticleSystem particleSystem = new ParticleSystem(r,30, 0.01f,0.001f, 4f);
+
 
     // temp
     private GraphicBound collideBound;
 
 
-    // todo: update objects
+
+    // todo: load from file:
+    // public Player(Cam..){
+    //     Animation hands = Initializer.get("hands");
+    //     ...
+    // todo: Initializer first reads file, then stores it in hashmap : [name][values] - like in file
     public Player(Camera camera, Transform transform, Animation hands, Collider collider) {
         super(transform);
+
+        velocity = new Vector3f(0,0,0);
 
         this.camera = camera;
         this.collider = collider;
 
         // todo: read from settings.ini
-        this.keyBoardControl = new KeyBoardControl(Input.KEY_W, Input.KEY_S, Input.KEY_A, Input.KEY_D, Input.KEY_SPACE, 10);
+        this.keyBoardControl = new KeyBoardControl(Input.KEY_W, Input.KEY_S, Input.KEY_A, Input.KEY_D, Input.KEY_R, Input.KEY_SPACE, 10);
         this.mouseControl = new MouseControl(0, 0.5f);
 
         this.audio = new Source();
@@ -56,15 +80,13 @@ public class Player extends GameObject implements Audible, Controllable, Livable
         addComponent(collider);
         addComponent(keyBoardControl);
         addComponent(mouseControl);
-
-
         health = 100;
         currentHealth = health;
 
         gun = new Gun(getTransform(), hands, this);
 
-        walking = new Walking(this, gun, this);
-        standing = new Standing(this, gun);
+        walking = new Walking(audio, hands, this);
+        standing = new Standing();
         dying = new Dying();
         state = standing;
 
@@ -85,13 +107,25 @@ public class Player extends GameObject implements Audible, Controllable, Livable
     }
 
     public void update(){
+//        System.out.println(collider.checkRayIntersection(new Vector3f(0, 3, 0), new Vector3f(0, 0, 20)));
 
+        f.generateParticles(new Vector3f(0, 0, 5));
+        if(Input.getKey(Input.KEY_Y)){
+
+
+            System.out.println("h");
+                    new Particle(new Transform(getTransform().getPosition().add(getTransform().getRotation().getForward().mul(1)),
+                            new Quaternion(0, 0, 0, 1), new Vector3f(1, 1, 1)), fire, new Vector3f(0, 0, 0.001f), -0.001f, 1f);
+        }
+
+        particleSystem.generateParticles(new Vector3f(0,3,0));
         if(isMoving()){
             changeState(walking);
         } else {
             changeState(standing);
         }
         state.update();
+
         move();
         super.update();
         updateGun();
@@ -103,6 +137,7 @@ public class Player extends GameObject implements Audible, Controllable, Livable
     public void render(Shader shader, RenderingEngine renderingEngine){
 
             gun.render(shader, renderingEngine);
+
             // temp
             collideBound.render(shader, renderingEngine);
     }
@@ -117,19 +152,20 @@ public class Player extends GameObject implements Audible, Controllable, Livable
 
     // todo: movable?
     private void move(){
+        handleGravity();
+        velocity = collider.solveCollision(keyBoardControl.getMovementVector());
+        getTransform().setPosition(getTransform().getPosition().add(velocity));
+        checkFloor();
+    }
 
-        // gravity
-        keyBoardControl.setTranslation(keyBoardControl.getTranslation().sub(new Vector3f(0, (float) Time.getDelta() * 8, 0)));
+    private void handleGravity(){
+        keyBoardControl.setMovementVector(keyBoardControl.getMovementVector().sub(new Vector3f(0, (float) Time.getDelta() * GRAVITY, 0)));
+    }
 
-        // moving
-        keyBoardControl.setTranslation(collider.solveCollision(keyBoardControl.getTranslation()));
-
-        // todo: improve by floor plane collider, then clear
-        // floor check
-        if(getTransform().getPosition().getY() < 1){
-            getTransform().setPosition(new Vector3f(getTransform().getPosition().getX(), 1, getTransform().getPosition().getZ()));
+    private void checkFloor(){
+        if(getTransform().getPosition().getY() < FLOOR_LEVEL){
+            getTransform().setPosition(new Vector3f(getTransform().getPosition().getX(), FLOOR_LEVEL, getTransform().getPosition().getZ()));
         }
-        ////
     }
 
     private void handleCamera(){
@@ -139,11 +175,6 @@ public class Player extends GameObject implements Audible, Controllable, Livable
                 .sub(new Vector3f((float) SyncEditor.a / 100f, (float) SyncEditor.b / 100f, (float) SyncEditor.c / 100f))
         );
         camera.setRot(getTransform().getRotation());
-    }
-
-    @Override
-    public Source getSource() {
-        return audio;
     }
 
     @Override
@@ -159,15 +190,6 @@ public class Player extends GameObject implements Audible, Controllable, Livable
     @Override
     public boolean isReloading() {
         return keyBoardControl.isReloading();
-    }
-
-    @Override
-    public boolean isOnLand() {
-        return false;
-    }
-
-    @Override
-    public void setShooting(boolean shooting) {
     }
 
     @Override
@@ -198,5 +220,10 @@ public class Player extends GameObject implements Audible, Controllable, Livable
     @Override
     public void setCurrentHealth(int currentHealth) {
         this.currentHealth = currentHealth;
+    }
+
+    @Override
+    public void getDamage(int damage) {
+
     }
 }

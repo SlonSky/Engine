@@ -114,6 +114,11 @@ public abstract class Shader {
         glUniform1i(uniforms.get(uniformName), value);
     }
 
+    public void setUniform(String uniformName, Vector2f vector){
+        glUniform2f(uniforms.get(uniformName), vector.getX(), vector.getY());
+    }
+
+
     public void setUniform(String uniformName, Vector3f vector){
         glUniform3f(uniforms.get(uniformName), vector.getX(), vector.getY(), vector.getZ());
     }

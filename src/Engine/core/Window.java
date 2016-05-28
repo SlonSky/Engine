@@ -13,7 +13,7 @@ public class Window {
         try {
             Display.setTitle(title);
             Display.setDisplayMode(new DisplayMode(width, height));
-//            Display.setVSyncEnabled(true);
+            Display.setVSyncEnabled(true);
             Display.create();
         } catch (LWJGLException e) {
             e.printStackTrace();

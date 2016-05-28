@@ -53,6 +53,7 @@ public abstract class UIComponent {
         pos = pos.add(incr);
     }
 
+
     public void setListener(WindowManager listener) {
         this.listener = listener;
     }

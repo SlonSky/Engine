@@ -4,14 +4,12 @@ import Engine.audio.Source;
 import Game.GameObject;
 import Engine.rendering.Transform;
 import Engine.rendering.animation.Animation;
-import Game.player.Animable;
-import Game.player.Audible;
 import Game.player.Controllable;
 
 /**
  * Created by Slon on 19.04.2016.
  */
-public class Gun extends GameObject implements Audible, Animable, Equipment {
+public class Gun extends GameObject implements Equipment {
 
     private Controllable controllable;
 
@@ -40,15 +38,15 @@ public class Gun extends GameObject implements Audible, Animable, Equipment {
         addComponent(audio);
 
         idling = new Idling();
-        shooting = new Shooting(this, this, controllable, this);
-        reloading = new Reloading(this, this, controllable, this);
+        shooting = new Shooting(audio, animation, controllable, this);
+        reloading = new Reloading(audio, animation, controllable, this);
         state = idling;
     }
 
     @Override
     public void update() {
         super.update();
-        if(controllable.isShooting()){
+        if(controllable.isShooting() && !controllable.isReloading()){
             changeState(shooting);
         } else if(controllable.isReloading()){
             changeState(reloading);
@@ -65,16 +63,6 @@ public class Gun extends GameObject implements Audible, Animable, Equipment {
         state.exit();
         state = newState;
         state.enter();
-    }
-
-    @Override
-    public Source getSource() {
-        return audio;
-    }
-
-    @Override
-    public Animation getAnimation() {
-        return hands;
     }
 
     @Override

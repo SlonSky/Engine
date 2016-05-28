@@ -1,7 +1,9 @@
 package Game.player;
 
 import Engine.audio.Sound;
+import Engine.audio.Source;
 import Engine.core.Time;
+import Engine.rendering.animation.Animation;
 import Engine.util.Vector3f;
 
 import java.util.Random;
@@ -18,22 +20,24 @@ public class Walking implements PlayerState {
     private static Sound step1 = new Sound("res/sound/steps1.wav");
     private static Sound step2 = new Sound("res/sound/steps.wav");
 
-    private Audible audible;
-    private Animable animable;
+//    private Audible audible;
+//    private Animable animable;
+    private Source source;
+    private Animation animation;
     private Controllable controllable;
 
     private float increment;
 
-    public Walking(Audible audible, Animable animable, Controllable controllable) {
-        this.audible = audible;
-        this.animable = animable;
+    public Walking(Source source, Animation animation, Controllable controllable) {
+        this.source = source;
+        this.animation = animation;
         this.controllable = controllable;
     }
 
     @Override
     public void enter() {
         increment = 0;
-        audible.getSource().setLooping(true);
+        source.setLooping(true);
     }
 
 
@@ -45,7 +49,7 @@ public class Walking implements PlayerState {
 
     private void walk(){
         increment += Time.getDelta();
-        animable.getAnimation().setOffset(controllable.getLookAt().normalized()
+        animation.setOffset(controllable.getLookAt().normalized()
                 .mul(WALKING_AMPLITUDE * (float) Math.sin(increment * WALKING_PERIOD)));
     }
 
@@ -53,15 +57,15 @@ public class Walking implements PlayerState {
     private Random r = new Random();
     private void sound(){
         if(r.nextInt(2) == 0) {
-            audible.getSource().play(step1.getBufferId(), true);
+            source.play(step1.getBufferId(), true);
         } else {
-            audible.getSource().play(step2.getBufferId(), true);
+            source.play(step2.getBufferId(), true);
         }
     }
 
     @Override
     public void exit() {
-        animable.getAnimation().setOffset(new Vector3f(0,0,0));
-        audible.getSource().setLooping(false);
+        animation.setOffset(new Vector3f(0,0,0));
+        source.setLooping(false);
     }
 }

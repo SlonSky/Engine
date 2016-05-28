@@ -2,7 +2,6 @@ package Engine.rendering.guis;
 
 import Engine.rendering.RenderingEngine;
 import Engine.rendering.meshManagment.Mesh;
-import Engine.rendering.particles.BillBoard;
 import Engine.util.*;
 
 import java.util.ArrayList;

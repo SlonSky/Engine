@@ -8,6 +8,9 @@ import Engine.core.CoreEngine;
 import Engine.rendering.guis.GUIRenderer;
 import Engine.rendering.guis.GUITexture;
 import Engine.rendering.light.Light;
+import Engine.rendering.particles.Particle;
+import Engine.rendering.particles.ParticleMaster;
+import Engine.rendering.particles.ParticleRenderer;
 import Engine.rendering.skybox.SkyBoxRenderer;
 import Engine.rendering.text.Text;
 import Engine.rendering.text.TextRenderer;
@@ -42,6 +45,7 @@ public class RenderingEngine {
         textRenderer = new TextRenderer();
         guiRenderer = new GUIRenderer();
 
+        ParticleMaster.init();
 
         glClearColor(1.5f, 1, 1.5f, 1);
         glFrontFace(GL_CW);
@@ -62,9 +66,10 @@ public class RenderingEngine {
 
         skyBoxRenderer.render(level.getSkyBox(), this);
         levelRenderer.render(level, this);
-//      particlesRenderer.render(level.getParticles(), this);
+        ParticleMaster.render(this);
         guiRenderer.render(level.getGuis(), this);
         textRenderer.render(level.getText(), this);
+
     }
 
     public void render(UIFrame frame){

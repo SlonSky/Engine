@@ -15,7 +15,6 @@ public class MouseControl extends GameComponent {
     private static final Vector2f CENTER_POS = new Vector2f(Window.getWidth()/2, Window.getHeight()/2);
 
     private int shootKey;
-
     private boolean shooting;
 
     private float sensitivity;
@@ -23,17 +22,13 @@ public class MouseControl extends GameComponent {
     public MouseControl(int lockKey, float sensitivity) {
         this.shootKey = lockKey;
         this.sensitivity = sensitivity;
-
         shooting = false;
         Input.setCursor(false);
+        Input.setMousePosition(CENTER_POS);
     }
 
     public boolean isShooting() {
         return shooting;
-    }
-
-    public void setShooting(boolean shooting) {
-        this.shooting = shooting;
     }
 
     public void input(){
@@ -62,15 +57,19 @@ public class MouseControl extends GameComponent {
     }
 
     private void rotateY(float angle){
-        getTransform().setRotation(
-                    (new Quaternion(Y_AXIS, (float) Math.toRadians(angle))).mul(getTransform().getRotation()).normalized());
+        getTransform().setRotation((new Quaternion(
+                Y_AXIS, (float) Math.toRadians(angle))).mul(getTransform().getRotation()).normalized());
     }
 
     private void rotateX(float angle){
         Quaternion rot = new Quaternion(getTransform().getRotation().getRight(),
-                (float) Math.toRadians(angle)).mul(getTransform().getRotation()).normalized();
-        float yNew = rot.getForward().normalized().getY();
-        if(yNew > -0.8 && yNew < 0.8) {
+                    (float) Math.toRadians(angle)).mul(getTransform().getRotation()).normalized();
+
+        Vector3f forwardOld = getTransform().getRotation().getForward().normalized();
+        Vector3f forwardNew = rot.getForward().normalized();
+
+        if(angle > 0 && forwardNew.getY() < forwardOld.getY()
+           || angle < 0 && forwardNew.getY() > forwardOld.getY()) {
             getTransform().setRotation(rot);
         }
     }

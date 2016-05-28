@@ -9,9 +9,9 @@ public interface Controllable {
     boolean isMoving();
     boolean isShooting();
     boolean isReloading();
-    boolean isOnLand();
-    void setShooting(boolean shooting);
+
     void setReloading(boolean reloading);
+
     Vector3f getLookAt();
     Vector3f getLeft();
 }

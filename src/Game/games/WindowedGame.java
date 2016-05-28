@@ -214,6 +214,8 @@ public class WindowedGame extends Game{
         Label ambient = new Label(new Vector2f(-0.76f, 0f), 0.1f, "Ambient", new Vector3f(0.7f,0,0));
         Label effects = new Label(new Vector2f(-0.76f, -0.2f), 0.1f, "Effects", new Vector3f(0.7f,0,0));
 
+
+        //todo: remove it
         Label graphicsTitle = new Label(new Vector2f(-0.85f, -0.5f), 0.2f, "Graphics", new Vector3f(0.6f, 0.2f, 0.3f));
         Label vSync = new Label(new Vector2f(-0.76f, -0.7f), 0.1f, "Vertical sync.", new Vector3f(0.7f,0,0));
 

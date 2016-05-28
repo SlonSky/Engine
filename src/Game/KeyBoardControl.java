@@ -3,15 +3,13 @@ package Game;
 import Engine.core.Input;
 import Engine.core.Time;
 import Engine.util.Vector3f;
-import Game.GameComponent;
-import Game.GameObject;
 
 /**
  * Created by Slon on 21.03.2016.
  */
 public class KeyBoardControl extends GameComponent {
     private static final Vector3f Y_AXIS = new Vector3f(0,1,0);
-
+    private static final float JUMP_HEIGHT = 14;
 
     private int forward;
     private int backward;
@@ -19,16 +17,17 @@ public class KeyBoardControl extends GameComponent {
     private int right;
     private int reloadButton;
     private int jumpButton;
+
     private float speed;
 
-    private Vector3f translation;
+    private Vector3f movementVector;
 
     private boolean reloading;
     private boolean moving;
 
 //    private boolean shoot;
 
-    public KeyBoardControl(int forward, int backward, int left, int right, int jump, float speed) {
+    public KeyBoardControl(int forward, int backward, int left, int right, int reload, int jump, float speed) {
         this.forward = forward;
         this.backward = backward;
         this.left = left;
@@ -37,7 +36,7 @@ public class KeyBoardControl extends GameComponent {
         this.jumpButton = jump;
 
         //todo: WARNING!
-        this.reloadButton = Input.KEY_R;
+        this.reloadButton = reload;
 
         reloading = false;
         moving = false;
@@ -48,36 +47,45 @@ public class KeyBoardControl extends GameComponent {
         Vector3f rightVec =  getTransform().getRotation().getRight().normalized();
         moving = false;
         if(Input.getKey(forward)){
-            translation.set(translation.add(getTranslation(rightVec.cross(Y_AXIS), movAmt)));
+            movementVector.set(movementVector.add(getTranslation(rightVec.cross(Y_AXIS), movAmt)));
             moving = true;
         }
         if(Input.getKey(backward)){
-            translation.set(translation.add(getTranslation(rightVec.cross(Y_AXIS), -movAmt)));
+            movementVector.set(movementVector.add(getTranslation(rightVec.cross(Y_AXIS), -movAmt)));
             moving = true;
         }
         if(Input.getKey(right)){
-            translation.set(translation.add(getTranslation(rightVec, movAmt)));
+            movementVector.set(movementVector.add(getTranslation(rightVec, movAmt)));
             moving = true;
         }
         if(Input.getKey(left)){
-            translation.set(translation.add(getTranslation(rightVec, -movAmt)));
+            movementVector.set(movementVector.add(getTranslation(rightVec, -movAmt)));
             moving = true;
         }
         if(Input.getKeyDown(reloadButton)){
             reloading = true;
         }
-//        if(Input.getKeyDown(jump)){
-//            translation.set(translation.add(getTranslation(Y_AXIS, 9*movAmt)));
-//        }
 
-
-        // template!
-        if(Input.getKey(Input.KEY_U)){
-            translation.set(translation.add(getTranslation(Y_AXIS, 9*movAmt)));
+        // todo: move to Jumping with onGround checks
+        if(Input.getKeyDown(jumpButton)){
+            movementVector.set(movementVector.add(getTranslation(Y_AXIS, JUMP_HEIGHT * movAmt)));
+            moving = true;
+//            jumping = true;
         }
 
-        if(Input.getKey(Input.KEY_J)){
-            translation.set(translation.add(getTranslation(Y_AXIS, -movAmt)));
+        // template!
+//        if(Input.getKeyDown(Input.KEY_U)){
+//            movementVector.set(movementVector.add(getTranslation(Y_AXIS, 9 * movAmt)));
+//            moving = true;
+//        }
+//
+//        if(Input.getKey(Input.KEY_J)){
+//            movementVector.set(movementVector.add(getTranslation(Y_AXIS, -movAmt)));
+//            moving = true;
+//        }
+
+        if(!moving){
+            movementVector = new Vector3f(0,0,0);
         }
 
     }
@@ -86,14 +94,14 @@ public class KeyBoardControl extends GameComponent {
     public void update() {
         super.update();
 
-        move(translation);
+//        move(movementVector);
 //        updateState();
-        translation = new Vector3f(0,0,0);
+        movementVector = new Vector3f(0,0,0);
     }
 
 //    private void updateState(){
-//        jump = (onGround && !jump && translation.getY() > 0);
-//        onGround = translation.getY() == 0;
+//        jump = (onGround && !jump && movementVector.getY() > 0);
+//        onGround = movementVector.getY() == 0;
 //    }
 
     private void move(Vector3f dir, float amt){
@@ -108,18 +116,18 @@ public class KeyBoardControl extends GameComponent {
         return (dir.mul(amt));
     }
 
-    public Vector3f getTranslation() {
-        return translation;
+    public Vector3f getMovementVector() {
+        return movementVector;
     }
 
-    public void setTranslation(Vector3f translation) {
-        this.translation = translation;
+    public void setMovementVector(Vector3f movementVector) {
+        this.movementVector = movementVector;
     }
 
     @Override
     public void setParent(GameObject parent) {
         super.setParent(parent);
-        translation = getTransform().getPosition();
+        movementVector = getTransform().getPosition();
 
     }
 
@@ -134,4 +142,5 @@ public class KeyBoardControl extends GameComponent {
     public boolean isMoving() {
         return moving;
     }
+
 }

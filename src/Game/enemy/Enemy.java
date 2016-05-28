@@ -1,8 +1,7 @@
 package Game.enemy;
 
-import Engine.ai.AIMove;
 import Engine.audio.Sound;
-import Engine.core.Time;
+import Engine.audio.Source;
 import Engine.physics.Collider;
 import Engine.rendering.*;
 import Engine.rendering.animation.Animation;
@@ -23,7 +22,7 @@ public class Enemy extends GameObject {
     private GraphicBound graphicBound;
     private GraphicBound colliderBound;
 
-    private Animation animation;
+    private Source audio;
 
     private Animation walk;
     private Animation hit;
@@ -37,42 +36,62 @@ public class Enemy extends GameObject {
     private Sound hitScream;
     private Sound steps;
 
-    public Enemy(Transform transform, Animation animation, Vector3f cullingSize) {
+    private EnemyState state;
+    private EnemyState idle;
+    private EnemyState chase;
+
+    public Enemy(Transform transform, Collider collider, Vector3f cullingSize, Vector3f cullingOffset,
+                 Animation idleAnim, Animation chaseAnim, Animation attackAnim, Animation hitAnim, Animation deathAnim) {
         super(transform);
 
-        this.animation = animation;
-        this.culling = new FrustumCulling(new Box(cullingSize, transform));
+        this.culling = new FrustumCulling(new Box(cullingSize, getTransform()), cullingOffset);
         this.ai = new AIMove();
-        this.collider = new Collider(new Vector3f(2,2,2));
+        this.collider = collider;
 
         addComponent(ai);
         addComponent(culling);
         addComponent(collider);
-        addComponent(this.animation);
 
+        addComponent(idleAnim);
+        addComponent(chaseAnim);
+
+        idle = new Idle(audio, idleAnim);
+        chase = new Chase(audio, chaseAnim);
+        state = chase;
 
         // temp
-        graphicBound = new GraphicBound(cullingSize, new Vector3f(0, 1, 0));
-        colliderBound = new GraphicBound(new Vector3f(2,2,2), new Vector3f(1,0,0), true);
+        graphicBound = new GraphicBound(cullingSize, cullingOffset, new Vector3f(0, 1, 0), false);
+        colliderBound = new GraphicBound(collider.getSize(), collider.getOffset(), new Vector3f(1,0,0), true);
         addComponent(graphicBound);
         addComponent(colliderBound);
     }
     @Override
     public void update() {
         super.update();
-        move();
+
+
+        state.update();
 
     }
 
+    private void changeState(EnemyState newState){
+        if(state != newState) {
+            state.exit();
+            state = newState;
+            state.enter();
+        }
+    }
+
     private void move(){
-        ai.setTranslation(collider.solveCollision(ai.getTranslation()));
-        ai.move();
+//        ai.setTranslation(collider.solveCollision(ai.getTranslation()));
+//        ai.move();
+        getTransform().setPosition(getTransform().getPosition().add(collider.solveCollision(ai.getMovementVector())));
     }
 
     public void render(Shader shader, RenderingEngine renderingEngine){
         if(culling.inFrustum(renderingEngine.getFrustum())){
-            animation.render(shader, renderingEngine);
-
+//            animation.render(shader, renderingEngine);
+            state.getAnimation().render(shader, renderingEngine);
             // temp
             graphicBound.render(shader, renderingEngine);
             colliderBound.render(shader, renderingEngine);

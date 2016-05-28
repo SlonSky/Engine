@@ -10,6 +10,7 @@ import Engine.rendering.light.*;
 import Engine.rendering.meshManagment.Material;
 import Engine.rendering.meshManagment.Mesh;
 import Engine.rendering.meshManagment.Texture;
+import Engine.rendering.particles.ParticleMaster;
 import Engine.rendering.skybox.SkyBox;
 import Engine.rendering.text.Font;
 import Engine.rendering.text.Text;
@@ -21,7 +22,9 @@ import Game.Level;
 import Game.enemy.Enemy;
 import Game.entities.Decoration;
 import Game.player.Player;
+import org.newdawn.slick.particles.Particle;
 
+import javax.xml.stream.XMLEventReader;
 import java.util.*;
 
 /**
@@ -147,23 +150,31 @@ public class TestGame extends Game {
 //        lights.add(new PointLight(new Vector3f(55.5f, 3, -2f), new Vector3f(1, 1,1), 0.2f, new Attenuation(1,0,0)));
 
 
-        Animation hands = new Animation(0, 100, new AnimMesh("ak2", "untitled", new Material(new Texture("ak.png"), 2, 8), 100, 30));
-        player = new Player(camera, new Transform(new Vector3f(0f, 10, 0f), camera.getRot(), new Vector3f(1,1,1)),
+        Animation hands = new Animation(0, 1, new AnimMesh("ak2", "untitled", new Material(new Texture("ak.png"), 2, 8), 1, 30));
+        player = new Player(camera, new Transform(new Vector3f(0f, 5, 0), camera.getRot(), new Vector3f(1,1,1)),
                 hands,
-                new Collider(new Vector3f(1,1f,1f), new Vector3f(0,0,0)));
+                new Collider(new Vector3f(5,5f,5f), new Vector3f(0,0,0)));
         objects.add(player);
 
+// todo: singleton for config initialization
 
+//
+//        Collider enC = new Collider(new Vector3f(2,2,2));
+//        AnimMesh animMesh = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
+//        Animation chase = new Animation(0, 31, new AnimMesh("zm_fast", "chase", new Material(new Texture("zomby_light.png"), 1, 4),
+//                31, 30));
+//        objects.add(new Enemy(new Transform(new Vector3f(0,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
+//                new Collider(new Vector3f(3,4,3)),
+//                new Vector3f(1,2        ,1), new Vector3f(0, 1, 0), new Animation(0, 106, animMesh),
+//                chase, null, null, null));
 
-        AnimMesh animMesh = new AnimMesh("anim", "untitled", new Material(new Texture("zomby_light.png"), 1, 4), 1, 30);
-        objects.add(new Enemy(new Transform(new Vector3f(100,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)), new Animation(0, 1, animMesh)
-                , new Vector3f(1,1,1)));
-
-        objects.add(new Enemy(new Transform(new Vector3f(40,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),  new Animation(0, 1, animMesh)
-                , new Vector3f(1,1,1)));
-
-        objects.add(new Enemy(new Transform(new Vector3f(0,0,50), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),  new Animation(0, 1, animMesh)
-                , new Vector3f(1,1,1)));
+//        objects.add(new Enemy(new Transform(new Vector3f(40,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
+//                new Animation(0, 1, animMesh), new Collider(new Vector3f(2,2,2)),
+//                new Vector3f(1,2,1), new Vector3f(0, 1, 0)));
+//
+//        objects.add(new Enemy(new Transform(new Vector3f(0,0,50), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
+//                new Animation(0, 1, animMesh), new Collider(new Vector3f(2,2,2)),
+//                new Vector3f(1,2,1), new Vector3f(0, 1, 0)));
 
 
 //
@@ -173,13 +184,26 @@ public class TestGame extends Game {
 
 
 
-        d = new Decoration(
-                new Transform(new Vector3f(20, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
+//        d = new Decoration(
+//                new Transform(new Vector3f(20, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
+//                new Graphic(building, buildingMaterial),
+//                new Vector3f(11, 11, 11),
+//                new Vector3f(30, 11, 11));
+//
+//        objects.add(d);
+        objects.add(new Decoration(
+                new Transform(new Vector3f(30, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
                 new Graphic(building, buildingMaterial),
                 new Vector3f(11, 11, 11),
-                new Vector3f(11, 11, 11));
+                new Vector3f(11, 11, 11)));
 
-        objects.add(d);
+//        objects.add(new Decoration(
+//                new Transform(new Vector3f(40, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
+//                new Graphic(building, buildingMaterial),
+//                new Vector3f(11, 11, 11),
+//                new Vector3f(11, 11, 11)));
+
+
         lights.add(new DirectionalLight(new Vector3f(0.6f, 0.4f, 0.3f), 0.5f, new Vector3f(-0.8f, -0.15f, -0.57f)));
         level = new Level(new SkyBox("1"), objects, lights);
 
@@ -215,6 +239,8 @@ public class TestGame extends Game {
 float k =0;
     public void update(){
         level.update();
+
+        ParticleMaster.update(engine.getRenderingEngine().getMainCamera());
 //        k+= (float)Time.getDelta();
 //        level.getText().get(0).setPos(new Vector2f((float)SyncEditor.y/100f,(float)SyncEditor.z/100f));
 //        level.getText().get(0).setSize((float)SyncEditor.x/100f);

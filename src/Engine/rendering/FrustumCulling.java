@@ -8,22 +8,22 @@ import Game.GameComponent;
  * Created by Slon on 21.03.2016.
  */
 public class FrustumCulling extends GameComponent {
-//    private Graphic bound = new Graphic(new Mesh("bound.obj"), new Material(new Texture("bound.png"), 0,0));
 
     private Box cullingBox;
+    private Vector3f offset = new Vector3f(0,0,0);
 
     public FrustumCulling(Box cullingBox) {
         this.cullingBox = cullingBox;
-//        bound.setParent(getParent());
+
+    }
+
+    public FrustumCulling(Box cullingBox, Vector3f offset) {
+        this.cullingBox = cullingBox;
+        this.offset = offset;
     }
 
     public void update(){
         cullingBox.setPosition(getTransform().getPosition());
-    }
-
-    public void render(Shader shader, RenderingEngine renderingEngine){
-
-//        bound.render(shader, renderingEngine);
     }
 
     private boolean pointInFrustum(Plane[] frustum, Vector3f point){
@@ -42,6 +42,18 @@ public class FrustumCulling extends GameComponent {
             }
         }
         return false;
+    }
+
+    public Vector3f getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Vector3f offset) {
+        this.offset = offset;
+    }
+
+    public Vector3f getSize(){
+        return cullingBox.getSize();
     }
 
 }

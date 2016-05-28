@@ -10,6 +10,8 @@ public class Box {
     private Vector3f dimensions;
     private Vector3f[] points;
 
+    private Vector3f offset = new Vector3f(0,0,0);
+
     public Box(Vector3f dimensions, Transform transform){
         points = new Vector3f[8];
         this.dimensions = dimensions.div(2);
@@ -22,7 +24,7 @@ public class Box {
         float y = dimensions.getY();
         float z = dimensions.getZ();
 
-        Vector3f center = transform.getPosition();
+        Vector3f center = transform.getPosition().add(offset);
 
         // bottom face
         points[0] = center.add(new Vector3f(-x, -y, z));
@@ -46,6 +48,14 @@ public class Box {
     public void setPosition(Vector3f position){
         transform.setPosition(position);
         initBounds();
+    }
+
+    public Vector3f getMin(){
+        return points[3];
+    }
+
+    public Vector3f getMax(){
+        return points[5];
     }
 
     public void setTransform(Transform transform) {
@@ -73,5 +83,13 @@ public class Box {
 
     public boolean isCulling(){
         return false;
+    }
+
+    public Vector3f getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Vector3f offset) {
+        this.offset = offset;
     }
 }
