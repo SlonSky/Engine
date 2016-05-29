@@ -9,13 +9,8 @@ import java.util.ArrayList;
  * Created by Slon on 16.03.2016.
  */
 
-// todo: plane-box ontersection
-    // todo: collision plane map (plane for static objects, aabb for dynamic)
 public class PhysicsEngine {
     public static final PhysicsEngine instance = new PhysicsEngine();
-
-    // todo: update in core
-    // / todo: handle moving and colliding objects
 
     private ArrayList<Collider> colliders;
 
@@ -97,6 +92,9 @@ public class PhysicsEngine {
     }
 
 
+    public void removeCollider(Collider collider){
+        colliders.remove(collider);
+    }
 
     private Vector3f calcNormal(Vector3f colVec, Vector3f size){
 
@@ -107,11 +105,11 @@ public class PhysicsEngine {
 
 
 
-        System.out.println(
-                        colVec.normalized().dot(new Vector3f(1, 0, 1).normalized())
+//        System.out.println(
+//                        colVec.normalized().dot(new Vector3f(1, 0, 1).normalized())
 //                + " " + colVec.normalized().dot(new Vector3f(0, 1, 0).normalized())
 //                + " " + colVec.normalized().dot(new Vector3f(0, 0, 1).normalized())
-        );
+//        );
 
 //        if(colVec.mul(new Vector3f(1,0,1)).normalized().dot(new Vector3f(1, 0, 1).normalized()) > 0.9){
 //            return new Vector3f(1, 0, 1).normalized();

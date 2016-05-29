@@ -2,9 +2,7 @@ package Game.player;
 
 import Editor.LevelEditor.SyncEditor;
 import Engine.rendering.meshManagment.Texture;
-import Engine.rendering.particles.Particle;
-import Engine.rendering.particles.ParticleMaster;
-import Engine.rendering.particles.ParticleSystem;
+import Engine.rendering.particles.ParticleSystemSample;
 import Engine.rendering.particles.ParticleTexture;
 import Engine.util.Quaternion;
 import Game.enemy.AIMove;
@@ -17,15 +15,18 @@ import Engine.util.Vector3f;
 import Game.GameObject;
 import Game.KeyBoardControl;
 import Game.MouseControl;
+import Game.entities.CombatManager;
+import Game.entities.Combating;
 import Game.gun.Gun;
 
 /**
  * Created by Slon on 21.03.2016.
  */
-public class Player extends GameObject implements Controllable, Livable{
+public class Player extends GameObject implements Controllable, Combating{
     public static final float GRAVITY = 10;
     private static final float FLOOR_LEVEL = 1;
 
+    public static final Quaternion LYING_ROT = new Quaternion(new Vector3f(0, 0, 1), (float)Math.toRadians(-90));
 
     private Camera camera;
     private Gun gun;
@@ -49,8 +50,8 @@ public class Player extends GameObject implements Controllable, Livable{
     ParticleTexture r = new ParticleTexture(new Texture("particleAtlas.png"), 4);
     ParticleTexture fire = new ParticleTexture(new Texture("fire.png"), 8);
 
-    private ParticleSystem f = new ParticleSystem(fire,10, 0.0001f, -0.001f, 1f);
-    private ParticleSystem particleSystem = new ParticleSystem(r,30, 0.01f,0.001f, 4f);
+    private ParticleSystemSample f = new ParticleSystemSample(fire,2, 0.0001f, -0.001f, 1f, true);
+    private ParticleSystemSample particleSystem = new ParticleSystemSample(r,30, 0.01f,0.001f, 4f, false);
 
 
     // temp
@@ -87,12 +88,14 @@ public class Player extends GameObject implements Controllable, Livable{
 
         walking = new Walking(audio, hands, this);
         standing = new Standing();
-        dying = new Dying();
+        dying = new Dying(audio, this);
         state = standing;
 
         // temp
         collideBound = new GraphicBound(collider.getSize(), collider.getOffset(), new Vector3f(1, 0, 0), true);
         addComponent(collideBound);
+
+        CombatManager.getInstance().setCombating(this);
     }
 
     @Override
@@ -107,22 +110,18 @@ public class Player extends GameObject implements Controllable, Livable{
     }
 
     public void update(){
-//        System.out.println(collider.checkRayIntersection(new Vector3f(0, 3, 0), new Vector3f(0, 0, 20)));
 
-        f.generateParticles(new Vector3f(0, 0, 5));
-        if(Input.getKey(Input.KEY_Y)){
-
-
-            System.out.println("h");
-                    new Particle(new Transform(getTransform().getPosition().add(getTransform().getRotation().getForward().mul(1)),
-                            new Quaternion(0, 0, 0, 1), new Vector3f(1, 1, 1)), fire, new Vector3f(0, 0, 0.001f), -0.001f, 1f);
-        }
-
-        particleSystem.generateParticles(new Vector3f(0,3,0));
-        if(isMoving()){
-            changeState(walking);
+        if(currentHealth <= 0){
+            changeState(dying);
+            if(getTransform().getRotation().dot(LYING_ROT) < 0.99f) {
+                // notify
+            }
         } else {
-            changeState(standing);
+            if (isMoving()) {
+                changeState(walking);
+            } else {
+                changeState(standing);
+            }
         }
         state.update();
 
@@ -131,7 +130,8 @@ public class Player extends GameObject implements Controllable, Livable{
         updateGun();
         handleCamera();
 
-        AIMove.moveTo = getTransform().getPosition();
+        AIMove.playerPos = getTransform().getPosition();
+        AIMove.lookAt = camera.getForward().normalized();
 
     }
     public void render(Shader shader, RenderingEngine renderingEngine){
@@ -150,7 +150,6 @@ public class Player extends GameObject implements Controllable, Livable{
         }
     }
 
-    // todo: movable?
     private void move(){
         handleGravity();
         velocity = collider.solveCollision(keyBoardControl.getMovementVector());
@@ -208,22 +207,9 @@ public class Player extends GameObject implements Controllable, Livable{
     }
 
     @Override
-    public int getHealth() {
-        return health;
+    public void getDamage(float damage) {
+        currentHealth -= damage;
+        System.out.println("Pl " + currentHealth);
     }
 
-    @Override
-    public int getCurrentHealth() {
-        return currentHealth;
-    }
-
-    @Override
-    public void setCurrentHealth(int currentHealth) {
-        this.currentHealth = currentHealth;
-    }
-
-    @Override
-    public void getDamage(int damage) {
-
-    }
 }

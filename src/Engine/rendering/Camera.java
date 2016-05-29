@@ -5,7 +5,6 @@ import Engine.util.Vector3f;
 
 /**
  * Created by Slon on 11.02.2016.
- * TODO: make it component
  */
 public class Camera {
 

@@ -13,6 +13,8 @@ public abstract class GameObject {
     private Transform transform;
     private ArrayList<GameComponent> components;
 
+    protected boolean remove = false;
+
     public GameObject(Transform transform){
         this.transform = transform;
         components = new ArrayList<>();
@@ -44,4 +46,10 @@ public abstract class GameObject {
     public Transform getTransform() {
         return transform;
     }
+
+    public boolean isToRemove() {
+        return remove;
+    }
+
+    public void remove(){};
 }

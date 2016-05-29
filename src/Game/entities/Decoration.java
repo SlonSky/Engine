@@ -8,7 +8,6 @@ import Game.GameObject;
 /**
  * Created by Slon on 21.03.2016.
  * TODO: renderable interface
- * todo: remove collider from here
  */
 public class Decoration extends GameObject {
     private Graphic graphic;
@@ -20,7 +19,6 @@ public class Decoration extends GameObject {
     private GraphicBound cullingBound;
     private GraphicBound collideBound;
 
-    // todo: remove components from update!
     public Decoration(Transform transform, Graphic graphic, Vector3f cullingSize, Vector3f collideSize, Vector3f colliderOffset) {
         super(transform);
         this.graphic = graphic;

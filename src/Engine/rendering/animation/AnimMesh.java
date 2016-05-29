@@ -32,8 +32,8 @@ public class AnimMesh {
                         ((i < 10) ? "0" : "") +
                         ((i < 100) ? "0" : "") + i + ".obj"
                 ));
-            // [todo] temp!
-            System.out.print(i + " ");
+//            // [todo] temp!
+//            System.out.print(i + " ");
         }System.out.println();
     }
 

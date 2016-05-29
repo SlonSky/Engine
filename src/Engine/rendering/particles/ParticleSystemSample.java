@@ -8,7 +8,7 @@ import Engine.util.Vector3f;
 /**
  * Created by Slon on 27.05.2016.
  */
-public class ParticleSystem {
+public class ParticleSystemSample {
 
     private float pps;
     private float speed;
@@ -16,13 +16,15 @@ public class ParticleSystem {
     private float liveLength;
 
     private ParticleTexture texture;
+    private boolean addLighting;
 
-    public ParticleSystem(ParticleTexture texture, float pps, float speed, float gravity, float liveLength) {
+    public ParticleSystemSample(ParticleTexture texture, float pps, float speed, float gravity, float liveLength, boolean addLIghing) {
         this.pps = pps;
         this.speed = speed;
         this.gravity = gravity;
         this.liveLength = liveLength;
         this.texture = texture;
+        this.addLighting = addLIghing;
     }
 
     public void generateParticles(Vector3f position){
@@ -44,7 +46,7 @@ public class ParticleSystem {
         velocity = velocity.normalized();
         velocity = velocity.mul(speed);
         new Particle(new Transform(position, new Quaternion(0,0,0,1), new Vector3f(1,1,1)), texture,
-                velocity, gravity, liveLength);
+                velocity, gravity, liveLength, addLighting);
     }
 
 

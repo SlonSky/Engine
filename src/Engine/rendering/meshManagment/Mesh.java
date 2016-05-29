@@ -24,7 +24,6 @@ public class Mesh {
 
     public Mesh(Vertex[] vertices, int[] indices){
         addVertices(vertices, indices);
-//        size = 0;
     }
 
     public Mesh(String filename){

@@ -34,8 +34,6 @@ public class KeyBoardControl extends GameComponent {
         this.right = right;
         this.speed = speed;
         this.jumpButton = jump;
-
-        //todo: WARNING!
         this.reloadButton = reload;
 
         reloading = false;
@@ -66,7 +64,6 @@ public class KeyBoardControl extends GameComponent {
             reloading = true;
         }
 
-        // todo: move to Jumping with onGround checks
         if(Input.getKeyDown(jumpButton)){
             movementVector.set(movementVector.add(getTranslation(Y_AXIS, JUMP_HEIGHT * movAmt)));
             moving = true;

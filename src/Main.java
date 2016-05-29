@@ -6,9 +6,6 @@ import Game.games.WindowedGame;
 
 import javax.swing.*;
 
-// todo: movement - jumping
-// todo: enemy movement
-
 public class Main {
 
     public static void main(String[] args) {

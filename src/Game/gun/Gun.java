@@ -1,6 +1,8 @@
 package Game.gun;
 
 import Engine.audio.Source;
+import Engine.util.Quaternion;
+import Engine.util.Vector3f;
 import Game.GameObject;
 import Engine.rendering.Transform;
 import Engine.rendering.animation.Animation;
@@ -11,7 +13,12 @@ import Game.player.Controllable;
  */
 public class Gun extends GameObject implements Equipment {
 
+    private static final float SCATTER = 0.1f;
+    private static final float SHOT_DISTANCE = 20;
+
     private Controllable controllable;
+
+    private Ray shotRay;
 
     private Animation hands;
     private Source audio;
@@ -22,9 +29,9 @@ public class Gun extends GameObject implements Equipment {
     private GunState reloading;
 
     // todo: init from loader
-    private int capacity = 30;
-    private int bulletsInMagazine = 30;
-    private int bulletsAmount = 90;
+    private int capacity = 300;
+    private int bulletsInMagazine = 300;
+    private int bulletsAmount = 900;
 
     public Gun(Transform transform, Animation animation, Controllable control) {
         super(transform);
@@ -41,6 +48,8 @@ public class Gun extends GameObject implements Equipment {
         shooting = new Shooting(audio, animation, controllable, this);
         reloading = new Reloading(audio, animation, controllable, this);
         state = idling;
+
+        shotRay = new Ray(new Vector3f(0,0,0), new Vector3f(0,0,0));
     }
 
     @Override
@@ -48,6 +57,7 @@ public class Gun extends GameObject implements Equipment {
         super.update();
         if(controllable.isShooting() && !controllable.isReloading()){
             changeState(shooting);
+            makeShotRay();
         } else if(controllable.isReloading()){
             changeState(reloading);
         } else {
@@ -63,6 +73,15 @@ public class Gun extends GameObject implements Equipment {
         state.exit();
         state = newState;
         state.enter();
+    }
+
+    private void makeShotRay(){
+        shotRay.start = getTransform().getPosition();
+        Quaternion gunRotation = getTransform().getRotation();
+        shotRay.end = shotRay.start.add(controllable.getLookAt().mul(SHOT_DISTANCE));
+//        System.out.println(shotRay.direction    );
+//                .rotate(new Quaternion(gunRotation.getUp(), SCATTER))
+//                .rotate(new Quaternion(gunRotation.getLeft(), SCATTER));
     }
 
     @Override
@@ -83,6 +102,11 @@ public class Gun extends GameObject implements Equipment {
     @Override
     public void setBulletsAmount(int bulletsAmount) {
         this.bulletsAmount = bulletsAmount;
+    }
+
+    @Override
+    public Ray getShotRay() {
+        return shotRay;
     }
 
     @Override

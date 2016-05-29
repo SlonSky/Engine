@@ -17,8 +17,8 @@ public class ParticleShader extends Shader {
         addVertexShader("particleVertex.txt");
         addFragmentShader("particleFragment.txt");
         compileShader();
-
-        addUniform("transform");
+//
+        addUniform("MVP");
         addUniform("texOffset1");
         addUniform("texOffset2");
         addUniform("texCoordInfo");
@@ -32,6 +32,6 @@ public class ParticleShader extends Shader {
 
     @Override
     public void updateUniforms(Transform transformation, Material material, RenderingEngine renderingEngine) {
-        setUniform("transform", transformation.getProjectedBillBoardTransformation());
+        setUniform("MVP", transformation.getProjectedBillBoardTransformation());
     }
 }

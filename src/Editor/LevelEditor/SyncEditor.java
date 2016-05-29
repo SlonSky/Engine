@@ -44,9 +44,9 @@ public class SyncEditor {
         yBar.addAdjustmentListener(e -> b = e.getValue());
         zBar.addAdjustmentListener(e -> c = e.getValue());
 
-        JScrollBar xrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, 0, 100);
-        JScrollBar yrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, 0, 100);
-        JScrollBar zrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, 0, 100);
+        JScrollBar xrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -10, 10);
+        JScrollBar yrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -10, 10);
+        JScrollBar zrBar = new JScrollBar(Adjustable.VERTICAL, 0, 0, -10, 10);
 //        xBar
         xrBar.addAdjustmentListener(e -> x = e.getValue());
         yrBar.addAdjustmentListener(e -> y = e.getValue());

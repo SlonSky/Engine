@@ -102,6 +102,10 @@ public class Transform {
         this.rotation = oldRot.mul(rotation).normalized();
     }
 
+    public Quaternion getLookAtRotation(Vector3f point, Vector3f up) {
+        return new Quaternion(new Matrix4f().initRotation(point.sub(position).normalized(), up));
+    }
+
     public Vector3f getPosition() {
         return position;
     }

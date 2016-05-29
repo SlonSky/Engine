@@ -12,7 +12,6 @@ import static org.lwjgl.opengl.GL11.*;
 
 /**
  * Created by Slon on 07.03.2016.
- * TODO: light renderable/non-light renderable entities
  */
 
 
@@ -41,8 +40,6 @@ public class LevelRenderer {
         for (Light light: lights) {
             engine.setActiveLight(light);
             for(GameObject object: objects){
-
-                // todo: if it's light-renderable object
                 object.render(light.getShader(), engine);
             }
         }

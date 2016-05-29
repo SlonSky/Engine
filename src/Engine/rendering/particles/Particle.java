@@ -25,12 +25,15 @@ public class Particle {
     private Vector2f texOffset2 = new Vector2f(0,0);
     private float blend;
 
-    public Particle(Transform transform, ParticleTexture texture, Vector3f velocity, float gravityEffect, float lifeLength) {
+    private boolean addLighting;
+
+    public Particle(Transform transform, ParticleTexture texture, Vector3f velocity, float gravityEffect, float lifeLength, boolean addLighting) {
         this.transform = transform;
         this.velocity = velocity;
         this.gravityEffect = gravityEffect;
         this.lifeLength = lifeLength;
         this.texture = texture;
+        this.addLighting = addLighting;
         ParticleMaster.addParticle(this);
     }
 
@@ -60,14 +63,11 @@ public class Particle {
         this.blend = atlasProgression % 1;
         texOffset1 = getTexOffset(index1);
         texOffset2 = getTexOffset(index2);
-//
-        System.out.println(texOffset1 + " " + texOffset2);
     }
 
     private Vector2f getTexOffset(int index){
         int column = index % texture.getNumberOfRows();
         int row = index / texture.getNumberOfRows();
-//        System.out.println(row);
         return new Vector2f((float) column / texture.getNumberOfRows(),
                 (float)row / texture.getNumberOfRows());
     }
@@ -90,5 +90,9 @@ public class Particle {
 
     public float getDistance() {
         return distance;
+    }
+
+    public boolean isAddLighting() {
+        return addLighting;
     }
 }

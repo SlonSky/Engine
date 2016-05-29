@@ -9,6 +9,7 @@ import Engine.rendering.text.Text;
 import Game.GameObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Slon on 07.03.2016.
@@ -16,17 +17,17 @@ import java.util.ArrayList;
 public class Level {
 
     // todo: triggers, respawn point
-    private ArrayList<GameObject> objects;
-    private ArrayList<Light> lights;
+    private static ArrayList<GameObject> objects;
+    private static ArrayList<Light> lights;
     private SkyBox skyBox;
-    private ArrayList<Text> text;
-    private ArrayList<GUITexture> guis;
+    private static ArrayList<Text> text;
+    private static ArrayList<GUITexture> guis;
 
 
     public Level(SkyBox skyBox, ArrayList<GameObject> objects, ArrayList<Light> lights) {
         this.skyBox = skyBox;
-        this.objects = objects;
-        this.lights = lights;
+        Level.objects = objects;
+        Level.lights = lights;
         text = new ArrayList<>();
         guis = new ArrayList<>();
     }
@@ -49,8 +50,17 @@ public class Level {
     }
 
     public void update(){
-        for(GameObject object: objects){
+        Iterator<GameObject> it = objects.iterator();
+//        for(GameObject object: objects){
+//            object.update();
+//        }
+        while (it.hasNext()){
+            GameObject object = it.next();
             object.update();
+            if(object.isToRemove()){
+                object.remove();
+                it.remove();
+            }
         }
     }
 
@@ -63,29 +73,28 @@ public class Level {
         return skyBox;
     }
 
-    public ArrayList<GameObject> getObjects() {
+    public static ArrayList<GameObject> getObjects() {
         return objects;
     }
 
-    public ArrayList<Light> getLights() {
+    public static ArrayList<Light> getLights() {
         return lights;
     }
 
-    public void addText(Text text){
-        this.text.add(text);
+    public static void addText(Text text){
+        Level.text.add(text);
     }
 
-    public ArrayList<Text> getText() {
+    public static ArrayList<Text> getText() {
         return text;
     }
 
-    public void addGUI(GUITexture gui){
+    public static void addGUI(GUITexture gui){
         guis.add(gui);
     }
 
-    public ArrayList<GUITexture> getGuis() {
+    public static ArrayList<GUITexture> getGuis() {
         return guis;
     }
-
 
 }

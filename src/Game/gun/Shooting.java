@@ -6,13 +6,15 @@ import Engine.core.Time;
 import Engine.rendering.animation.Animation;
 import Engine.util.Quaternion;
 import Engine.util.Vector3f;
+import Game.entities.CombatManager;
 import Game.player.*;
+
+import java.util.Random;
 
 /**
  * Created by Slon on 22.05.2016.
  */
 
-// todo: click-click on empty magazine - Gunnable interface for bullets/damage/direction(ray)
 public class Shooting implements GunState {
 
     private static final double SHOT_PERIOD = Math.PI * 20;
@@ -20,7 +22,8 @@ public class Shooting implements GunState {
     private static final float RECOIL_OFFSET = -0.01f;
     private static final float SHOT_TIME = 0.1f;
 
-    //todo: prizelivanie
+    private static final int DAMAGE = 15;
+    private static final int MAX_ABERRATION = 6;
 
     // todo: init sounds from loader
     private static Sound shooting = new Sound("res/sound/fire.wav");
@@ -32,6 +35,8 @@ public class Shooting implements GunState {
     private Controllable controllable;
     private Equipment equipment;
 
+    private Random random;
+
     private float increment;
     private float time;
 
@@ -40,6 +45,7 @@ public class Shooting implements GunState {
         this.animation = animation;
         this.controllable = controllable;
         this.equipment = equipment;
+        random = new Random();
     }
 
     @Override
@@ -58,7 +64,7 @@ public class Shooting implements GunState {
 
     @Override
     public void exit() {
-        animation.setOffset(new Vector3f(0,0,0));
+        animation.setOffset(new Vector3f(0, 0, 0));
         animation.setRotationOffset(new Quaternion(0, 0, 0, 1));
 
         if(equipment.getBulletsInMagazine() == 0){
@@ -100,6 +106,7 @@ public class Shooting implements GunState {
     }
 
     private void fireBullet(){
+        damage();
         if(equipment.getBulletsInMagazine() != 0) {
             time += Time.getDelta();
             if (time >= SHOT_TIME) {
@@ -108,10 +115,11 @@ public class Shooting implements GunState {
             }
         } else {
             time = 0;
-//            if(equipment.getBulletsAmount() > 0) {
-//                controllable.setReloading(true);
-//            }
         }
-        System.out.println(equipment.getBulletsInMagazine());
+//        System.out.println(equipment.getBulletsInMagazine());
+    }
+
+    private void damage(){
+        CombatManager.getInstance().hitOpponent(DAMAGE + random.nextInt(MAX_ABERRATION * 2) - MAX_ABERRATION, equipment.getShotRay());
     }
 }

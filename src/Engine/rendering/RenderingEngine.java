@@ -31,8 +31,6 @@ public class RenderingEngine {
     private Plane[] frustum;
 
     private LevelRenderer levelRenderer;
-
-    // todo move to level renderer?
     private SkyBoxRenderer skyBoxRenderer;
     private TextRenderer textRenderer;
     private GUIRenderer guiRenderer;
@@ -47,7 +45,7 @@ public class RenderingEngine {
 
         ParticleMaster.init();
 
-        glClearColor(1.5f, 1, 1.5f, 1);
+        glClearColor(1, 1, 1, 1);
         glFrontFace(GL_CW);
         glCullFace(GL_BACK);
         glEnable(GL_CULL_FACE);

@@ -1,5 +1,6 @@
 package Game.player;
 
+import Engine.rendering.Transform;
 import Engine.util.Vector3f;
 
 /**
@@ -9,9 +10,9 @@ public interface Controllable {
     boolean isMoving();
     boolean isShooting();
     boolean isReloading();
-
     void setReloading(boolean reloading);
 
+    Transform getTransform();
     Vector3f getLookAt();
     Vector3f getLeft();
 }

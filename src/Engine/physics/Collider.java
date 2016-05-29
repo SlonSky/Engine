@@ -5,15 +5,19 @@ import Engine.rendering.Transform;
 import Engine.util.Vector3f;
 import Game.GameComponent;
 import Game.GameObject;
+import Game.gun.Ray;
 
 /**
  * Created by Slon on 15.03.2016.
- * todo: broad/wide phases AABB/OBB
  */
-public class Collider extends GameComponent implements Collide{
+public class Collider extends GameComponent{
     private PhysicsEngine engine = PhysicsEngine.getInstance();
     private Box bound;
     private Vector3f offset;
+
+    private float fLow;
+    private float fHigh;
+    private float fLFraction;
 
     public Collider(Vector3f size){
 //        bound = new Box(size, new Transform());
@@ -45,30 +49,61 @@ public class Collider extends GameComponent implements Collide{
         return engine.checkIntersection(this, movementVector);
     }
 
-    public boolean checkRayIntersection(Vector3f rayStart, Vector3f rayDir){
-            double tx1 = (bound.getMin().getX() - rayStart.getX())*(-rayDir.getX());
-            double tx2 = (bound.getMax().getX() - rayStart.getX())*(-rayDir.getX());
+    public boolean checkRayIntersection(Ray shotRay, Vector3f intersectionVec){
+        fLow = 0f;
+        fHigh = 1f;
 
-            double tMin = Math.min(tx1, tx2);
-            double tMax = Math.max(tx1, tx2);
-
-            double ty1 = (bound.getMin().getY() - rayStart.getY())*(-rayDir.getY());
-            double ty2 = (bound.getMax().getY() - rayStart.getY())*(-rayDir.getY());
-
-            tMin = Math.max(tMin, Math.min(ty1, ty2));
-            tMax = Math.min(tMax, Math.max(ty1, ty2));
-
-            double tz1 = (bound.getMin().getZ() - rayStart.getZ())*(-rayDir.getZ());
-            double tz2 = (bound.getMax().getZ() - rayStart.getZ())*(-rayDir.getZ());
-
-            tMin = Math.max(tMin, Math.min(tz1, tz2));
-            tMax = Math.min(tMax, Math.max(tz1, tz2));
-
-        return tMax >= tMin;
+        if(clipLine(0, shotRay) && clipLine(1, shotRay) && clipLine(2, shotRay)) {
+            Vector3f b = shotRay.end.sub(shotRay.start);
+            intersectionVec.set(shotRay.start.add(b.mul(fLow)));
+            fLFraction = fLow;
+            return true;
+        }
+        return false;
     }
 
+    private boolean clipLine(int axis, Ray ray){
+        float fDimLow = 0f;
+        float fDimHigh = 0f;
 
-    // for 6 normals max dot product - our normal!!
+        switch (axis){
+            case 0:
+                fDimLow = (bound.getMin().getX() - ray.start.getX())/(ray.end.getX() - ray.start.getX());
+                fDimHigh = (bound.getMax().getX() - ray.start.getX())/(ray.end.getX() - ray.start.getX());
+                break;
+            case 1:
+                fDimLow = (bound.getMin().getY() - ray.start.getY())/(ray.end.getY() - ray.start.getY());
+                fDimHigh = (bound.getMax().getY() - ray.start.getY())/(ray.end.getY() - ray.start.getY());
+                break;
+            case 2:
+                fDimLow = (bound.getMin().getZ() - ray.start.getZ())/(ray.end.getZ() - ray.start.getZ());
+                fDimHigh = (bound.getMax().getZ() - ray.start.getZ())/(ray.end.getZ() - ray.start.getZ());
+                break;
+        }
+
+        if(fDimHigh < fDimLow){
+            float temp = fDimHigh;
+            fDimHigh = fDimLow;
+            fDimLow = temp;
+        }
+
+        if(fDimHigh < fLow){
+            return false;
+        }
+        if(fDimLow > fHigh){
+            return false;
+        }
+
+        fLow = Math.max(fDimLow, fLow);
+        fHigh = Math.max(fDimHigh, fHigh);
+
+        return fLow <= fHigh;
+    }
+
+    public void remove(){
+        engine.removeCollider(this);
+    }
+
     public Vector3f getPosition(){
         return getTransform().getPosition().add(offset);
     }
@@ -91,5 +126,9 @@ public class Collider extends GameComponent implements Collide{
 
     public Vector3f getOffset() {
         return offset;
+    }
+
+    public float getfLFraction() {
+        return fLFraction;
     }
 }

@@ -48,7 +48,6 @@ public class GUIRenderer {
         glDisable(GL_BLEND);
     }
 
-    // temp
     public void render(GUITexture gui, RenderingEngine engine){
 
         if(!gui.isHidden()) {
@@ -61,25 +60,8 @@ public class GUIRenderer {
             shader.updateUniforms(gui.getTransform(), null, engine);
             shader.setMask(gui.getMask());
             quad.draw();
-
             glEnable(GL_DEPTH_TEST);
             glDisable(GL_BLEND);
         }
     }
-
-//    public static void render(BillBoard billBoard, RenderingEngine engine){
-//        GUITexture gui = billBoard.getTexture();
-//        if(!gui.isHidden()) {
-//            glEnable(GL_BLEND);
-//            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-//
-//            shader.bind();
-//            gui.getTexture().bind();
-//            shader.updateUniforms(gui.getTransform(), null, engine);
-//            shader.setMask(gui.getMask());
-//            quad.draw();
-//
-//            glDisable(GL_BLEND);
-//        }
-//    }
 }

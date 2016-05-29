@@ -37,12 +37,18 @@ public class ParticleRenderer {
 
     public void render(HashMap<ParticleTexture, ArrayList<Particle>> particles, RenderingEngine engine){
         glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glDepthMask(false);
         for(ParticleTexture texture: particles.keySet()) {
             // bind
             texture.getTexture().bind();
             for (Particle particle : particles.get(texture)) {
+
+                if(particle.isAddLighting()){
+                    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+                } else {
+                    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                }
+
                 shader.bind();
                 shader.loadTextureCoordInfo(particle.getTexOffset1(), particle.getTexOffset2(), texture.getNumberOfRows(), particle.getBlend());
                 shader.updateUniforms(particle.getTransform(), null, engine);
