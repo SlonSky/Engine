@@ -12,6 +12,7 @@ import Engine.rendering.meshManagment.Material;
 import Engine.rendering.meshManagment.Mesh;
 import Engine.rendering.meshManagment.Texture;
 import Engine.rendering.particles.ParticleMaster;
+import Engine.rendering.particles.ParticleTexture;
 import Engine.rendering.skybox.SkyBox;
 import Engine.rendering.text.Font;
 import Engine.rendering.text.Text;
@@ -23,6 +24,7 @@ import Game.GameObject;
 import Game.Level;
 import Game.enemy.Enemy;
 import Game.entities.Decoration;
+import Game.entities.Fire;
 import Game.player.Player;
 import org.newdawn.slick.particles.Particle;
 
@@ -56,7 +58,7 @@ public class TestGame extends Game {
     private Random r;
 
 
-
+private Fire fire;
 
     public void init(){
 
@@ -107,8 +109,9 @@ r = new Random();
 
 // todo: singleton for config initialization
 
-//
-//        Collider enC = new Collider(new Vector3f(2,2,2));
+
+        fire =  new Fire(new ParticleTexture(new Texture("fire.png"), 8), 5, 5, 5);
+
         AnimMesh animMesh = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
         idle = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
 
@@ -192,6 +195,8 @@ r = new Random();
 float k =0;
     public void update(){
         level.update();
+
+        fire.generateParticles(new Vector3f(0, 0, -10));
 
         if(Input.getKey(Input.KEY_O)){
 

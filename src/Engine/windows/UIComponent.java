@@ -17,7 +17,7 @@ public abstract class UIComponent {
 
     protected Vector2f pos;
     protected Vector2f size;
-    protected WindowManager listener;
+    protected WindowManager manager;
 
     public void update(){}
 
@@ -54,8 +54,8 @@ public abstract class UIComponent {
     }
 
 
-    public void setListener(WindowManager listener) {
-        this.listener = listener;
+    public void setManager(WindowManager listener) {
+        this.manager = listener;
     }
 
     public Text getText(){

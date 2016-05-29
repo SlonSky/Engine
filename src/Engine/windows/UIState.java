@@ -6,7 +6,9 @@ package Engine.windows;
 public enum UIState {
     LOGO,
     MAIN_MENU,
+    LOADING,
     GAME,
+    PAUSE,
     CHOOSE_LEVEL,
     SETTINGS,
     CREDITS,

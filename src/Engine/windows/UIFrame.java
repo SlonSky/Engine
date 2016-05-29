@@ -18,7 +18,7 @@ public class UIFrame {
     static Sound clickSound;
 
     private ArrayList<UIComponent> components;
-    private WindowManager listener;
+    private WindowManager manager;
 
 //    private Sound ambient;
     private int actKey;
@@ -50,10 +50,10 @@ public class UIFrame {
         UIFrame.clickSound = new Sound(clickSound);
     }
 
-    public void setListener(WindowManager listener) {
-        this.listener = listener;
+    public void setManager(WindowManager listener) {
+        this.manager = listener;
         for(UIComponent component: components){
-            component.setListener(listener);
+            component.setManager(listener);
         }
     }
 
@@ -65,8 +65,8 @@ public class UIFrame {
     }
 
     private void alert(UIState state){
-        if(listener != null){
-            listener.alert(state);
+        if(manager != null){
+            manager.alert(state);
         }
     }
 

@@ -44,8 +44,10 @@ public class Player extends GameObject implements Controllable, Combating{
 
     private int health;
     private int currentHealth;
+    private boolean dead;
 
     private Vector3f velocity;
+
 
     ParticleTexture r = new ParticleTexture(new Texture("particleAtlas.png"), 4);
     ParticleTexture fire = new ParticleTexture(new Texture("fire.png"), 8);
@@ -83,6 +85,7 @@ public class Player extends GameObject implements Controllable, Combating{
         addComponent(mouseControl);
         health = 100;
         currentHealth = health;
+        dead = false;
 
         gun = new Gun(getTransform(), hands, this);
 
@@ -114,7 +117,7 @@ public class Player extends GameObject implements Controllable, Combating{
         if(currentHealth <= 0){
             changeState(dying);
             if(getTransform().getRotation().dot(LYING_ROT) < 0.99f) {
-                // notify
+                dead = true;
             }
         } else {
             if (isMoving()) {

@@ -35,8 +35,8 @@ public class BlinkImage extends Image{
 
     private void alert(){
         if(time >= blinkTime){
-            if(listener != null){
-                listener.alert(actState);
+            if(manager != null){
+                manager.alert(actState);
             }
         }
     }

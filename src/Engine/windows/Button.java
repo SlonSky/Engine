@@ -55,8 +55,8 @@ public class Button extends Label {
 
     private void alert(){
         // todo: is it observer?? no
-        if(isReleased() && listener != null){
-            listener.alert(actState);
+        if(isReleased() && manager != null){
+            manager.alert(actState);
         }
     }
     private void changeColor(){

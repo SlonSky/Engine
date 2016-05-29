@@ -69,9 +69,27 @@ public class RenderingEngine {
         textRenderer.render(level.getText(), this);
 
     }
+//
+//    public void render(UIFrame frame){
+//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//
+//        for(UIComponent component: frame.getComponents()){
+//            GUITexture gui = component.getGui();
+//            Text text = component.getText();
+//            if(gui != null) {
+//                guiRenderer.render(component.getGui(), this);
+//            }
+//            if(text != null) {
+//                textRenderer.render(component.getText(), this);
+//            }
+//        }
+//    }
 
-    public void render(UIFrame frame){
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    public void render(UIFrame frame, boolean inGame){
+
+        if(!inGame) {
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        }
 
         for(UIComponent component: frame.getComponents()){
             GUITexture gui = component.getGui();
@@ -84,6 +102,7 @@ public class RenderingEngine {
             }
         }
     }
+
 
     private Plane[] calcFrustum(){
         Matrix4f clip = Transform.getProjectedModelView();

@@ -31,8 +31,8 @@ public class Fire extends ParticleSystem {
         float dirX = (float) Math.random() * length - length/2;
         float dirZ = (float) Math.random() * width - width/2;
         Vector3f velocity = new Vector3f(dirX, BURN_SPEED, dirZ);
-//        velocity = velocity.normalized();
-//        velocity = velocity.mul();
+        velocity = velocity.normalized();
+        velocity = velocity.mul(BURN_SPEED);
         new Particle(new Transform(position, new Quaternion(0,0,0,1), new Vector3f(1,1,1)), texture,
                 velocity, gravity, liveLength, addLighting);
     }

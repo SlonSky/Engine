@@ -13,7 +13,6 @@ import Game.player.Controllable;
  */
 public class Gun extends GameObject implements Equipment {
 
-    private static final float SCATTER = 0.1f;
     private static final float SHOT_DISTANCE = 20;
 
     private Controllable controllable;
@@ -77,11 +76,7 @@ public class Gun extends GameObject implements Equipment {
 
     private void makeShotRay(){
         shotRay.start = getTransform().getPosition();
-        Quaternion gunRotation = getTransform().getRotation();
         shotRay.end = shotRay.start.add(controllable.getLookAt().mul(SHOT_DISTANCE));
-//        System.out.println(shotRay.direction    );
-//                .rotate(new Quaternion(gunRotation.getUp(), SCATTER))
-//                .rotate(new Quaternion(gunRotation.getLeft(), SCATTER));
     }
 
     @Override

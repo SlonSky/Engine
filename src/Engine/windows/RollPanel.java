@@ -36,7 +36,6 @@ public class RollPanel extends UIComponent {
 
     @Override
     public void update() {
-        super.update();
         roll();
     }
 
