@@ -65,7 +65,7 @@ private Fire fire;
 
         // Initializer.init(windowManager);
 
-
+//fire = new Fire(new ParticleTexture(new Texture("smoke.png"), 8), 1, 1, 1);
         System.out.println("Loading...");
         double start = System.currentTimeMillis();
 
@@ -121,10 +121,10 @@ r = new Random();
         attack = new AnimMesh("zm_fast", "attack", new Material(new Texture("zomby_light.png"), 1, 4), 29, 40);
         dying = new AnimMesh("zm_fast", "dying", new Material(new Texture("zomby_light.png"), 1, 4), 38, 30);
 
-        objects.add(new Enemy(new Transform(new Vector3f(10,0,10), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
-                new Collider(new Vector3f(2,2,2)),
-                new Vector3f(1,2 ,1), new Vector3f(0, 1, 0), new Animation(0, 106, animMesh),
-                new Animation(0, 31, chase), new Animation(0, 29, attack), new Animation(0, 38, dying)));
+//        objects.add(new Enemy(new Transform(new Vector3f(10,0,10), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
+//                new Collider(new Vector3f(2,2,2)),
+//                new Vector3f(1,2 ,1), new Vector3f(0, 1, 0), new Animation(0, 106, animMesh),
+//                new Animation(0, 31, chase), new Animation(0, 29, attack), new Animation(0, 38, dying)));
 
 //        objects.add(new Enemy(new Transform(new Vector3f(40,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
 //                new Animation(0, 1, animMesh), new Collider(new Vector3f(2,2,2)),
@@ -153,7 +153,8 @@ r = new Random();
                 new Transform(new Vector3f(30, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
                 new Graphic(building, buildingMaterial),
                 new Vector3f(11, 11, 11),
-                new Vector3f(11, 11, 11)));
+                new Vector3f(11, 11, 11),
+                new Vector3f(0,0,0)));
 
 //        objects.add(new Decoration(
 //                new Transform(new Vector3f(40, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
@@ -197,7 +198,7 @@ r = new Random();
 float k =0;
     public void update(){
         level.update();
-
+fire.generateParticles(new Vector3f(0,0,0));
         fire.generateParticles(new Vector3f(0, 0, -10));
 
         if(Input.getKey(Input.KEY_O)){

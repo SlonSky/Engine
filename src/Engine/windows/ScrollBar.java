@@ -17,11 +17,12 @@ public class ScrollBar extends UIComponent {
     private float minValue;
     private float value;
 
-
     private float maxSliderX;
     private float minSliderX;
 
-    public ScrollBar(Vector2f pos, String barTexture, String sliderTexture, float min, float max, float value){
+    private Variable variable;
+
+    public ScrollBar(Vector2f pos, String barTexture, String sliderTexture, float min, float max, float value, Variable variable){
         bar = new Image(pos, new Vector2f(0.3f, 0.02f), barTexture, false);
         slider = new Image(pos, new Vector2f(0.03f, 0.03f), sliderTexture, true);
         this.minValue = min;
@@ -32,6 +33,10 @@ public class ScrollBar extends UIComponent {
         this.size = slider.getGui().getScreenSize();
         this.size.setX(this.size.getX() * 4f);
         this.pos = slider.pos;
+        this.variable = variable;
+
+        setSlider(value);
+        variable.setValue(value);
     }
 
     @Override
@@ -64,6 +69,11 @@ public class ScrollBar extends UIComponent {
 
     private void setValue(){
         value = (pos.getX()-minSliderX)/(maxSliderX-minSliderX)*(maxValue-minValue);
+        variable.setValue(value);
+    }
+
+    private void setSlider(float value){
+        setSliderPos(value*(maxSliderX-minSliderX)/(maxValue-minValue) + minSliderX);
     }
 
     private void checkBounds(){

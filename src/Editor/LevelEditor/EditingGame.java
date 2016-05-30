@@ -81,11 +81,11 @@ public class EditingGame extends Game {
     public void doTemp(){
 
         if(!EditorConsole.p.equals(new Vector3f(0,0,0)) && !EditorConsole.name.equals("")) {
-            level.getObjects().add(
-                    new Decoration(new Transform(EditorConsole.p, new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-90)), new Vector3f(3, 3, 3)),
-                    new Graphic(new Mesh(EditorConsole.name+".obj"), new Material(new Texture(EditorConsole.name+".png"))),
-                    new Vector3f(3, 3, 3),
-                    new Vector3f(3,3, 3)));
+//            level.getObjects().add(
+//                    new Decoration(new Transform(EditorConsole.p, new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-90)), new Vector3f(3, 3, 3)),
+//                    new Graphic(new Mesh(EditorConsole.name+".obj"), new Material(new Texture(EditorConsole.name+".png"))),
+//                    new Vector3f(3, 3, 3),
+//                    new Vector3f(3,3, 3)));
 
             EditorConsole.p = new Vector3f(0,0,0);
             EditorConsole.name = "";

@@ -1,5 +1,6 @@
 package Game;
 
+import Engine.audio.Sound;
 import Engine.rendering.guis.GUITexture;
 import Engine.rendering.light.Light;
 import Engine.rendering.particles.Particle;
@@ -22,7 +23,7 @@ public class Level {
     private SkyBox skyBox;
     private static ArrayList<Text> text;
     private static ArrayList<GUITexture> guis;
-
+    private Sound levelTheme;
 
     public Level(SkyBox skyBox, ArrayList<GameObject> objects, ArrayList<Light> lights) {
         this.skyBox = skyBox;
@@ -97,4 +98,7 @@ public class Level {
         return guis;
     }
 
+    public void setLevelTheme(Sound levelTheme) {
+        this.levelTheme = levelTheme;
+    }
 }

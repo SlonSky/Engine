@@ -17,3 +17,29 @@ rendering:
 physics:
 - aabb proper collision detection: done!
 - collision resolving
+
+
+bugs
+- phantom zommbie int the middle
+- wrong hits
+- hide cursor in level choose
+-
+
+todo
+- game over /end - scores
+- level music
+- settings
+- ammo/heal
+- guis - ammo
+- pre-death screen (maybe sound chnge)
+- triggers: spawn/level end/
+    spawn - onreach - for positions list - create enemies
+    level end - message text"your score "/button "main menu"
+- for this^ - GameplayManager
+- new ak47 sound
+- levels id - 1 for demo
+- credits
+- faster zm disappearing
+- shot sprite
+- customize fire/smoke characteristics
+- in wind gae blood in air

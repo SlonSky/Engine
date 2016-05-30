@@ -29,8 +29,9 @@ public class LevelIcon extends Icon{
     @Override
     public void update() {
         super.update();
-        if(isReleased()){
-            locked = !locked;
+        if (isClicked() && !locked){
+            Initializer.getInstance().setLevelToLoad(levelID);
+            manager.alert(UIState.LOADING);
         }
     }
 
@@ -38,17 +39,23 @@ public class LevelIcon extends Icon{
     public void roll(float delta, int axis) {
         super.roll(delta, axis);
 
-        if(!locked){
-            Initializer.getInstance().setLevelToLoad(levelID);
-            manager.alert(UIState.GAME);
-        }
-        // temp
+//        if(!locked){
+
+//        }
+
+    }
+
+//    private void chngState(){
+//        if(isReleased()){
+//            locked = !locked;
+//        }
+//        // temp
 //        if (!locked){
 //            lockedImage.move(new Vector2f(axis == X_AXIS ? delta : 0, axis == Y_AXIS ? delta : 0));
 //        } else {
 //            super.getGui().move(new Vector2f(axis == X_AXIS ? delta : 0, axis == Y_AXIS ? delta : 0));
 //        }
-    }
+//    }
 
     @Override
     public GUITexture getGui() {

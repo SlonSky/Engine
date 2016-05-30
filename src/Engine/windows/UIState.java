@@ -9,6 +9,8 @@ public enum UIState {
     LOADING,
     GAME,
     PAUSE,
+    GAME_OVER,
+    LEVEL_ENDED,
     CHOOSE_LEVEL,
     SETTINGS,
     CREDITS,

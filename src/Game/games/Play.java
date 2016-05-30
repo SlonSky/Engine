@@ -14,6 +14,8 @@ import Engine.rendering.light.Light;
 import Engine.rendering.meshManagment.Material;
 import Engine.rendering.meshManagment.Mesh;
 import Engine.rendering.meshManagment.Texture;
+import Engine.rendering.particles.Particle;
+import Engine.rendering.particles.ParticleMaster;
 import Engine.rendering.particles.ParticleTexture;
 import Engine.rendering.skybox.SkyBox;
 import Engine.rendering.text.Font;
@@ -30,6 +32,7 @@ import Game.entities.Decoration;
 import Game.entities.Fire;
 import Game.player.Player;
 import Game.Game;
+import Game.GameplayManager;
 import Game.Initializer;
 import java.util.ArrayList;
 import java.util.Random;
@@ -40,11 +43,13 @@ import java.util.Random;
 public class Play implements GameState {
 
     private Game game;
+    private Camera camera;
     private Level level;
     private WindowManager manager;
 
     private boolean pause;
-
+    private boolean gameOver;
+    private boolean levelEnded;
 
     public Play(WindowManager manager, Game game) {
         this.manager = manager;
@@ -59,7 +64,7 @@ public class Play implements GameState {
         System.out.println("Loading...");
         double start = System.currentTimeMillis();
 
-        Camera camera = new Camera(new Vector3f(0,0,0),new Quaternion(0,0,0,1));
+        camera = new Camera(new Vector3f(0,0,0),new Quaternion(0,0,0,1));
         game.setCamera(camera);
         camera.setPos(new Vector3f(0, 1, 0));
 
@@ -72,30 +77,35 @@ public class Play implements GameState {
     @Override
     public void enter() {
         init();
+
     }
 
     @Override
     public void update() {
+        GameplayManager.getInstance().update();
+        gameOver = checkGameOver();
+        levelEnded = checkLevelEnded();
         checkPause();
-        if(pause){
+        if(pause || gameOver || levelEnded){
             manager.update();
         } else {
             level.input();
             level.update();
+            ParticleMaster.update(camera);
         }
     }
 
     @Override
     public void render(RenderingEngine engine) {
         engine.render(level);
-        if(pause){
+        if(pause || gameOver || levelEnded){
             engine.render(manager.getMainFrame(), true);
         }
 
     }
 
     public void checkPause(){
-        if(Input.getKeyDown(Input.KEY_ESCAPE)){
+        if(Input.getKeyDown(Input.KEY_ESCAPE) && !checkGameOver() && !checkLevelEnded()){
             pause = !pause;
             if(pause){
                 manager.alert(UIState.PAUSE);
@@ -106,6 +116,22 @@ public class Play implements GameState {
         if(manager.getOldState() == UIState.GAME){
             pause = manager.isPaused();
         }
+    }
+
+    public boolean checkGameOver(){
+        boolean res = GameplayManager.getInstance().isGameOver();
+        if(res){
+            manager.alert(UIState.GAME_OVER);
+        }
+        return res;
+    }
+
+    public boolean checkLevelEnded(){
+        boolean res = GameplayManager.getInstance().isLevelEnded();
+        if(res){
+            manager.alert(UIState.LEVEL_ENDED);
+        }
+        return res;
     }
 
     @Override

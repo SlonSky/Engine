@@ -9,6 +9,7 @@ import Engine.util.Vector3f;
 import Game.gun.Ray;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Created by Slon on 28.05.2016.
@@ -21,7 +22,7 @@ public class CombatManager {
 
     private int score;
 
-    private Blood blood = new Blood(new ParticleTexture(new Texture("blood.png"), 4));
+    private Blood blood = new Blood(new ParticleTexture(new Texture("blood2.png"), 3));
 
     public static CombatManager getInstance() {
         return instance;
@@ -33,6 +34,20 @@ public class CombatManager {
     }
 
     public void hitOpponent(float damage, Ray shotRay){
+        opponents.sort(new Comparator<Opponent>() {
+            @Override
+            public int compare(Opponent o1, Opponent o2) {
+                float dis1 = combating.getPosition().sub(o1.getCollider().getPosition()).length();
+                float dis2 = combating.getPosition().sub(o2.getCollider().getPosition()).length();
+                if(dis1 > dis2){
+                    return 1;
+                } else if(dis1 < dis2){
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        });
         for(Opponent opponent: opponents){
             if(opponentHit(opponent, shotRay)){
                 opponent.getDamage(damage);
@@ -42,16 +57,14 @@ public class CombatManager {
     }
 
     private boolean opponentHit(Opponent opponent, Ray shotRay){
-        Vector3f bx = new Vector3f(0,0,0);
-        boolean t = opponent.getCollider().checkRayIntersection(shotRay, bx);
-//        System.out.println(bx);
-        if(opponent.getCollider().getfLFraction() < 1 && t) {
+        Vector3f hitPos = new Vector3f(0,0,0);
+        boolean hit = opponent.getCollider().checkRayIntersection(shotRay, hitPos);
+        if(opponent.getCollider().getfLFraction() < 1 && hit) {
             blood.setDir(shotRay.end.sub(shotRay.start));
-            blood.emitParticle(bx);
-//            new Particle(new Transform(bx, new Quaternion(0, 0, 0, 1), new Vector3f(1, 1, 1)), p, new Vector3f(0, 0, 0), 0, 50, true);
-//            return t;
+//            blood.emitParticle(hitPos);
+            blood.generateParticles(hitPos);
         }
-        return t;
+        return hit;
 
     }
 

@@ -86,16 +86,6 @@ public class Initializer {
 
     // todo: init(int levelNumber){}
     // todo : temp!/////////////////////////
-    private Player player;
-    private Decoration d;
-    Text text;
-    Font font;
-    ArrayList<GameObject> objects;
-    AnimMesh idle ;
-    AnimMesh chase;
-    AnimMesh attack;
-    AnimMesh dying;
-    private Random r;
 
     public void initSettings(){
 
@@ -110,10 +100,10 @@ public class Initializer {
         // main initialization
 
         loadSounds();
-        objects = new ArrayList<>();
+        ArrayList<GameObject> objects = new ArrayList<>();
         ArrayList<Light> lights = new ArrayList<>();
 
-        r = new Random();
+        Random r = new Random();
 
 //        Mesh road = new Mesh("road.obj");
 //        Material roadMaterial = new Material(new Texture("road.png"));
@@ -139,7 +129,7 @@ public class Initializer {
         Material buildingMaterial = new Material(new Texture("building.png"), 1, 8);
 
         Animation hands = new Animation(0, 1, new AnimMesh("ak2", "untitled", new Material(new Texture("ak.png"), 2, 8), 1, 30));
-        player = new Player(camera, new Transform(new Vector3f(0f, 5, 0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
+        Player player = new Player(camera, new Transform(new Vector3f(0f, 5, 0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
                 hands,
                 new Collider(new Vector3f(2,2f,2f), new Vector3f(0,0,0)));
         objects.add(player);
@@ -150,26 +140,21 @@ public class Initializer {
 //        fire =  new Fire(new ParticleTexture(new Texture("fire.png"), 8), 5, 5, 5);
 
         AnimMesh animMesh = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
-        idle = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
+        AnimMesh idle = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
 
-        chase =new AnimMesh("zm_fast", "chase", new Material(new Texture("zomby_light.png"), 1, 4), 31, 40);
-        attack = new AnimMesh("zm_fast", "attack", new Material(new Texture("zomby_light.png"), 1, 4), 29, 40);
-        dying = new AnimMesh("zm_fast", "dying", new Material(new Texture("zomby_light.png"), 1, 4), 38, 30);
+        AnimMesh chase =new AnimMesh("zm_fast", "chase", new Material(new Texture("zomby_light.png"), 1, 4), 31, 40);
+        AnimMesh attack = new AnimMesh("zm_fast", "attack", new Material(new Texture("zomby_light.png"), 1, 4), 29, 40);
+        AnimMesh dying = new AnimMesh("zm_fast", "dying", new Material(new Texture("zomby_light.png"), 1, 4), 38, 30);
 
         objects.add(new Enemy(new Transform(new Vector3f(10,0,10), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
                 new Collider(new Vector3f(2,2,2)),
                 new Vector3f(1,2 ,1), new Vector3f(0, 1, 0), new Animation(0, 106, animMesh),
                 new Animation(0, 31, chase), new Animation(0, 29, attack), new Animation(0, 38, dying)));
 
-//        objects.add(new Enemy(new Transform(new Vector3f(40,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
-//                new Animation(0, 1, animMesh), new Collider(new Vector3f(2,2,2)),
-//                new Vector3f(1,2,1), new Vector3f(0, 1, 0)));
-//
-//        objects.add(new Enemy(new Transform(new Vector3f(0,0,50), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
-//                new Animation(0, 1, animMesh), new Collider(new Vector3f(2,2,2)),
-//                new Vector3f(1,2,1), new Vector3f(0, 1, 0)));
-
-
+        objects.add(new Enemy(new Transform(new Vector3f(-10,0,10), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
+                new Collider(new Vector3f(2,2,2)),
+                new Vector3f(1,2 ,1), new Vector3f(0, 1, 0), new Animation(0, 106, animMesh),
+                new Animation(0, 31, chase), new Animation(0, 29, attack), new Animation(0, 38, dying)));
 //
 //
 //        objects.add(new Enemy(new Transform(new Vector3f(5,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
@@ -188,7 +173,8 @@ public class Initializer {
                 new Transform(new Vector3f(30, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
                 new Graphic(building, buildingMaterial),
                 new Vector3f(11, 11, 11),
-                new Vector3f(11, 11, 11)));
+                new Vector3f(11, 11, 11),
+                new Vector3f(0,0,0)));
 
 //        objects.add(new Decoration(
 //                new Transform(new Vector3f(40, 5, -10), new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-90)), new Vector3f(1,1,1)),
@@ -200,8 +186,8 @@ public class Initializer {
         lights.add(new DirectionalLight(new Vector3f(0.6f, 0.4f, 0.3f), 0.5f, new Vector3f(-0.8f, -0.15f, -0.57f)));
         Level level = new Level(new SkyBox("1"), objects, lights);
 
-        font = new Font("rus.png", "rus.fnt");
-        text = new Text(0.8f, 0.8f, 0.15f, "text", font, new Vector3f(1, 0,0));
+        Font font = new Font("rus.png", "rus.fnt");
+        Text text = new Text(0.8f, 0.8f, 0.15f, "text", font, new Vector3f(1, 0,0));
         level.addText(text);
 
 //        level.addText(new Text(0, 0.0f, 0.10f, "small piece of text", font, new Vector3f(0, 0,0)));
@@ -214,7 +200,7 @@ public class Initializer {
         level.addGUI(new GUITexture(new Texture("cross.png"), new Vector2f(0, 0),new Vector2f(0.2f, 0.2f)));
 //
 //        level.addGUI(new GUITexture(new Texture("health.png"), new Vector2f(1, 1), new Vector2f(1f, 1f)));
-
+        GameplayManager.getInstance().setPlayer(player);
         return level;
     }
 

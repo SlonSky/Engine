@@ -1,5 +1,6 @@
 package Engine.windows;
 
+import Engine.rendering.text.Text;
 import Game.Game;
 import Engine.audio.Sound;
 import Engine.audio.Source;
@@ -8,8 +9,9 @@ import Engine.core.Input;
 import Engine.rendering.text.Font;
 import Engine.util.Vector2f;
 import Engine.util.Vector3f;
+import Game.entities.CombatManager;
 import Game.games.WindowedGame;
-
+import Game.SoundManager;
 /**
  * Created by Slon on 08.05.2016.
  */
@@ -30,6 +32,8 @@ public class WindowManager {
     private UIFrame settings;
     private UIFrame loading;
     private UIFrame pause;
+    private UIFrame gameOverMessage;
+    private UIFrame levelEndedMessage;
     private UIFrame levelChoose;
     private UIFrame titles;
 
@@ -54,6 +58,8 @@ public class WindowManager {
         initMainMenu();
         initLoading();
         initPause();
+        initGameOverMessage();
+        initLevelEndedMessage();
         initLevelChoose();
         initSettings();
         initTitles();
@@ -78,7 +84,7 @@ public class WindowManager {
             case MAIN_MENU:
                 if(oldState == UIState.LOGO){
                     playMenuTheme();
-                } else if(oldState == UIState.PAUSE){
+                } else if(oldState == UIState.PAUSE || oldState == UIState.GAME_OVER || oldState == UIState.LEVEL_ENDED){
                     playMenuTheme();
                     game.setMenu();
                 }
@@ -91,11 +97,13 @@ public class WindowManager {
                     game.setPlay();
                     alert(UIState.GAME);
                 } else {
+                    if(oldState == UIState.GAME_OVER || oldState == UIState.CHOOSE_LEVEL){
+                        game.setMenu();
+                    }
                     Input.setCursor(false);
                     mainFrame = loading;
                     oldState = UIState.LOADING;
                 }
-
                 break;
             case PAUSE:
                 mainFrame = pause;
@@ -111,6 +119,16 @@ public class WindowManager {
                 paused = false;
                 Input.setCursor(false);
                 oldState = UIState.GAME;
+                break;
+            case GAME_OVER:
+                Input.setCursor(true);
+                mainFrame = gameOverMessage;
+                oldState = UIState.GAME_OVER;
+                break;
+            case LEVEL_ENDED:
+                Input.setCursor(true);
+                mainFrame = levelEndedMessage;
+                oldState = UIState.LEVEL_ENDED;
                 break;
             case CHOOSE_LEVEL:
                 mainFrame = levelChoose;
@@ -135,6 +153,7 @@ public class WindowManager {
             alert(UIState.LOADING);
         }
         mainFrame.update();
+        SoundManager.getInstance().update();
     }
 
     public void initLogo(){
@@ -205,6 +224,43 @@ public class WindowManager {
 
         pause.setManager(this);
 
+    }
+
+    public void initGameOverMessage(){
+        gameOverMessage = new UIFrame();
+
+        Image back = new Image(new Vector2f(0,0), new Vector2f(0.4f, 0.3f), "pause.png", false);
+        Label gameOverLabel = new Label(new Vector2f(-0.18f,0.1f), 0.1f, "GAME OVER", new Vector3f(0.7f,0,0));
+       Button again = new Button(new Vector2f(-0.3f,-0.20f), 0.1f, "Again", new Vector3f(0.7f,0,0), new Vector3f(0.9f,0,0), new Vector3f(0.9f,0.2f,0));
+        again.setStateOnClick(UIState.LOADING);
+        Button button = new Button(new Vector2f(0f,-0.20f), 0.1f, "Main menu", new Vector3f(0.7f,0,0), new Vector3f(0.9f,0,0), new Vector3f(0.9f,0.2f,0));
+        button.setStateOnClick(UIState.MAIN_MENU);
+
+        GameMessage gameOver = new GameMessage(back);
+        gameOver.addButton(button);
+        gameOver.addButton(again);
+        gameOver.addMessage(gameOverLabel);
+
+        gameOverMessage.addComponent(gameOver);
+        gameOverMessage.setManager(this);
+    }
+
+    public void initLevelEndedMessage(){
+        levelEndedMessage = new UIFrame();
+
+        Image back = new Image(new Vector2f(0,0), new Vector2f(0.4f, 0.3f), "pause.png", false);
+        Label gameOverLabel = new Label(new Vector2f(-0.25f,0.1f), 0.1f, "LEVEL COMPLETE", new Vector3f(0.7f,0,0));
+        Button again = new Button(new Vector2f(-0.3f,-0.20f), 0.1f, "Again", new Vector3f(0.7f,0,0), new Vector3f(0.9f,0,0), new Vector3f(0.9f,0.2f,0));
+        again.setStateOnClick(UIState.LOADING);
+        Button button = new Button(new Vector2f(0f,-0.20f), 0.1f, "Main menu", new Vector3f(0.7f,0,0), new Vector3f(0.9f,0,0), new Vector3f(0.9f,0.2f,0));
+        button.setStateOnClick(UIState.MAIN_MENU);
+        GameMessage gameOver = new GameMessage(back);
+        gameOver.addButton(button);
+        gameOver.addButton(again);
+        gameOver.addMessage(gameOverLabel);
+
+        levelEndedMessage.addComponent(gameOver);
+        levelEndedMessage.setManager(this);
     }
 
     public void initLevelChoose(){
@@ -282,14 +338,15 @@ public class WindowManager {
         rollPanel.addComponent(gameTitle);
         rollPanel.addComponent(difficult);
 
-        ScrollBar ambientBar = new ScrollBar(new Vector2f(0.55f,0.05f), "bar.png", "scroll.png", 0, 100, 20);
-        ScrollBar effectBar = new ScrollBar(new Vector2f(0.55f,-0.15f), "bar.png", "scroll.png", 0, 100, 20);
+        ScrollBar ambientBar = new ScrollBar(new Vector2f(0.55f,0.05f), "bar.png", "scroll.png", 0, 100, 100, SoundManager.getInstance().getMusicVolumeHandler());
+        ScrollBar effectBar = new ScrollBar(new Vector2f(0.55f,-0.15f), "bar.png", "scroll.png", 0, 100, 100, SoundManager.getInstance().getEffectsVolumeHandler());
+
         CheckBox checkBox = new CheckBox(new Vector2f(0.55f, -0.65f), "checkBack.png", "checkMark.png", true);
-        ScrollBar difficultBar = new ScrollBar(new Vector2f(0.55f,-1.15f), "bar.png", "scroll.png", 1, 3, 20);
+//        ScrollBar difficultBar = new ScrollBar(new Vector2f(0.55f,-1.15f), "bar.png", "scroll.png", 1, 3, 20);
         rollPanel.addComponent(ambientBar);
         rollPanel.addComponent(effectBar);
         rollPanel.addComponent(checkBox);
-        rollPanel.addComponent(difficultBar);
+//        rollPanel.addComponent(difficultBar);
 
 
         Button back = new Button(new Vector2f(0.8f, -0.8f), 0.1f, "back", new Vector3f(0.7f,0,0), new Vector3f(0.9f,0,0), new Vector3f(0.9f,0.2f,0));

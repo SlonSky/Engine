@@ -48,14 +48,6 @@ public class Player extends GameObject implements Controllable, Combating{
 
     private Vector3f velocity;
 
-
-    ParticleTexture r = new ParticleTexture(new Texture("particleAtlas.png"), 4);
-    ParticleTexture fire = new ParticleTexture(new Texture("fire.png"), 8);
-
-    private ParticleSystemSample f = new ParticleSystemSample(fire,2, 0.0001f, -0.001f, 1f, true);
-    private ParticleSystemSample particleSystem = new ParticleSystemSample(r,30, 0.01f,0.001f, 4f, false);
-
-
     // temp
     private GraphicBound collideBound;
 
@@ -116,7 +108,7 @@ public class Player extends GameObject implements Controllable, Combating{
 
         if(currentHealth <= 0){
             changeState(dying);
-            if(getTransform().getRotation().dot(LYING_ROT) < 0.99f) {
+            if(getTransform().getRotation().dot(LYING_ROT) > 0.99f) {
                 dead = true;
             }
         } else {
@@ -215,4 +207,12 @@ public class Player extends GameObject implements Controllable, Combating{
         System.out.println("Pl " + currentHealth);
     }
 
+    @Override
+    public Vector3f getPosition() {
+        return getTransform().getPosition();
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
 }

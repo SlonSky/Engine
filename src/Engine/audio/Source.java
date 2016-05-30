@@ -2,6 +2,7 @@ package Engine.audio;
 
 import Game.GameComponent;
 import Engine.util.Vector3f;
+import Game.SoundManager;
 
 import static org.lwjgl.openal.AL10.*;
 
@@ -16,6 +17,15 @@ public class Source extends GameComponent{
         alSourcef(sourceId, AL_GAIN, 1);
         alSourcef(sourceId, AL_PITCH, 1);
         alSource3f(sourceId, AL_POSITION, 0, 0, 0);
+        SoundManager.getInstance().addEffect(this);
+    }
+
+    public Source(boolean music){
+        sourceId = alGenSources();
+        alSourcef(sourceId, AL_GAIN, 1);
+        alSourcef(sourceId, AL_PITCH, 1);
+        alSource3f(sourceId, AL_POSITION, 0, 0, 0);
+        SoundManager.getInstance().addMusic(this);
     }
 
     public void play(int buffer){

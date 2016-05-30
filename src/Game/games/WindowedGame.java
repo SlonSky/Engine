@@ -39,7 +39,7 @@ public class WindowedGame extends Game{
         camera = new Camera(new Vector3f(0,0,0),new Quaternion(0,0,0,1));
         setCamera(camera);
 
-        gameBackground = new Source();
+        gameBackground = new Source(true);
 
         windowManager = new WindowManager(this, gameBackground);
 
@@ -77,6 +77,7 @@ public class WindowedGame extends Game{
         changeState(menu);
     }
 
-
-
+    public Source getGameBackground() {
+        return gameBackground;
+    }
 }

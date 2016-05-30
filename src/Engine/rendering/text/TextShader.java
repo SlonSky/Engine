@@ -12,6 +12,9 @@ import Engine.rendering.meshManagment.Material;
  */
 public class TextShader extends Shader {
 
+    /**
+     * //todo javadoc
+     */
     public TextShader(){
         super();
         addVertexShader("textVertex.txt");
