@@ -1,84 +1,119 @@
-package Game.games;
+package Game;
 
-
-import Engine.core.*;
+import Engine.audio.Sound;
+import Engine.audio.Source;
+import Engine.core.Window;
 import Engine.physics.Collider;
-import Engine.rendering.*;
+import Engine.rendering.Camera;
+import Engine.rendering.Graphic;
+import Engine.rendering.Transform;
 import Engine.rendering.animation.AnimMesh;
 import Engine.rendering.animation.Animation;
 import Engine.rendering.guis.GUITexture;
-import Engine.rendering.light.*;
+import Engine.rendering.light.DirectionalLight;
+import Engine.rendering.light.Light;
 import Engine.rendering.meshManagment.Material;
 import Engine.rendering.meshManagment.Mesh;
 import Engine.rendering.meshManagment.Texture;
-import Engine.rendering.particles.ParticleMaster;
-import Engine.rendering.particles.ParticleTexture;
 import Engine.rendering.skybox.SkyBox;
 import Engine.rendering.text.Font;
 import Engine.rendering.text.Text;
 import Engine.util.Quaternion;
 import Engine.util.Vector2f;
 import Engine.util.Vector3f;
-import Game.Game;
-import Game.GameObject;
-import Game.Level;
 import Game.enemy.Enemy;
 import Game.entities.Decoration;
-import Game.entities.Fire;
 import Game.player.Player;
-import Game.Initializer;
-import org.newdawn.slick.particles.Particle;
+import com.sun.deploy.util.IcoEncoder;
+import com.sun.javaws.jnl.IconDesc;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.Display;
+import org.newdawn.slick.opengl.ImageIOImageData;
+import sun.awt.IconInfo;
 
-import javax.xml.stream.XMLEventReader;
-import java.util.*;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
 /**
- * Created by Slon on 09.02.2016.
+ * Created by Slon on 22.05.2016.
+ *
+ * Initializes game resources and settings from res.ini and settings.ini files
  */
-public class TestGame extends Game {
+public class Initializer {
+
+    private static final String SETTINGS_FILEPATH = "res/settings.ini";
+    private static final String LEVELS_LOCATION = "res/levels/";
+
+    public static final String PLAYER_STEP1 = "playerStep1";
+    public static final String PLAYER_STEP2 = "playerStep2";
+    public static final String PLAYER_DYING = "playerDying";
+
+    public static final String GUN_SHOOTING = "gunShooting";
+    public static final String GUN_SHOOTING_END = "gunShootingEnd";
+    public static final String GUN_DRY_FIRE = "gunDryFire";
+    public static final String GUN_RELOAD = "gunReload";
+
+    public static final String ZM_ATTACK = "zmAttack";
+    public static final String ZM_ROAR = "zmRoar";
+    public static final String ZM_DYING = "zmDying";
 
 
-//    private Transform transform;
-//    private Material material;
-//    private Mesh mesh;
+    private static Initializer instance = new Initializer();
+
+    private static HashMap<String, Sound> sounds;
+
+    private int levelToLoad;
+    // Level...
+    // static keys
+    // static sounds
+    // ...
+    private Initializer(){
+        // open file
+        // init static settings
+        // ...
+    }
+
+    public void initSettings(String settings){
+
+    }
 
 
+    // todo: init(int levelNumber){}
+    // todo : temp!/////////////////////////
     private Player player;
     private Decoration d;
-
     Text text;
     Font font;
-
     ArrayList<GameObject> objects;
-
-        AnimMesh idle ;
-        AnimMesh chase;
+    AnimMesh idle ;
+    AnimMesh chase;
     AnimMesh attack;
     AnimMesh dying;
-
     private Random r;
 
+    public void initSettings(){
 
-private Fire fire;
+    }
 
-    public void init(){
+    //todo: temmp
+    public Level loadLevel(Camera camera){
+        // read file
+        // create Level instance
 
-        // Initializer.init(windowManager);
-
-
-        System.out.println("Loading...");
-        double start = System.currentTimeMillis();
 
         // main initialization
-        camera = new Camera(new Vector3f(0,0,0),new Quaternion(0,0,0,1));
-        setCamera(camera);
 
-        camera.setPos(new Vector3f(0, 1, 0));
-        Initializer.getInstance().loadLevel(camera);
+        loadSounds();
         objects = new ArrayList<>();
         ArrayList<Light> lights = new ArrayList<>();
 
-r = new Random();
+        r = new Random();
 
 //        Mesh road = new Mesh("road.obj");
 //        Material roadMaterial = new Material(new Texture("road.png"));
@@ -104,7 +139,7 @@ r = new Random();
         Material buildingMaterial = new Material(new Texture("building.png"), 1, 8);
 
         Animation hands = new Animation(0, 1, new AnimMesh("ak2", "untitled", new Material(new Texture("ak.png"), 2, 8), 1, 30));
-        player = new Player(camera, new Transform(new Vector3f(0f, 5, 0), camera.getRot(), new Vector3f(1,1,1)),
+        player = new Player(camera, new Transform(new Vector3f(0f, 5, 0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
                 hands,
                 new Collider(new Vector3f(2,2f,2f), new Vector3f(0,0,0)));
         objects.add(player);
@@ -112,7 +147,7 @@ r = new Random();
 // todo: singleton for config initialization
 
 
-        fire =  new Fire(new ParticleTexture(new Texture("fire.png"), 8), 5, 5, 5);
+//        fire =  new Fire(new ParticleTexture(new Texture("fire.png"), 8), 5, 5, 5);
 
         AnimMesh animMesh = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
         idle = new AnimMesh("zm_fast", "idle", new Material(new Texture("zomby_light.png"), 1, 4), 106, 30);
@@ -163,7 +198,7 @@ r = new Random();
 
 
         lights.add(new DirectionalLight(new Vector3f(0.6f, 0.4f, 0.3f), 0.5f, new Vector3f(-0.8f, -0.15f, -0.57f)));
-        level = new Level(new SkyBox("1"), objects, lights);
+        Level level = new Level(new SkyBox("1"), objects, lights);
 
         font = new Font("rus.png", "rus.fnt");
         text = new Text(0.8f, 0.8f, 0.15f, "text", font, new Vector3f(1, 0,0));
@@ -180,76 +215,38 @@ r = new Random();
 //
 //        level.addGUI(new GUITexture(new Texture("health.png"), new Vector2f(1, 1), new Vector2f(1f, 1f)));
 
-
-
-//        Source source2 = new Source();
-//        int v = AudioEngine.loadSound("res/sound/theme1.ogg");
-//        source2.play(v);
-
-//        player.setJump(new Sound("res\\sound\\fx\\jump.wav"));
-
-        double finish = System.currentTimeMillis();
-        System.out.println((finish - start) / 1000 + "s");
-    }
-    public void render(RenderingEngine renderingEngine){
-        renderingEngine.render(level);
-    }
-float k =0;
-    public void update(){
-        level.update();
-
-        fire.generateParticles(new Vector3f(0, 0, -10));
-
-        if(Input.getKey(Input.KEY_O)){
-
-            level.getObjects().add(new Enemy(new Transform(new Vector3f(r.nextInt(30)-15,0,r.nextInt(30)-15), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
-                    new Collider(new Vector3f(3,4,3)),
-                    new Vector3f(1,2 ,1), new Vector3f(0, 1, 0), new Animation(0, 106, idle),
-                    new Animation(0, 31, chase), new Animation(0, 29, attack), new Animation(0, 38, dying)));
-            k++;
-            System.out.println(k);
-        }
-
-        ParticleMaster.update(engine.getRenderingEngine().getMainCamera());
-//        k+= (float)Time.getDelta();
-//        level.getText().get(0).setPos(new Vector2f((float)SyncEditor.y/100f,(float)SyncEditor.z/100f));
-//        level.getText().get(0).setSize((float)SyncEditor.x/100f);
-//        System.out.println(level.getText().get(0).getSize());
-//        level.getText().clear();
-
-        level.getText().get(0).edit(Integer.toString(engine.getFPS()));
-
-//        level.addText( new Text(0.8f, 0.8f, 0.15f, "text", font, new Vector3f(1, 0,0)));
-
-
-//        level.getGuis().get(0).setPos(new Vector2f((float)SyncEditor.y/100f, (float)SyncEditor.z/100f));
-//        level.getGuis().get(0).setScale(new Vector2f((float)SyncEditor.x/100f, (float)SyncEditor.x/100f));
-
-
-//        level.setText(new Text(SyncEditor.y, SyncEditor.z, SyncEditor.x,
-//                Integer.toString(engine.getFPS()),
-////                "Some text from me",
-//                font, new Vector3f(1,1,0)));
-    }
-
-    int i = 0;
-    public void input(){
-        if(Input.getKey(Input.KEY_Q)){
-            engine.stop();
-//            System.exit(0);
-        }
-        level.input();
-
-
-    }
-
-    public void setEngine(CoreEngine engine){
-        this.engine = engine;
-    }
-
-    public Level getLevel() {
         return level;
     }
 
+    // todo: from file
+    private void loadSounds(){
+        sounds = new HashMap<>(20);
+        sounds.put(PLAYER_STEP1, new Sound("res/sound/steps1.wav"));
+        sounds.put(PLAYER_STEP2, new Sound("res/sound/steps.wav"));
+        sounds.put(PLAYER_DYING, new Sound("res/sound/playerDying.wav"));
 
+        sounds.put(GUN_SHOOTING, new Sound("res/sound/fire.wav"));
+        sounds.put(GUN_SHOOTING_END, new Sound("res/sound/fired.wav"));
+        sounds.put(GUN_DRY_FIRE, new Sound("res/sound/dryfire.wav"));
+        sounds.put(GUN_RELOAD, new Sound("res/sound/reload.ogg"));
+
+
+        sounds.put(ZM_ATTACK, new Sound("res/sound/zmAttack.wav"));
+        sounds.put(ZM_ROAR, new Sound("res/sound/zmRoar.wav"));
+        sounds.put(ZM_DYING, new Sound("res/sound/zmDying.wav"));
+
+
+    }
+
+    public void setLevelToLoad(int levelToLoad) {
+        this.levelToLoad = levelToLoad;
+    }
+
+    public static Initializer getInstance() {
+        return instance;
+    }
+
+    public Sound getSound(String name){
+        return sounds.get(name);
+    }
 }

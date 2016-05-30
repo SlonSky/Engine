@@ -6,6 +6,7 @@ import Engine.core.Time;
 import Engine.rendering.animation.Animation;
 import Engine.util.Quaternion;
 import Engine.util.Vector3f;
+import Game.Initializer;
 import Game.entities.CombatManager;
 import Game.player.*;
 
@@ -25,10 +26,9 @@ public class Shooting implements GunState {
     private static final int DAMAGE = 15;
     private static final int MAX_ABERRATION = 6;
 
-    // todo: init sounds from loader
-    private static Sound shooting = new Sound("res/sound/fire.wav");
-    private static Sound shootingEnded = new Sound("res/sound/fired.wav");
-    private static Sound dryFire = new Sound("res/sound/dryfire.wav");
+    private Sound shooting;
+    private Sound shootingEnded;
+    private Sound dryFire;
 
     private Source source;
     private Animation animation;
@@ -46,6 +46,9 @@ public class Shooting implements GunState {
         this.controllable = controllable;
         this.equipment = equipment;
         random = new Random();
+        shooting = Initializer.getInstance().getSound(Initializer.GUN_SHOOTING);
+        shootingEnded = Initializer.getInstance().getSound(Initializer.GUN_SHOOTING_END);
+        dryFire = Initializer.getInstance().getSound(Initializer.GUN_DRY_FIRE);
     }
 
     @Override

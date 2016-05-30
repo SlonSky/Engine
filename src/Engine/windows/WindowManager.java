@@ -213,18 +213,18 @@ public class WindowManager {
         Image background = new Image(new Vector2f(0,0), new Vector2f(1,1), "levelBack.png", false);
         Image layer = new Image(new Vector2f(0,0), new Vector2f(1,1), "levelLayer.png", false);
 
-        LevelIcon initio = new LevelIcon(new Vector2f(-0.5f,0), new Vector2f(0.4f,0.4f), "an initio.png", "locked.png", true, false);
-        LevelIcon jasta = new LevelIcon(new Vector2f(0,0), new Vector2f(0.4f,0.4f), "alea jasta est.png", "locked.png", true, false);
-        LevelIcon hominus = new LevelIcon(new Vector2f(0.5f,0), new Vector2f(0.4f,0.4f), "homines.png", "locked.png", true, false);
+        LevelIcon initio = new LevelIcon(new Vector2f(-0.5f,0), new Vector2f(0.4f,0.4f), "an initio.png", "locked.png", true, false, 1);
+        LevelIcon jasta = new LevelIcon(new Vector2f(0,0), new Vector2f(0.4f,0.4f), "alea jasta est.png", "locked.png", true, false, 2);
+        LevelIcon hominus = new LevelIcon(new Vector2f(0.5f,0), new Vector2f(0.4f,0.4f), "homines.png", "locked.png", true, false, 3);
 
-        LevelIcon initio1 = new LevelIcon(new Vector2f(0.5f,-1f), new Vector2f(0.4f,0.4f), "an initio.png", "locked.png", true, true);
-        LevelIcon jasta1 = new LevelIcon(new Vector2f(-0.5f,-1f), new Vector2f(0.4f,0.4f), "alea jasta est.png", "locked.png", true, true);
-        LevelIcon hominus1 = new LevelIcon(new Vector2f(0,-1f), new Vector2f(0.4f,0.4f), "homines.png", "locked.png", true, true);
+        LevelIcon initio1 = new LevelIcon(new Vector2f(0.5f,-1f), new Vector2f(0.4f,0.4f), "an initio.png", "locked.png", true, true, 4);
+        LevelIcon jasta1 = new LevelIcon(new Vector2f(-0.5f,-1f), new Vector2f(0.4f,0.4f), "alea jasta est.png", "locked.png", true, true, 5);
+        LevelIcon hominus1 = new LevelIcon(new Vector2f(0,-1f), new Vector2f(0.4f,0.4f), "homines.png", "locked.png", true, true, 6);
 
 
-        LevelIcon initio2 = new LevelIcon(new Vector2f(0, -2f), new Vector2f(0.4f,0.4f), "an initio.png", "locked.png", true, true);
-        LevelIcon jasta2 = new LevelIcon(new Vector2f(0.5f,-2f), new Vector2f(0.4f,0.4f), "alea jasta est.png", "locked.png", true, true);
-        LevelIcon hominus2 = new LevelIcon(new Vector2f(-0.5f,-2f), new Vector2f(0.4f,0.4f), "homines.png", "locked.png", true, true);
+        LevelIcon initio2 = new LevelIcon(new Vector2f(0, -2f), new Vector2f(0.4f,0.4f), "an initio.png", "locked.png", true, true, 7);
+        LevelIcon jasta2 = new LevelIcon(new Vector2f(0.5f,-2f), new Vector2f(0.4f,0.4f), "alea jasta est.png", "locked.png", true, true, 8);
+        LevelIcon hominus2 = new LevelIcon(new Vector2f(-0.5f,-2f), new Vector2f(0.4f,0.4f), "homines.png", "locked.png", true, true, 9);
 
         RollPanel rollPanel = new RollPanel(-0.1f, UIComponent.Y_AXIS, -0.3f, 2f);
 

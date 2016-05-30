@@ -5,6 +5,7 @@ import Engine.audio.Source;
 import Engine.core.Time;
 import Engine.rendering.animation.Animation;
 import Engine.util.Vector3f;
+import Game.Initializer;
 
 import java.util.Random;
 
@@ -16,12 +17,9 @@ public class Walking implements PlayerState {
     private static final double WALKING_PERIOD = 2*Math.PI;
     private static final float WALKING_AMPLITUDE = 0.02f;
 
-    // todo: the same thing...
-    private static Sound step1 = new Sound("res/sound/steps1.wav");
-    private static Sound step2 = new Sound("res/sound/steps.wav");
+    private Sound step1 = Initializer.getInstance().getSound(Initializer.PLAYER_STEP1); // new Sound("res/sound/steps1.wav");
+    private Sound step2 = Initializer.getInstance().getSound(Initializer.PLAYER_STEP2);//new Sound("res/sound/steps.wav");
 
-//    private Audible audible;
-//    private Animable animable;
     private Source source;
     private Animation animation;
     private Controllable controllable;

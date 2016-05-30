@@ -33,18 +33,6 @@ public class Enemy extends GameObject implements Movable, Opponent{
 
     private Source audio;
 
-    private Animation walk;
-    private Animation hit;
-    private Animation die;
-//    private Animation attack;
-    private Animation calm; // ?
-
-    private Sound noise;
-    private Sound strike;
-    private Sound dieScream;
-    private Sound hitScream;
-    private Sound steps;
-
     private EnemyState state;
     private EnemyState idle;
     private EnemyState chase;
@@ -70,6 +58,9 @@ public class Enemy extends GameObject implements Movable, Opponent{
         addComponent(chaseAnim);
         addComponent(attackAnim);
         addComponent(deathAnim);
+
+        audio = new Source();
+        audio.setPitch((float)Math.random());
 
         idle = new Idle(audio, idleAnim);
         chase = new Chase(audio, chaseAnim, this);

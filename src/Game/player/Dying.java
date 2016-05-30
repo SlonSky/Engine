@@ -5,6 +5,7 @@ import Engine.audio.Source;
 import Engine.core.Time;
 import Engine.util.Quaternion;
 import Engine.util.Vector3f;
+import Game.Initializer;
 
 /**
  * Created by Slon on 22.05.2016.
@@ -14,7 +15,7 @@ public class Dying implements PlayerState {
     private static final float FALL_SPEED = 3;
 
 
-    private Sound sound;
+    private Sound dyingScream;
 
     private Source source;
     private Controllable controllable;
@@ -22,11 +23,12 @@ public class Dying implements PlayerState {
     public Dying(Source source, Controllable controllable) {
         this.source = source;
         this.controllable = controllable;
+        dyingScream = Initializer.getInstance().getSound(Initializer.PLAYER_DYING);
     }
 
     @Override
     public void enter() {
-
+        source.play(dyingScream.getBufferId());
     }
 
     @Override

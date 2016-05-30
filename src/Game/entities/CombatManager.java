@@ -21,6 +21,8 @@ public class CombatManager {
 
     private int score;
 
+    private Blood blood = new Blood(new ParticleTexture(new Texture("blood.png"), 4));
+
     public static CombatManager getInstance() {
         return instance;
     }
@@ -39,18 +41,17 @@ public class CombatManager {
         }
     }
 
-    private ParticleTexture p = new ParticleTexture(new Texture("fire.png"), 8);
-
     private boolean opponentHit(Opponent opponent, Ray shotRay){
         Vector3f bx = new Vector3f(0,0,0);
         boolean t = opponent.getCollider().checkRayIntersection(shotRay, bx);
 //        System.out.println(bx);
-        //todo: blood in same dir
-        if(opponent.getCollider().getfLFraction() < 1) {
-            new Particle(new Transform(bx, new Quaternion(0, 0, 0, 1), new Vector3f(1, 1, 1)), p, new Vector3f(0, 0, 0), 0, 50, true);
-            return t;
+        if(opponent.getCollider().getfLFraction() < 1 && t) {
+            blood.setDir(shotRay.end.sub(shotRay.start));
+            blood.emitParticle(bx);
+//            new Particle(new Transform(bx, new Quaternion(0, 0, 0, 1), new Vector3f(1, 1, 1)), p, new Vector3f(0, 0, 0), 0, 50, true);
+//            return t;
         }
-        return false;
+        return t;
 
     }
 
@@ -69,5 +70,9 @@ public class CombatManager {
     public void removeOpponent(Opponent opponent){
         opponents.remove(opponent);
         score++;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

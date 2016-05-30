@@ -3,6 +3,7 @@ package Game.gun;
 import Engine.audio.Sound;
 import Engine.audio.Source;
 import Engine.rendering.animation.Animation;
+import Game.Initializer;
 import Game.player.*;
 
 /**
@@ -10,8 +11,7 @@ import Game.player.*;
  */
 public class Reloading implements GunState {
 
-    // todo: you know...
-    private static Sound reload = new Sound("res/sound/reload.ogg");
+    private Sound reload;
 
     private Source source;
     private Animation animation;
@@ -24,6 +24,7 @@ public class Reloading implements GunState {
         this.animation = animation;
         this.controllable = controllable;
         this.equipment = equipment;
+        reload = Initializer.getInstance().getSound(Initializer.GUN_RELOAD);
     }
 
     @Override

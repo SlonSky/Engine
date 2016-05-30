@@ -4,6 +4,7 @@ import Engine.rendering.guis.GUITexture;
 import Engine.rendering.meshManagment.Texture;
 import Engine.rendering.text.Text;
 import Engine.util.Vector2f;
+import Game.Initializer;
 import Game.Level;
 
 import java.util.ArrayList;
@@ -16,10 +17,13 @@ public class LevelIcon extends Icon{
     private GUITexture lockedImage;
     private boolean locked;
 
-    public LevelIcon(Vector2f pos, Vector2f size, String unlockedImage, String lockedImage, boolean quad, boolean locked){
+    private int levelID;
+
+    public LevelIcon(Vector2f pos, Vector2f size, String unlockedImage, String lockedImage, boolean quad, boolean locked, int levelID){
         super(pos, size, unlockedImage, quad);
         this.lockedImage = new GUITexture(new Texture(lockedImage), pos, size, quad);
         this.locked = locked;
+        this.levelID = levelID;
     }
 
     @Override
@@ -34,12 +38,16 @@ public class LevelIcon extends Icon{
     public void roll(float delta, int axis) {
         super.roll(delta, axis);
 
-        // temp
-        if (!locked){
-            lockedImage.move(new Vector2f(axis == X_AXIS ? delta : 0, axis == Y_AXIS ? delta : 0));
-        } else {
-            super.getGui().move(new Vector2f(axis == X_AXIS ? delta : 0, axis == Y_AXIS ? delta : 0));
+        if(!locked){
+            Initializer.getInstance().setLevelToLoad(levelID);
+            manager.alert(UIState.GAME);
         }
+        // temp
+//        if (!locked){
+//            lockedImage.move(new Vector2f(axis == X_AXIS ? delta : 0, axis == Y_AXIS ? delta : 0));
+//        } else {
+//            super.getGui().move(new Vector2f(axis == X_AXIS ? delta : 0, axis == Y_AXIS ? delta : 0));
+//        }
     }
 
     @Override
