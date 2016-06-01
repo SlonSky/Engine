@@ -38,23 +38,6 @@ public class DemoGame extends Game{
         ArrayList<GameObject> objects = new ArrayList<>();
         ArrayList<Light> lights = new ArrayList<>();
 
-//        Player player = new Player(camera, new Transform(new Vector3f(0f, 10, 10f), camera.getRot(), new Vector3f(1,1,1)),
-//                new Graphic(new Mesh("AK1.obj"), new Material(new Texture("ak.png"))),
-//                new Vector3f(0.8f,0.8f,0.8f), new Vector3f(0, -2, 0));
-
-//        Player player = new Player(camera, new Transform(new Vector3f(0f, 10, 0f), camera.getRot(), new Vector3f(1,1,1)),
-//                "ak", new Material(new Texture("ak.png")),
-//                new Vector3f(1,1f,1f), new Vector3f(0,0,0));
-//        objects.add(player);
-
-//
-//        objects.add(new Enemy(new Transform(new Vector3f(0,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
-//                new Material(new Texture("zombie.png")), "anim", new Vector3f(1,1,1)));
-//
-//
-//        objects.add(new Enemy(new Transform(new Vector3f(5,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1)),
-//                new Material(new Texture("zomby_light.png")), "fast", new Vector3f(1,1,1)));
-
         Mesh road = new Mesh("road.obj");
         Material roadMaterial = new Material(new Texture("road.png"), 1, 10);
 ////
@@ -70,14 +53,6 @@ public class DemoGame extends Game{
 //
         Mesh building2 = new Mesh("building2.obj");
         Material building2Material = new Material(new Texture("building2.png"), 1, 8);
-//
-//        Mesh zombie = new Mesh("zombie.obj");
-//        Mesh zomAxe = new Mesh("zombie_axe.obj");
-//
-//        Mesh zomDied1 = new Mesh("died1.obj");
-//        Mesh zomDied2 = new Mesh("died2.obj");
-//        Material zombieMaterial = new Material(new Texture("zombie.png"), 2, 8);
-//        Material zombieLightMaterial = new Material(new Texture("zomby_light.png"), 2, 6);
 
         Mesh barrel = new Mesh("barrel.obj");
         Material barrelMaterial = new Material(new Texture("barrel.png"), 2, 32);
@@ -113,9 +88,6 @@ public class DemoGame extends Game{
         Mesh lamp = new Mesh("lamp.obj");
         Material lampMaterial = new Material(new Texture("1_LIGHTER.png"), 2, 15);
 
-
-//        objects.add(new Director(camera, new Transform(new Vector3f(0,0,0), new Quaternion(0,0,0,1), new Vector3f(1,1,1))));
-//        objects.add(player);
         for(int i = 0; i < 8; i++) {
             objects.add(new Decoration(
                     new Transform(new Vector3f(3.43f, 0, i*6.75f), new Quaternion(new Vector3f(0,0,1),(float)Math.toRadians(180)), new Vector3f(1, 1, 1)),
@@ -417,79 +389,6 @@ public class DemoGame extends Game{
                 new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
         ));
 
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(-6, 0.0f, 11.3f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(45)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zombie, zombieMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(-4.5f, 0.8f, 10.5f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(72)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zomDied2, zombieMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(-10.3f, 0.0f, 15.5f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-140)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zombie, zombieMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(-4.7f, 0.0f, 17.86f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-40)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zombie, zombieMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(7.85f, 0.0f, 43.39f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-45)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zombie, zombieLightMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(12.63f, 0.0f, 43.39f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-64.1f)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zombie, zombieLightMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(30, 0.0f, 36.89f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-142.1f)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zombie, zombieLightMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(38, 0.0f, 31.39f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-90)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zomAxe, zombieLightMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(31, 0.3f, 27), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(-160.1f)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zomDied1, zombieMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(40, 0.0f, 33), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(106.1f)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zombie, zombieMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(7.8f, 0.15f, 40.39f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(140)), new Vector3f(2f, 2, 2f)),
-//                new Graphic(zomAxe, zombieMaterial),
-//                new Vector3f(3.68f, 1.19f, 2.16f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-//        objects.add(new Decoration(
-//                new Transform(new Vector3f(-2.6f, 0.0f, 6.69f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(0)), new Vector3f(1, 1, 1)),
-//                new Graphic(lamp, lampMaterial),
-//                new Vector3f(0.13f, 2.78f, 0.148f),
-//                new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
-//        ));
-
         objects.add(new Decoration(
                 new Transform(new Vector3f(-2.6f, 0.0f, 32.06f), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(0)), new Vector3f(1, 1, 1)),
                 new Graphic(lamp, lampMaterial),
@@ -502,32 +401,17 @@ public class DemoGame extends Game{
                 new Vector3f(0.13f, 2.78f, 0.148f),
                 new Vector3f(10, 10, 10), new Vector3f(2f, -20, 0)
         ));
-//        Random r = new Random();
-//        for(int i = 0; i < 20; i++) {
-//            for(int j = 0; j < 1; j++) {
-//                objects.add(new Enemy(new Transform(new Vector3f(j * r.nextInt(4) +1, 0, i * 3 + r.nextInt(5)), new Quaternion(new Vector3f(0, 1, 0), (float) Math.toRadians(r.nextInt(180))), new Vector3f(3, 3, 3)),
-//                        new Graphic(zombie, zombieMaterial),
-//                        new Vector3f(1.794f, 0.581f, 1.055f)));
-//            }
-//        }
-// -0.8 -0.15 -0.57
+
         lights.add(new DirectionalLight(new Vector3f(0.5f, 0.37f, 0.18f), 0.5f, new Vector3f(-0.8f, -0.15f, -0.57f)));
 //        lights.add(new PointLight(new Vector3f(-1.06f, 2.46f, 6.73f), new Vector3f(1,0.3f,0), 100.5f, new Attenuation(0, 0, 0.5f)));
-        lights.add(new PointLight(new Vector3f(-1.06f, 2.46f, 32.03f), new Vector3f(1,0.3f,0), 100.5f, new Attenuation(0, 0, 0.5f)));
-        lights.add(new PointLight(new Vector3f(8.58f, 2.46f, 39.53f), new Vector3f(1,0.3f,0.1f), 100.5f, new Attenuation(0, 0, 0.5f)));
+//        lights.add(new PointLight(new Vector3f(-1.06f, 2.46f, 32.03f), new Vector3f(1,0.3f,0), 100.5f, new Attenuation(0, 0, 0.5f)));
+//        lights.add(new PointLight(new Vector3f(8.58f, 2.46f, 39.53f), new Vector3f(1,0.3f,0.1f), 100.5f, new Attenuation(0, 0, 0.5f)));
 //        lights.add(new PointLight(new Vector3f(17.85f, 1.72f, 40.75f), new Vector3f(1,0,0), 0.5f, new Attenuation(3, 1, 2)));
 
         level = new Level(skyBox, objects, lights);
 
-        level.addGUI(new GUITexture(new Texture("health.png"), new Vector2f(0.85f, -0.75f), new Vector2f(0.25f, 0.25f)));
-        level.addGUI(new GUITexture(new Texture("minimap.png"), new Vector2f(-0.75f, 0.70f), new Vector2f(0.2f, 0.2f)));
-        level.addGUI(new GUITexture(new Texture("logo.png"), new Vector2f(-0.75f, -0.70f), new Vector2f(0.2f, 0.2f)));
-//        level.addGUI(new GUITexture(new Texture("cross.png"), new Vector2f(0, 0), new Vector2f(0.2f, 0.2f)));
+        level.addGUI(new GUITexture(new Texture("cross.png"), new Vector2f(0, 0), new Vector2f(0.2f, 0.2f)));
 
-
-//        Source source2 = new Source();
-//        int v = AudioEngine.loadSound("res/sound/themeCannibal.ogg");
-//        source2.play(v);
 
         System.out.println((System.currentTimeMillis() - start) / 1000 + "s");
     }

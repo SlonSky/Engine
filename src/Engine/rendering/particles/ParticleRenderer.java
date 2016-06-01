@@ -50,7 +50,7 @@ public class ParticleRenderer {
                 }
 
                 shader.bind();
-                shader.loadTextureCoordInfo(particle.getTexOffset1(), particle.getTexOffset2(), texture.getNumberOfRows(), particle.getBlend());
+                shader.loadParticleInfo(particle.getTexOffset1(), particle.getTexOffset2(), texture.getNumberOfRows(), particle.getBlend(), particle.isBillBoard());
                 shader.updateUniforms(particle.getTransform(), null, engine);
                 quad.draw();
             }

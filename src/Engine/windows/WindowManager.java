@@ -143,7 +143,7 @@ public class WindowManager {
                 oldState = UIState.CREDITS;
                 break;
             case EXIT:
-                // todo: game.exit();
+                game.exit();
                 break;
         }
     }

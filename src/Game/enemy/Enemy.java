@@ -68,7 +68,7 @@ public class Enemy extends GameObject implements Movable, Opponent{
         death = new Death(audio, deathAnim);
         state = idle;
 
-        health = 100;
+        health = 300;
         currentHealth = health;
 
         CombatManager.getInstance().addOpponent(this);
@@ -124,8 +124,8 @@ public class Enemy extends GameObject implements Movable, Opponent{
             state.getAnimation().render(shader, renderingEngine);
 
             // temp
-            graphicBound.render(shader, renderingEngine);
-            colliderBound.render(shader, renderingEngine);
+//            graphicBound.render(shader, renderingEngine);
+//            colliderBound.render(shader, renderingEngine);
         }
     }
 

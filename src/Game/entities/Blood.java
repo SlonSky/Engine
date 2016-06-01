@@ -1,6 +1,7 @@
 package Game.entities;
 
 import Engine.rendering.Transform;
+import Engine.rendering.particles.LyingParticle;
 import Engine.rendering.particles.Particle;
 import Engine.rendering.particles.ParticleTexture;
 import Engine.util.Quaternion;
@@ -11,11 +12,13 @@ import Engine.util.Vector3f;
  */
 public class Blood extends ParticleSystem {
 
+    private static final float LIFE_ON_LAND = 9;
 
     private Vector3f dir;
 
+
     public Blood(ParticleTexture texture) {
-        super(texture, 40, new Vector3f(0,0,0), 0.1f, 0.5f, false);
+        super(texture, 40, new Vector3f(0,0,0), 0.1f, 0.2f, false);
     }
 
     @Override

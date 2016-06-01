@@ -42,7 +42,7 @@ import java.util.Random;
  */
 public class Play implements GameState {
 
-    private Game game;
+    private WindowedGame game;
     private Camera camera;
     private Level level;
     private WindowManager manager;
@@ -51,7 +51,7 @@ public class Play implements GameState {
     private boolean gameOver;
     private boolean levelEnded;
 
-    public Play(WindowManager manager, Game game) {
+    public Play(WindowManager manager, WindowedGame game) {
         this.manager = manager;
         this.game = game;
         this.pause = false;
@@ -77,12 +77,14 @@ public class Play implements GameState {
     @Override
     public void enter() {
         init();
+        game.getGameBackground().stop();
+        game.getGameBackground().play(level.playTheme());
 
     }
 
     @Override
     public void update() {
-        GameplayManager.getInstance().update();
+        GameplayManager.getInstance().update((Player)Level.getObjects().get(0));
         gameOver = checkGameOver();
         levelEnded = checkLevelEnded();
         checkPause();

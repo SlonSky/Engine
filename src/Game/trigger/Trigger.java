@@ -10,6 +10,7 @@ public class Trigger {
     // boolean reached; update;
     // Action; - pattern Command?
 
+    private boolean reached;
     private float radius;
     private Vector3f position;
     private TriggerEvent event;
@@ -18,11 +19,13 @@ public class Trigger {
         this.radius = radius;
         this.position = position;
         this.event = event;
+        this.reached = false;
     }
 
     public void check(Vector3f playerPos){
-        if(playerPos.sub(position).length() <= radius){
+        if(playerPos.sub(position).length() <= radius && !reached){
             event.run();
+            reached = true;
         }
     }
 }

@@ -45,6 +45,10 @@ public class Decoration extends GameObject {
 
         addComponent(graphic);
         addComponent(culling);
+
+        // temp
+        cullingBound = new GraphicBound(cullingSize, new Vector3f(0, 1, 0));
+        addComponent(cullingBound);
     }
 
     public Decoration(Transform transform, Graphic graphic){
@@ -53,7 +57,6 @@ public class Decoration extends GameObject {
 
 
         addComponent(graphic);
-        addComponent(culling);
     }
 
     public void render(Shader shader, RenderingEngine renderingEngine){
@@ -64,8 +67,10 @@ public class Decoration extends GameObject {
                 graphic.render(shader, renderingEngine);
 
                 // temp
-                cullingBound.render(shader, renderingEngine);
-                collideBound.render(shader, renderingEngine);
+//                cullingBound.render(shader, renderingEngine);
+
+//                if(collideBound!= null)
+//                collideBound.render(shader, renderingEngine);
             }
         }
     }

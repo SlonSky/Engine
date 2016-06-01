@@ -27,7 +27,7 @@ public class GameplayManager {
         triggers = new ArrayList<>();
     }
 
-    public void update(){
+    public void update(Player player){
         for(Trigger trigger: triggers){
             trigger.check(player.getPosition());
         }

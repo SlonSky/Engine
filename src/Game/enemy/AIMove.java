@@ -13,7 +13,7 @@ import java.util.Random;
 public class AIMove extends GameComponent {
 
     private static final Vector3f Y_AXIS = new Vector3f(0,1,0);
-    private static final float CHASE_DISTANCE = 12;
+    private static final float CHASE_DISTANCE = 22;
     private static final float ATTACK_DISTANCE = 3;
     private static final float ROTATION_SPEED = 5;
 
@@ -43,7 +43,7 @@ public class AIMove extends GameComponent {
     public static Vector3f lookAt = new Vector3f(0,0,0);
 
     private Random r = new Random();
-    private float speed = r.nextInt(10);
+    private float speed = r.nextInt(8)+7;
 
     private Vector3f movementVector = new Vector3f(0,0,0);
 

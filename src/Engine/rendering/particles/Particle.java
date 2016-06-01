@@ -10,13 +10,15 @@ import Game.player.Player;
 /**
  * Created by Slon on 27.05.2016.
  */
+
+// todo: Sprite class
 public class Particle {
     private Transform transform;
-    private Vector3f velocity;
+    protected Vector3f velocity;
     private float gravityEffect;
-    private float lifeLength;
+    protected float lifeLength;
 
-    private float elapsedTime = 0;
+    protected float elapsedTime = 0;
     private float distance;
 
     private ParticleTexture texture;
@@ -27,13 +29,21 @@ public class Particle {
 
     private boolean addLighting;
 
+    private boolean billBoard;
+
     public Particle(Transform transform, ParticleTexture texture, Vector3f velocity, float gravityEffect, float lifeLength, boolean addLighting) {
+        this(transform, texture, velocity, gravityEffect, lifeLength, addLighting, true);
+    }
+
+
+    public Particle(Transform transform, ParticleTexture texture, Vector3f velocity, float gravityEffect, float lifeLength, boolean addLighting, boolean billBoard) {
         this.transform = transform;
         this.velocity = velocity;
         this.gravityEffect = gravityEffect;
         this.lifeLength = lifeLength;
         this.texture = texture;
         this.addLighting = addLighting;
+        this.billBoard = billBoard;
         ParticleMaster.addParticle(this);
     }
 
@@ -44,7 +54,7 @@ public class Particle {
     public boolean update(Camera camera){
         velocity.setY(velocity.getY() - Player.GRAVITY * gravityEffect * (float) Time.getDelta());
         Vector3f change = new Vector3f(velocity.getX(), velocity.getY(), velocity.getZ());
-        change.mul(transform.getScale());
+//        change.mul(transform.getScale());
         transform.setPosition(transform.getPosition().add(change));
         distance = camera.getPos().sub(transform.getPosition()).length();
 
@@ -94,5 +104,13 @@ public class Particle {
 
     public boolean isAddLighting() {
         return addLighting;
+    }
+
+    public boolean isBillBoard() {
+        return billBoard;
+    }
+
+    public void setBillBoard(boolean billBoard) {
+        this.billBoard = billBoard;
     }
 }

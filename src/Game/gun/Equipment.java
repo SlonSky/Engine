@@ -13,4 +13,6 @@ public interface Equipment {
     void setBulletsAmount(int amount);
 
     Ray getShotRay();
+
+    void fire();
 }

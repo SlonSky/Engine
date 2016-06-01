@@ -3,7 +3,11 @@ package Game.gun;
 import Engine.audio.Sound;
 import Engine.audio.Source;
 import Engine.core.Time;
+import Engine.rendering.Transform;
 import Engine.rendering.animation.Animation;
+import Engine.rendering.meshManagment.Texture;
+import Engine.rendering.particles.Particle;
+import Engine.rendering.particles.ParticleTexture;
 import Engine.util.Quaternion;
 import Engine.util.Vector3f;
 import Game.Initializer;
@@ -39,6 +43,7 @@ public class Shooting implements GunState {
 
     private float increment;
     private float time;
+
 
     public Shooting(Source source, Animation animation, Controllable controllable, Equipment equipment) {
         this.source = source;
@@ -92,7 +97,6 @@ public class Shooting implements GunState {
         // offset
         float kickout = (float) (Math.sin(increment * SHOT_PERIOD));
         animation.setOffset(controllable.getLookAt().add(kickout).normalized().mul(RECOIL_OFFSET));
-
         // rot
         animation.setRotationOffset(new Quaternion(controllable.getLeft(),
                 (float) Math.toRadians(RECOIL_ANGLE * (Math.abs(Math.sin(increment * SHOT_PERIOD)) - 1) / 2)));
@@ -113,6 +117,7 @@ public class Shooting implements GunState {
         if(equipment.getBulletsInMagazine() != 0) {
             time += Time.getDelta();
             if (time >= SHOT_TIME) {
+                equipment.fire();
                 equipment.setBulletsInMagazine(equipment.getBulletsInMagazine() - 1);
                 time = 0;
             }

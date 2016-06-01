@@ -9,7 +9,7 @@ import Engine.util.Vector3f;
  */
 public class Transform {
     private static Camera camera;
-
+    private static final float FRUSTUM_BACKWARD = 3;
 
     private static float zNear;
     private static float zFar;
@@ -72,7 +72,8 @@ public class Transform {
     public static Matrix4f getProjectedModelView(){
         Matrix4f id = new Matrix4f().initIdentity();
         Matrix4f cameraRotation = new Matrix4f().initRotation(camera.getForward(), camera.getUp());
-        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camera.getPos().getX(), -camera.getPos().getY(), -camera.getPos().getZ());
+        Vector3f camPos = camera.getPos().sub(camera.getForward().normalized().mul(FRUSTUM_BACKWARD));
+        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-camPos.getX(), -camPos.getY(), -camPos.getZ());
         return projectionMatrix.mul((cameraRotation.mul(cameraTranslation).mul(id)));
     }
 

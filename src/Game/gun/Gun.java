@@ -1,6 +1,9 @@
 package Game.gun;
 
 import Engine.audio.Source;
+import Engine.rendering.meshManagment.Texture;
+import Engine.rendering.particles.Particle;
+import Engine.rendering.particles.ParticleTexture;
 import Engine.util.Quaternion;
 import Engine.util.Vector3f;
 import Game.GameObject;
@@ -28,9 +31,12 @@ public class Gun extends GameObject implements Equipment {
     private GunState reloading;
 
     // todo: init from loader
-    private int capacity = 300;
-    private int bulletsInMagazine = 300;
-    private int bulletsAmount = 900;
+    private int capacity = 30;
+    private int bulletsInMagazine = 90;
+    private int bulletsAmount = 120;
+
+
+    private ParticleTexture fire = new ParticleTexture(new Texture("fire.png"), 8);
 
     public Gun(Transform transform, Animation animation, Controllable control) {
         super(transform);
@@ -56,7 +62,9 @@ public class Gun extends GameObject implements Equipment {
         super.update();
         if(controllable.isShooting() && !controllable.isReloading()){
             changeState(shooting);
-            makeShotRay();
+
+            // todo: move to Shooting
+
         } else if(controllable.isReloading()){
             changeState(reloading);
         } else {
@@ -101,7 +109,26 @@ public class Gun extends GameObject implements Equipment {
 
     @Override
     public Ray getShotRay() {
+        makeShotRay();
         return shotRay;
+    }
+
+    @Override
+    public void fire() {
+        new Particle(new Transform(
+                getTransform().getPosition()
+                        .add(getTransform().getRotation().getForward().mul(1.4f)
+                                .sub(getTransform().getRotation().getLeft().mul(0.1f)
+                                        .add(getTransform().getRotation().getUp().mul(0.1f)))),
+                new Quaternion(0,0,0,1), new Vector3f(0.3f,0.3f,0.3f)), fire, new Vector3f(0,0,0), 0,
+                0.05f, true);
+        new Particle(new Transform(
+                getTransform().getPosition()
+                        .add(getTransform().getRotation().getForward().mul(1.4f)
+                                .sub(getTransform().getRotation().getLeft().mul(0.1f)
+                                        .add(getTransform().getRotation().getUp().mul(0.1f)))),
+                new Quaternion(0,0,0,1), new Vector3f(0.3f,0.3f,0.3f)), fire, new Vector3f(0,0,0), 0,
+                0.05f, true);
     }
 
     @Override

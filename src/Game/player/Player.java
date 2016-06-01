@@ -24,8 +24,8 @@ import Game.gun.Gun;
  */
 public class Player extends GameObject implements Controllable, Combating{
     public static final float GRAVITY = 10;
-    private static final float FLOOR_LEVEL = 1;
-
+    public static final float FLOOR_LEVEL = 0;
+    private static final float PLAYER_HEIGHT = 2;
     public static final Quaternion LYING_ROT = new Quaternion(new Vector3f(0, 0, 1), (float)Math.toRadians(-90));
 
     private Camera camera;
@@ -105,11 +105,11 @@ public class Player extends GameObject implements Controllable, Combating{
     }
 
     public void update(){
-
         if(currentHealth <= 0){
             changeState(dying);
             if(getTransform().getRotation().dot(LYING_ROT) > 0.99f) {
                 dead = true;
+                audio.stop();
             }
         } else {
             if (isMoving()) {
@@ -134,7 +134,7 @@ public class Player extends GameObject implements Controllable, Combating{
             gun.render(shader, renderingEngine);
 
             // temp
-            collideBound.render(shader, renderingEngine);
+//            collideBound.render(shader, renderingEngine);
     }
 
     private void changeState(PlayerState newState){
@@ -157,8 +157,8 @@ public class Player extends GameObject implements Controllable, Combating{
     }
 
     private void checkFloor(){
-        if(getTransform().getPosition().getY() < FLOOR_LEVEL){
-            getTransform().setPosition(new Vector3f(getTransform().getPosition().getX(), FLOOR_LEVEL, getTransform().getPosition().getZ()));
+        if(getTransform().getPosition().getY() < FLOOR_LEVEL + PLAYER_HEIGHT){
+            getTransform().setPosition(new Vector3f(getTransform().getPosition().getX(), FLOOR_LEVEL + PLAYER_HEIGHT, getTransform().getPosition().getZ()));
         }
     }
 

@@ -101,4 +101,9 @@ public class Level {
     public void setLevelTheme(Sound levelTheme) {
         this.levelTheme = levelTheme;
     }
+
+    public int playTheme(){
+        return levelTheme.getBufferId();
+    }
+
 }

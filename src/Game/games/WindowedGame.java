@@ -80,4 +80,8 @@ public class WindowedGame extends Game{
     public Source getGameBackground() {
         return gameBackground;
     }
+
+    public void exit(){
+        engine.stop();
+    }
 }

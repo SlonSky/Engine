@@ -20,6 +20,7 @@ public class ZMSpawn implements TriggerEvent {
     public void run() {
         for(Enemy enemy: enemiesToSpawn){
             Level.getObjects().add(enemy);
+            System.out.println("her");
         }
     }
 }
