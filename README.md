@@ -2,22 +2,22 @@
 Engine for 3D game Post Mortem (zombie-shooter). 
 Alpha version 0.0.1 ready.
 What it can:
--3D rendering:
+1.3D rendering:
   -OBJ loading
   -lighting
   -morphing animation
   -frustum culling
   -particle system
   -gui&text drawing
--GUI System:
+2.GUI System:
   -frames, buttons, labels
   -images, roll panels
   -scrollbars, checkboxes
--Audio system:
+3.Audio system:
   -WAV&OGG reading
   -sound sources
   -game background/effects sources
--Physics:
+4.Physics:
   -AABB collision detection
   -ray-AABB hit detection
   
