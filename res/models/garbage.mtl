@@ -1,0 +1,92 @@
+# Blender MTL File: 'None'
+# Material Count: 9
+
+newmtl Material.004
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl TextureTextu
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl texture.001T
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl texture.002T
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl texture.003T
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl texture.004
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl texture.004T
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl textureTextu
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg
+
+newmtl texturtextur
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\x32y95n5hyio-GarbageBrass\GarbageBrass(LatãoDeLixo)\Texture.jpg

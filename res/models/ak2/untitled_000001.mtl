@@ -1,0 +1,35 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl 01_-_Default
+Ns 19.607843
+Ka 0.000000 0.000000 0.000000
+Kd 0.470588 0.470588 0.470588
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 1
+map_Kd D:\\gamedev\\modeling\\content\\zip\\is7bhmvuz9-ak47FPS\\v_hands2.bmp
+map_d D:\\gamedev\\modeling\\content\\zip\\is7bhmvuz9-ak47FPS\\v_hands2.bmp
+
+newmtl Material_#36
+Ns 19.607843
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 1
+map_Kd D:\\gamedev\\modeling\\content\\zip\\is7bhmvuz9-ak47FPS\\T1.bmp
+map_d D:\\gamedev\\modeling\\content\\zip\\is7bhmvuz9-ak47FPS\\T1.bmp
+
+newmtl Material_#37
+Ns 19.607843
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 1
+map_Kd D:\\gamedev\\modeling\\content\\zip\\is7bhmvuz9-ak47FPS\\T2.bmp
+map_d D:\\gamedev\\modeling\\content\\zip\\is7bhmvuz9-ak47FPS\\T2.bmp

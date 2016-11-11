@@ -1,0 +1,22 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl 4ec086b7.dds_4ec086b7.dds
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.446745 0.446745 0.446745
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\GameEngine\res\textures\car.png
+
+newmtl ec94858b.dds_ec94858b.dds
+Ns 15.686275
+Ka 0.000000 0.000000 0.000000
+Kd 0.446745 0.446745 0.446745
+Ks 0.420125 0.420125 0.420125
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\GameEngine\res\textures\car.png

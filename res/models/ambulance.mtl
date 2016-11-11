@@ -1,0 +1,32 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl ambulance_car
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\sdd03rgkpf-Ambulance_Car_Crysis_2\Ambulance_Car_Crysis_2\ambulance_car_d.tga
+
+newmtl ambulance_car_glass
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\sdd03rgkpf-Ambulance_Car_Crysis_2\Ambulance_Car_Crysis_2\ambulance_car_glass_d.tga
+
+newmtl ambulance_car_sign
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd D:\gamedev\modeling\content\zip\sdd03rgkpf-Ambulance_Car_Crysis_2\Ambulance_Car_Crysis_2\ambulance_car_sign_d.tga

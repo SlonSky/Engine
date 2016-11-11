@@ -1,0 +1,13 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl Material.002
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.150794 0.150794 0.150794
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\gamedev\GameEngine\res\textures\1_LIGHTER.png
+disp D:\\gamedev\\modeling\\content\\zip\\s3duldjjt9fk-StreetLampByTyroSmith\\Street Lamp\\grey-concrete-texture.jpg
