@@ -1,6 +1,6 @@
 # PMEngine
 ###Engine for 3D game Post Mortem (zombie-shooter).   
-###Alpha version 0.0.1 ready (01.06.2016).  
+###Alpha version 1.0 ready (01.06.2016).  
 ***
 What it can:  
 + 3D rendering:  
@@ -27,4 +27,4 @@ What it can:
   
 ***  
 Alpha version have working game with one demo level.  
-*WARNING:* there are no resources (will be improved).  
+*See the release v1.0*
